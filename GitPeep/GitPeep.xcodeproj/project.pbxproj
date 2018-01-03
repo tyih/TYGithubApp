@@ -11,13 +11,15 @@
 		377EAE82B35A63CF778268D9 /* libPods-GitPeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */; };
 		432C9ED88A2B4DEA51CBF7E2 /* libPods-GitPeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191AE2B3298EB784577BC5C1 /* libPods-GitPeepTests.a */; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
-		9FBF5DA61FF510690032418D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA51FF510690032418D /* ViewController.m */; };
-		9FBF5DA91FF510690032418D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA71FF510690032418D /* Main.storyboard */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
 		9FBF5DB11FF510690032418D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DB01FF510690032418D /* main.m */; };
 		9FBF5DBB1FF510690032418D /* GitPeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DBA1FF510690032418D /* GitPeepTests.m */; };
 		9FBF5DC61FF510690032418D /* GitPeepUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DC51FF510690032418D /* GitPeepUITests.m */; };
+		9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */; };
+		9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */; };
+		9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */; };
+		9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +50,6 @@
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DA11FF510690032418D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FBF5DA21FF510690032418D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9FBF5DA41FF510690032418D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FBF5DA51FF510690032418D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9FBF5DA81FF510690032418D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FBF5DAA1FF510690032418D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FBF5DAD1FF510690032418D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FBF5DAF1FF510690032418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +60,18 @@
 		9FBF5DC11FF510690032418D /* GitPeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DC51FF510690032418D /* GitPeepUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitPeepUITests.m; sourceTree = "<group>"; };
 		9FBF5DC71FF510690032418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FDE45C91FFC80B600E1DCE4 /* TYConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYConstant.h; sourceTree = "<group>"; };
+		9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYConstant.m; sourceTree = "<group>"; };
+		9FDE45CC1FFC832700E1DCE4 /* TYMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMacros.h; sourceTree = "<group>"; };
+		9FDE45CE1FFCFC0C00E1DCE4 /* TYNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationProtocol.h; sourceTree = "<group>"; };
+		9FDE45CF1FFCFDCA00E1DCE4 /* TYViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModel.h; sourceTree = "<group>"; };
+		9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewModel.m; sourceTree = "<group>"; };
+		9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServicesProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModelServicesProtocol.h; sourceTree = "<group>"; };
+		9FDE45D31FFD012300E1DCE4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9FDE45D41FFD071A00E1DCE4 /* TYViewModelServicesImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModelServicesImpl.h; sourceTree = "<group>"; };
+		9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewModelServicesImpl.m; sourceTree = "<group>"; };
+		9FDE45D71FFD0A3200E1DCE4 /* TYNavigationControllerStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationControllerStack.h; sourceTree = "<group>"; };
+		9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationControllerStack.m; sourceTree = "<group>"; };
 		A669BE2CFC8D05F0B762DE1F /* Pods-GitPeep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.release.xcconfig"; sourceTree = "<group>"; };
 		D46D6C7556264FF3942F81CA /* Pods-GitPeep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,13 +161,11 @@
 				9FBF5DD31FF510DB0032418D /* View */,
 				9FBF5DA11FF510690032418D /* AppDelegate.h */,
 				9FBF5DA21FF510690032418D /* AppDelegate.m */,
-				9FBF5DA41FF510690032418D /* ViewController.h */,
-				9FBF5DA51FF510690032418D /* ViewController.m */,
-				9FBF5DA71FF510690032418D /* Main.storyboard */,
 				9FBF5DAA1FF510690032418D /* Assets.xcassets */,
 				9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */,
 				9FBF5DAF1FF510690032418D /* Info.plist */,
 				9FBF5DB01FF510690032418D /* main.m */,
+				9FDE45D31FFD012300E1DCE4 /* PrefixHeader.pch */,
 				9FBF5DDB1FF512820032418D /* Resource */,
 			);
 			path = GitPeep;
@@ -195,6 +204,7 @@
 		9FBF5DD41FF511220032418D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9FDE45CD1FFCFBED00E1DCE4 /* BaseClass */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -235,6 +245,9 @@
 		9FBF5DDA1FF511BA0032418D /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				9FDE45C91FFC80B600E1DCE4 /* TYConstant.h */,
+				9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */,
+				9FDE45CC1FFC832700E1DCE4 /* TYMacros.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -277,6 +290,8 @@
 		9FBF5DEC1FF514C50032418D /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				9FDE45D71FFD0A3200E1DCE4 /* TYNavigationControllerStack.h */,
+				9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -314,6 +329,19 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		9FDE45CD1FFCFBED00E1DCE4 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				9FDE45CE1FFCFC0C00E1DCE4 /* TYNavigationProtocol.h */,
+				9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServicesProtocol.h */,
+				9FDE45CF1FFCFDCA00E1DCE4 /* TYViewModel.h */,
+				9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */,
+				9FDE45D41FFD071A00E1DCE4 /* TYViewModelServicesImpl.h */,
+				9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */,
+			);
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +462,6 @@
 			files = (
 				9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */,
 				9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */,
-				9FBF5DA91FF510690032418D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,9 +633,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBF5DA61FF510690032418D /* ViewController.m in Sources */,
 				9FBF5DB11FF510690032418D /* main.m in Sources */,
+				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
+				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
+				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
+				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,14 +674,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9FBF5DA71FF510690032418D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FBF5DA81FF510690032418D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -774,8 +796,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GitPeep/PrefixHeader.pch";
 				INFOPLIST_FILE = GitPeep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.com.GitPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -790,8 +814,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/GitPeep/PrefixHeader.pch";
 				INFOPLIST_FILE = GitPeep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.com.GitPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
