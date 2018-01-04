@@ -10,6 +10,15 @@
 		15CE74C1E55598E2B4F11223 /* libPods-GitPeepUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D245A053043DE98A47E10 /* libPods-GitPeepUITests.a */; };
 		377EAE82B35A63CF778268D9 /* libPods-GitPeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */; };
 		432C9ED88A2B4DEA51CBF7E2 /* libPods-GitPeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191AE2B3298EB784577BC5C1 /* libPods-GitPeepTests.a */; };
+		7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0921FFE5E7100887DFE /* TYViewController.m */; };
+		7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0991FFE62ED00887DFE /* TYRouter.m */; };
+		7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E09D1FFE78EB00887DFE /* TYTabBarController.m */; };
+		7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A01FFE7D9300887DFE /* TYMainController.m */; };
+		7109E0A41FFE7DFC00887DFE /* TYExploreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A31FFE7DFC00887DFE /* TYExploreController.m */; };
+		7109E0A71FFE7E0F00887DFE /* TYHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A61FFE7E0F00887DFE /* TYHomeController.m */; };
+		7109E0AA1FFE7E3B00887DFE /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A91FFE7E3B00887DFE /* TYProfileController.m */; };
+		7109E0AD1FFE7E5400887DFE /* TYRepositoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0AC1FFE7E5400887DFE /* TYRepositoriesController.m */; };
+		7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
@@ -46,6 +55,24 @@
 		1CF1D49280F965098EB470EE /* Pods-GitPeepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.release.xcconfig"; sourceTree = "<group>"; };
 		2EC9BCCFC8812056E42CC6EE /* Pods-GitPeepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepUITests/Pods-GitPeepUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeep.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7109E0911FFE5E7100887DFE /* TYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewController.h; sourceTree = "<group>"; };
+		7109E0921FFE5E7100887DFE /* TYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewController.m; sourceTree = "<group>"; };
+		7109E0981FFE62ED00887DFE /* TYRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRouter.h; sourceTree = "<group>"; };
+		7109E0991FFE62ED00887DFE /* TYRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRouter.m; sourceTree = "<group>"; };
+		7109E09C1FFE78EB00887DFE /* TYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTabBarController.h; sourceTree = "<group>"; };
+		7109E09D1FFE78EB00887DFE /* TYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTabBarController.m; sourceTree = "<group>"; };
+		7109E09F1FFE7D9300887DFE /* TYMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMainController.h; sourceTree = "<group>"; };
+		7109E0A01FFE7D9300887DFE /* TYMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMainController.m; sourceTree = "<group>"; };
+		7109E0A21FFE7DFC00887DFE /* TYExploreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TYExploreController.h; path = GitPeep/ViewController/Main/TYExploreController.h; sourceTree = SOURCE_ROOT; };
+		7109E0A31FFE7DFC00887DFE /* TYExploreController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TYExploreController.m; path = GitPeep/ViewController/Main/TYExploreController.m; sourceTree = SOURCE_ROOT; };
+		7109E0A51FFE7E0F00887DFE /* TYHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TYHomeController.h; path = GitPeep/ViewController/Main/TYHomeController.h; sourceTree = SOURCE_ROOT; };
+		7109E0A61FFE7E0F00887DFE /* TYHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TYHomeController.m; path = GitPeep/ViewController/Main/TYHomeController.m; sourceTree = SOURCE_ROOT; };
+		7109E0A81FFE7E3B00887DFE /* TYProfileController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TYProfileController.h; path = GitPeep/ViewController/Main/TYProfileController.h; sourceTree = SOURCE_ROOT; };
+		7109E0A91FFE7E3B00887DFE /* TYProfileController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TYProfileController.m; path = GitPeep/ViewController/Main/TYProfileController.m; sourceTree = SOURCE_ROOT; };
+		7109E0AB1FFE7E5400887DFE /* TYRepositoriesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TYRepositoriesController.h; path = GitPeep/ViewController/Main/TYRepositoriesController.h; sourceTree = SOURCE_ROOT; };
+		7109E0AC1FFE7E5400887DFE /* TYRepositoriesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TYRepositoriesController.m; path = GitPeep/ViewController/Main/TYRepositoriesController.m; sourceTree = SOURCE_ROOT; };
+		7109E0AF1FFE81CB00887DFE /* TYMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMainViewModel.h; sourceTree = "<group>"; };
+		7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMainViewModel.m; sourceTree = "<group>"; };
 		956CEF98E0C9C96FE156CB86 /* Pods-GitPeepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DA11FF510690032418D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +154,84 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7109E08F1FFE5E3100887DFE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7109E09B1FFE789900887DFE /* Main */,
+				7109E0971FFE5EBF00887DFE /* Explore */,
+				7109E0961FFE5EB200887DFE /* Home */,
+				7109E0951FFE5EA800887DFE /* Profile */,
+				7109E0941FFE5E7E00887DFE /* Repositories */,
+				7109E0901FFE5E4100887DFE /* BaseClass */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7109E0901FFE5E4100887DFE /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0911FFE5E7100887DFE /* TYViewController.h */,
+				7109E0921FFE5E7100887DFE /* TYViewController.m */,
+				7109E09C1FFE78EB00887DFE /* TYTabBarController.h */,
+				7109E09D1FFE78EB00887DFE /* TYTabBarController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		7109E0941FFE5E7E00887DFE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0AB1FFE7E5400887DFE /* TYRepositoriesController.h */,
+				7109E0AC1FFE7E5400887DFE /* TYRepositoriesController.m */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7109E0951FFE5EA800887DFE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0A81FFE7E3B00887DFE /* TYProfileController.h */,
+				7109E0A91FFE7E3B00887DFE /* TYProfileController.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7109E0961FFE5EB200887DFE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0A51FFE7E0F00887DFE /* TYHomeController.h */,
+				7109E0A61FFE7E0F00887DFE /* TYHomeController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7109E0971FFE5EBF00887DFE /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0A21FFE7DFC00887DFE /* TYExploreController.h */,
+				7109E0A31FFE7DFC00887DFE /* TYExploreController.m */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		7109E09B1FFE789900887DFE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7109E09F1FFE7D9300887DFE /* TYMainController.h */,
+				7109E0A01FFE7D9300887DFE /* TYMainController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7109E0AE1FFE813400887DFE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7109E0AF1FFE81CB00887DFE /* TYMainViewModel.h */,
+				7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		9FBF5D951FF510690032418D = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +257,10 @@
 		9FBF5DA01FF510690032418D /* GitPeep */ = {
 			isa = PBXGroup;
 			children = (
+				7109E08F1FFE5E3100887DFE /* ViewController */,
 				9FBF5DDA1FF511BA0032418D /* Macros */,
 				9FBF5DD91FF511A50032418D /* Vendor */,
 				9FBF5DD81FF5117A0032418D /* Utils */,
-				9FBF5DD71FF511590032418D /* ViewController */,
 				9FBF5DD51FF5112B0032418D /* Model */,
 				9FBF5DD41FF511220032418D /* ViewModel */,
 				9FBF5DD31FF510DB0032418D /* View */,
@@ -166,6 +271,8 @@
 				9FBF5DAF1FF510690032418D /* Info.plist */,
 				9FBF5DB01FF510690032418D /* main.m */,
 				9FDE45D31FFD012300E1DCE4 /* PrefixHeader.pch */,
+				7109E0981FFE62ED00887DFE /* TYRouter.h */,
+				7109E0991FFE62ED00887DFE /* TYRouter.m */,
 				9FBF5DDB1FF512820032418D /* Resource */,
 			);
 			path = GitPeep;
@@ -204,6 +311,7 @@
 		9FBF5DD41FF511220032418D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7109E0AE1FFE813400887DFE /* Main */,
 				9FDE45CD1FFCFBED00E1DCE4 /* BaseClass */,
 			);
 			path = ViewModel;
@@ -214,18 +322,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9FBF5DD71FF511590032418D /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9FBF5DF71FF515CC0032418D /* BaseClass */,
-				9FBF5DF81FF515CC0032418D /* Explore */,
-				9FBF5DF61FF515CC0032418D /* Home */,
-				9FBF5DF51FF515CC0032418D /* Profile */,
-				9FBF5DF91FF515CD0032418D /* Repositories */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9FBF5DD81FF5117A0032418D /* Utils */ = {
@@ -294,41 +390,6 @@
 				9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */,
 			);
 			path = BaseClass;
-			sourceTree = "<group>";
-		};
-		9FBF5DF51FF515CC0032418D /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		9FBF5DF61FF515CC0032418D /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		9FBF5DF71FF515CC0032418D /* BaseClass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BaseClass;
-			sourceTree = "<group>";
-		};
-		9FBF5DF81FF515CC0032418D /* Explore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Explore;
-			sourceTree = "<group>";
-		};
-		9FBF5DF91FF515CD0032418D /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		9FDE45CD1FFCFBED00E1DCE4 /* BaseClass */ = {
@@ -634,9 +695,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FBF5DB11FF510690032418D /* main.m in Sources */,
+				7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */,
 				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
+				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
+				7109E0AD1FFE7E5400887DFE /* TYRepositoriesController.m in Sources */,
+				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
+				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
+				7109E0A71FFE7E0F00887DFE /* TYHomeController.m in Sources */,
+				7109E0AA1FFE7E3B00887DFE /* TYProfileController.m in Sources */,
+				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
+				7109E0A41FFE7DFC00887DFE /* TYExploreController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 			);

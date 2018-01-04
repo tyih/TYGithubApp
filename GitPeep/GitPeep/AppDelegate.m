@@ -8,15 +8,35 @@
 
 #import "AppDelegate.h"
 
+#import "TYNavigationControllerStack.h"
+#import "TYViewModelServicesImpl.h"
+#import "TYMainViewModel.h"
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong, readwrite) TYNavigationControllerStack *navigationControllerStack;
+
+@property (nonatomic, strong, readwrite) TYViewModelServicesImpl *services;
 
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *)sharedDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.services = [[TYViewModelServicesImpl alloc] init];
+    self.navigationControllerStack = [[TYNavigationControllerStack alloc] initWithServices:self.services];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    [self.services resetRootViewModel:[[TYMainViewModel alloc] initWithServices:self.services params:nil]];
+
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

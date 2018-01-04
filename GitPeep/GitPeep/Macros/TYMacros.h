@@ -83,4 +83,9 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 #define TYColorAlpha(r, g, b, a) \
 [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
+#pragma mark -
+
+/// AppDelegate
+#define TYSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
 #endif /* TYMacros_h */

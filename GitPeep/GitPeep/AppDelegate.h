@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class TYNavigationControllerStack;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+/// 导航栏堆栈
+@property (nonatomic, strong, readonly) TYNavigationControllerStack *navigationControllerStack;
+
+// AppDelegate
++ (AppDelegate *)sharedDelegate;
 
 @end
 

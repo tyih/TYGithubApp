@@ -16,6 +16,7 @@
 
 #import <ReactiveObjC.h>
 
+#import "AppDelegate.h"
 #import "TYConstant.h"
 #import "TYMacros.h"
 
