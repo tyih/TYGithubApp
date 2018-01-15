@@ -9,6 +9,9 @@
 #ifndef TYMacros_h
 #define TYMacros_h
 
+/// 存储应用版本号
+#define TYApplicationVersionKey @"TYApplicationVersionKey"
+
 /// 应用版本号
 #define APP_VERSION() \
 [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]

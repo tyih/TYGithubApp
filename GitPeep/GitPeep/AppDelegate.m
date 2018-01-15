@@ -11,6 +11,12 @@
 #import "TYNavigationControllerStack.h"
 #import "TYViewModelServicesImpl.h"
 #import "TYMainViewModel.h"
+#import "TYNewFeatureViewModel.h"
+#import "TYBootLoginViewModel.h"
+#import "TYAccountLoginViewModel.h"
+#import "TYHomePageViewModel.h"
+
+#import <SAMKeychain.h>
 
 @interface AppDelegate ()
 
@@ -65,6 +71,32 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - private
+
+- (TYViewModel *)createInitialViewModel {
+    
+    // 应用版本号
+    NSString *version = [[NSUserDefaults standardUserDefaults] objectForKey:TYApplicationVersionKey];
+    
+    if (![version isEqualToString:APP_VERSION()]) {
+        // 版本不一样，显示新特性界面
+        return [[TYNewFeatureViewModel alloc] initWithServices:self.services params:nil];
+    } else {
+        
+        if (0) {
+            // 有账号，有用户数据，跳到主页
+            return [[TYHomePageViewModel alloc] initWithServices:self.services params:nil];
+        } else if (0) {
+            // 没有账号，有用户数据，跳到登录界面
+            return [[TYAccountLoginViewModel alloc] initWithServices:self.services params:nil];
+        } else {
+            // 第一次使用
+            return [[TYBootLoginViewModel alloc] initWithServices:self.services params:nil];
+        }
+    }
+    
 }
 
 

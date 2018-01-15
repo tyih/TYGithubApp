@@ -10,6 +10,8 @@ target 'GitPeep' do
   pod 'ReactiveObjC'
 
   pod 'YYKit'
+  
+  pod 'SAMKeychain'
 
   target 'GitPeepTests' do
     inherit! :search_paths
