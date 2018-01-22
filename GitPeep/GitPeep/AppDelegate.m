@@ -39,7 +39,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    [self.services resetRootViewModel:[[TYMainViewModel alloc] initWithServices:self.services params:nil]];
+    [self.services resetRootViewModel:[self createInitialViewModel]];
 
     [self.window makeKeyAndVisible];
     

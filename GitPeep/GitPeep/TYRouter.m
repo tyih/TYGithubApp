@@ -61,6 +61,9 @@ static TYRouter *sharedInstance_ = nil;
 - (NSDictionary *)viewModelViewMappings {
     
     return @{
+             @"TYNewFeatureViewModel" : @"TYNewFeatureController",
+             @"TYBootLoginViewModel" : @"TYBootLoginController",
+             @"TYAccountLoginViewModel" : @"TYAccountLoginController",
              @"TYMainViewModel" : @"TYMainController",
              @"TYHomeViewModel" : @"TYHomeController"
              

@@ -33,6 +33,9 @@
 		9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */; };
 		9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */; };
 		9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */; };
+		9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844922015B39200FF4DCF /* TYNewFeatureController.m */; };
+		9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844952015B40900FF4DCF /* TYBootLoginController.m */; };
+		9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,12 @@
 		9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewModelServicesImpl.m; sourceTree = "<group>"; };
 		9FDE45D71FFD0A3200E1DCE4 /* TYNavigationControllerStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationControllerStack.h; sourceTree = "<group>"; };
 		9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationControllerStack.m; sourceTree = "<group>"; };
+		9FF844912015B39200FF4DCF /* TYNewFeatureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewFeatureController.h; sourceTree = "<group>"; };
+		9FF844922015B39200FF4DCF /* TYNewFeatureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureController.m; sourceTree = "<group>"; };
+		9FF844942015B40900FF4DCF /* TYBootLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBootLoginController.h; sourceTree = "<group>"; };
+		9FF844952015B40900FF4DCF /* TYBootLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBootLoginController.m; sourceTree = "<group>"; };
+		9FF844972015B42A00FF4DCF /* TYAccountLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYAccountLoginController.h; sourceTree = "<group>"; };
+		9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYAccountLoginController.m; sourceTree = "<group>"; };
 		A669BE2CFC8D05F0B762DE1F /* Pods-GitPeep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.release.xcconfig"; sourceTree = "<group>"; };
 		D46D6C7556264FF3942F81CA /* Pods-GitPeep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +178,8 @@
 		7109E08F1FFE5E3100887DFE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9FF844902015B32E00FF4DCF /* NewFeature */,
+				9FF8448F2015B31D00FF4DCF /* Login */,
 				7109E09B1FFE789900887DFE /* Main */,
 				7109E0971FFE5EBF00887DFE /* Explore */,
 				7109E0961FFE5EB200887DFE /* Home */,
@@ -447,6 +458,26 @@
 				9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */,
 			);
 			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		9FF8448F2015B31D00FF4DCF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9FF844942015B40900FF4DCF /* TYBootLoginController.h */,
+				9FF844952015B40900FF4DCF /* TYBootLoginController.m */,
+				9FF844972015B42A00FF4DCF /* TYAccountLoginController.h */,
+				9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9FF844902015B32E00FF4DCF /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				9FF844912015B39200FF4DCF /* TYNewFeatureController.h */,
+				9FF844922015B39200FF4DCF /* TYNewFeatureController.m */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -747,6 +778,7 @@
 				7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */,
 				9F3B5C9A1FFF42B500A8FACD /* TYHomeController.m in Sources */,
 				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
+				9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */,
 				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
 				717924F4200CE2790097925E /* TYHomePageViewModel.m in Sources */,
@@ -756,9 +788,11 @@
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
+				9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
+				9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */,
 				717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
