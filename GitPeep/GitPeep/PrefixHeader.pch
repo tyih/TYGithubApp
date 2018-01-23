@@ -19,6 +19,7 @@
 #import "AppDelegate.h"
 #import "TYConstant.h"
 #import "TYMacros.h"
+#import "SAMKeychain+GHUtil.h"
 
 #endif
 

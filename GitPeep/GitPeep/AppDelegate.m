@@ -34,14 +34,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    /// Congigure Before Init UI
+    [self configureApplication:application initialParamsBeforeInitUI:launchOptions];
+    
+    // Configure Service
     self.services = [[TYViewModelServicesImpl alloc] init];
+    // Configure Navigation Stack
     self.navigationControllerStack = [[TYNavigationControllerStack alloc] initWithServices:self.services];
-    
+    // Configure Window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+    // Reset Root Controller
     [self.services resetRootViewModel:[self createInitialViewModel]];
-
+    // Window Visible
     [self.window makeKeyAndVisible];
+    
+    /// Congigure After Init UI
+    [self configureApplication:application initialParamsAfterInitUI:launchOptions];
+    
+#ifdef DEBUG
+    /// Debug Model
+    [self configureDebugModel];
+#endif
+    
+    /// Save Application Version Last
+    [[NSUserDefaults standardUserDefaults] setObject:APP_VERSION() forKey:TYApplicationVersionKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;
 }
@@ -96,8 +113,38 @@
             return [[TYBootLoginViewModel alloc] initWithServices:self.services params:nil];
         }
     }
-    
 }
 
+#pragma mark - Configure Before Init UI
+
+- (void)configureApplication:(UIApplication *)application initialParamsBeforeInitUI:(NSDictionary *)launchOptions {
+    
+    /// 显示状态栏
+    
+    /// 配置键盘
+    
+    /// 配置文件夹
+    
+    /// 配置数据库
+}
+
+#pragma mark - Configure After Init UI
+
+- (void)configureApplication:(UIApplication *)application initialParamsAfterInitUI:(NSDictionary *)launchOptions {
+    
+    /// 配置弹出框
+    
+    /// 配置平台信息
+    
+    /// 监听通知
+    
+    /// 配置H5
+}
+#pragma mark - Configure Debug Model
+
+- (void)configureDebugModel {
+    
+    /// 显示FPS
+}
 
 @end

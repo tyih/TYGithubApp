@@ -29,6 +29,8 @@
 		9FBF5DB11FF510690032418D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DB01FF510690032418D /* main.m */; };
 		9FBF5DBB1FF510690032418D /* GitPeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DBA1FF510690032418D /* GitPeepTests.m */; };
 		9FBF5DC61FF510690032418D /* GitPeepUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DC51FF510690032418D /* GitPeepUITests.m */; };
+		9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */; };
+		9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA8201738B6006BCFE9 /* TYUtils.m */; };
 		9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */; };
 		9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */; };
 		9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */; };
@@ -102,6 +104,10 @@
 		9FBF5DC11FF510690032418D /* GitPeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DC51FF510690032418D /* GitPeepUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitPeepUITests.m; sourceTree = "<group>"; };
 		9FBF5DC71FF510690032418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC2BEA420173024006BCFE9 /* SAMKeychain+GHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain+GHUtil.h"; sourceTree = "<group>"; };
+		9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain+GHUtil.m"; sourceTree = "<group>"; };
+		9FC2BEA7201738B6006BCFE9 /* TYUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUtils.h; sourceTree = "<group>"; };
+		9FC2BEA8201738B6006BCFE9 /* TYUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUtils.m; sourceTree = "<group>"; };
 		9FDE45C91FFC80B600E1DCE4 /* TYConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYConstant.h; sourceTree = "<group>"; };
 		9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYConstant.m; sourceTree = "<group>"; };
 		9FDE45CC1FFC832700E1DCE4 /* TYMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMacros.h; sourceTree = "<group>"; };
@@ -382,6 +388,10 @@
 		9FBF5DD81FF5117A0032418D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9FC2BEA420173024006BCFE9 /* SAMKeychain+GHUtil.h */,
+				9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */,
+				9FC2BEA7201738B6006BCFE9 /* TYUtils.h */,
+				9FC2BEA8201738B6006BCFE9 /* TYUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -784,6 +794,7 @@
 				717924F4200CE2790097925E /* TYHomePageViewModel.m in Sources */,
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
 				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
+				9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */,
@@ -793,6 +804,7 @@
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 				9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */,
+				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
 				717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -956,7 +968,7 @@
 				INFOPLIST_FILE = GitPeep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.com.GitPeep;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tianyao.GitPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -974,7 +986,7 @@
 				INFOPLIST_FILE = GitPeep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.com.GitPeep;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tianyao.GitPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

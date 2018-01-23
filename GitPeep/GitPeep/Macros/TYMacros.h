@@ -91,4 +91,11 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 /// AppDelegate
 #define TYSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
+#pragma mark -
+
+/// SAMKeychain
+#define GH_SERVICE_NAME @"com.tianyao.GitPeep"
+#define GH_PASSWORD     @"Password"
+#define GH_ACCESS_TOKEN @"AccessToken"
+
 #endif /* TYMacros_h */
