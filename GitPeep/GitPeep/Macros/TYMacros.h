@@ -95,6 +95,7 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 
 /// SAMKeychain
 #define GH_SERVICE_NAME @"com.tianyao.GitPeep"
+#define GH_RAW_LOGIN    @"RawLogin"
 #define GH_PASSWORD     @"Password"
 #define GH_ACCESS_TOKEN @"AccessToken"
 

@@ -20,6 +20,7 @@
 #import "TYConstant.h"
 #import "TYMacros.h"
 #import "SAMKeychain+GHUtil.h"
+#import "TYUtils.h"
 
 #endif
 

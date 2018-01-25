@@ -10,12 +10,15 @@
 
 @interface SAMKeychain (GHUtil)
 
++ (NSString *)rawLogin;
 + (NSString *)password;
 + (NSString *)accessToken;
 
++ (BOOL)setRawLogin:(NSString *)rawLogin;
 + (BOOL)setPassword:(NSString *)password;
 + (BOOL)setAccessToken:(NSString *)accessToken;
 
++ (BOOL)deleteRawLogin;
 + (BOOL)deletePassword;
 + (BOOL)deleteAccessToken;
 

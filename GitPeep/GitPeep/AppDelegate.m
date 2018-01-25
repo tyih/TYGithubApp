@@ -102,7 +102,7 @@
         return [[TYNewFeatureViewModel alloc] initWithServices:self.services params:nil];
     } else {
         
-        if (0) {
+        if ([SAMKeychain rawLogin].isExist && [SAMKeychain accessToken].isExist) {
             // 有账号，有用户数据，跳到主页
             return [[TYHomePageViewModel alloc] initWithServices:self.services params:nil];
         } else if (0) {
