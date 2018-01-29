@@ -21,6 +21,7 @@
 #import "TYMacros.h"
 #import "SAMKeychain+GHUtil.h"
 #import "TYUtils.h"
+#import "UIImage+Octicons.h"
 
 #endif
 

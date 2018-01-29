@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view.
 
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    UIImage *img = [UIImage octicon_imageWithIcon:@"Heart" backgroundColor:[UIColor whiteColor] iconColor:[UIColor redColor] iconScale:1.f andSize:CGSizeMake(29.f, 29.f)];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
+    imgView.frame = CGRectMake(50, 100, 29, 29);
+    [self.view addSubview:imgView];
 }
 
 - (void)didReceiveMemoryWarning {

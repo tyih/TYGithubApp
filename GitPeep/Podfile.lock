@@ -1,4 +1,5 @@
 PODS:
+  - OcticonsIOS (0.0.2)
   - ReactiveObjC (3.0.0)
   - SAMKeychain (1.5.3)
   - YYKit (1.0.9):
@@ -6,15 +7,27 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - OcticonsIOS (from `https://github.com/jacksonh/OcticonsIOS.git`, commit `4bd3b21`)
   - ReactiveObjC
   - SAMKeychain
   - YYKit
 
+EXTERNAL SOURCES:
+  OcticonsIOS:
+    :commit: 4bd3b21
+    :git: https://github.com/jacksonh/OcticonsIOS.git
+
+CHECKOUT OPTIONS:
+  OcticonsIOS:
+    :commit: 4bd3b21
+    :git: https://github.com/jacksonh/OcticonsIOS.git
+
 SPEC CHECKSUMS:
+  OcticonsIOS: e21204b48b0d83f7740008abed42f8b1573b3ffc
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e34948666586696cedaea01a7fad9cf6b9d24f35
+PODFILE CHECKSUM: e5d18041c70877872d2576523775c4da10b720ff
 
 COCOAPODS: 1.3.1

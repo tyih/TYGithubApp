@@ -1,5 +1,9 @@
+source 'https://github.com/Artsy/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 # Uncomment the next line to define a global platform for your project
 platform :ios, '8.0'
+inhibit_all_warnings!
 
 target 'GitPeep' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -12,6 +16,8 @@ target 'GitPeep' do
   pod 'YYKit'
   
   pod 'SAMKeychain'
+  
+  pod 'OcticonsIOS', :git => 'https://github.com/jacksonh/OcticonsIOS.git', :commit => '4bd3b21'
 
   target 'GitPeepTests' do
     inherit! :search_paths
