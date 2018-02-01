@@ -1,5 +1,5 @@
 //
-//  TYRepositoriesController.h
+//  TYReposController.h
 //  GitPeep
 //
 //  Created by tiany on 2018/1/4.
@@ -8,6 +8,6 @@
 
 #import "TYViewController.h"
 
-@interface TYRepositoriesController : TYViewController
+@interface TYReposController : TYViewController
 
 @end

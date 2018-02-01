@@ -8,7 +8,7 @@
 
 #import "TYViewController.h"
 
-@interface TYTabBarController : TYViewController
+@interface TYTabBarController : TYViewController <UITabBarControllerDelegate>
 
 @property (nonatomic, strong, readonly) UITabBarController *tabBarController;
 

@@ -22,6 +22,7 @@
 #import "SAMKeychain+GHUtil.h"
 #import "TYUtils.h"
 #import "UIImage+Octicons.h"
+#import "YYFPSLabel.h"
 
 #endif
 

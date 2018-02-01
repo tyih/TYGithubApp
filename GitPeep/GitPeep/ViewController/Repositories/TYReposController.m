@@ -1,18 +1,18 @@
 //
-//  TYHomeController.m
+//  TYReposController.m
 //  GitPeep
 //
 //  Created by tiany on 2018/1/4.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYHomeController.h"
+#import "TYReposController.h"
 
-@interface TYHomeController ()
+@interface TYReposController ()
 
 @end
 
-@implementation TYHomeController
+@implementation TYReposController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

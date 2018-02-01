@@ -80,11 +80,20 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 
 #pragma mark -
 
-#define TYColor(r, g, b) \
+#define RGB(r, g, b) \
 [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-#define TYColorAlpha(r, g, b, a) \
+#define RGBAlpha(r, g, b, a) \
 [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define HexRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define HexRGBAlpha(rgbValue, a) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+
+#define colorA1 0x2F434F
+#define colorA2 0x4183C4
 
 #pragma mark -
 

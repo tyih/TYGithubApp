@@ -1,22 +1,27 @@
 //
-//  TYRepositoriesController.m
+//  TYNewsController.m
 //  GitPeep
 //
 //  Created by tiany on 2018/1/4.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYRepositoriesController.h"
+#import "TYNewsController.h"
 
-@interface TYRepositoriesController ()
+@interface TYNewsController ()
 
 @end
 
-@implementation TYRepositoriesController
+@implementation TYNewsController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)refresh {
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

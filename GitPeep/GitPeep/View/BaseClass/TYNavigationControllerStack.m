@@ -8,6 +8,7 @@
 
 #import "TYNavigationControllerStack.h"
 
+#import "TYNavigationController.h"
 #import "TYViewModelServicesProtocol.h"
 #import "TYViewController.h"
 #import "TYRouter.h"
@@ -86,7 +87,7 @@
     [[(NSObject *)self.services rac_signalForSelector:@selector(popToRootViewModelAnimated:)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
         
-        [self.navigationControllers.lastObject popToRootViewModelAnimated:[x.first boolValue]];
+        [self.navigationControllers.lastObject popToRootViewControllerAnimated:[x.first boolValue]];
     }];
     
     // presentViewModel
@@ -96,7 +97,7 @@
         UIViewController *viewController = [[TYRouter sharedInstance] viewControllerForViewModel:x.first];
         UINavigationController *presentingViewController = self.navigationControllers.lastObject;
         if (![viewController isKindOfClass:UINavigationController.class]) {
-            viewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+            viewController = [[TYNavigationController alloc] initWithRootViewController:viewController];
         }
         [self pushNavigationController:(UINavigationController *)viewController];
         [presentingViewController presentViewController:viewController animated:[x.second boolValue] completion:x.third];
@@ -117,7 +118,7 @@
         [self.navigationControllers removeAllObjects];
         UIViewController *viewController = [TYRouter.sharedInstance viewControllerForViewModel:x.first];
         if (![viewController isKindOfClass:[UINavigationController class]] && ![viewController isKindOfClass:[UITabBarController class]]) {
-            viewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+            viewController = [[TYNavigationController alloc] initWithRootViewController:viewController];
             [self pushNavigationController:(UINavigationController *)viewController];
         }
         TYSharedAppDelegate.window.rootViewController = viewController;

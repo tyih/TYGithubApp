@@ -14,7 +14,7 @@
 #import "TYNewFeatureViewModel.h"
 #import "TYBootLoginViewModel.h"
 #import "TYAccountLoginViewModel.h"
-#import "TYHomePageViewModel.h"
+#import "TYNewsViewModel.h"
 
 #import <SAMKeychain.h>
 
@@ -50,11 +50,6 @@
     
     /// Congigure After Init UI
     [self configureApplication:application initialParamsAfterInitUI:launchOptions];
-    
-#ifdef DEBUG
-    /// Debug Model
-    [self configureDebugModel];
-#endif
     
     /// Save Application Version Last
     [[NSUserDefaults standardUserDefaults] setObject:APP_VERSION() forKey:TYApplicationVersionKey];
@@ -103,8 +98,9 @@
     } else {
         
         if ([SAMKeychain rawLogin].isExist && [SAMKeychain accessToken].isExist) {
+
             // 有账号，有用户数据，跳到主页
-            return [[TYHomePageViewModel alloc] initWithServices:self.services params:nil];
+            return [[TYMainViewModel alloc] initWithServices:self.services params:nil];
         } else if (0) {
             // 没有账号，有用户数据，跳到登录界面
             return [[TYAccountLoginViewModel alloc] initWithServices:self.services params:nil];
@@ -132,6 +128,9 @@
 
 - (void)configureApplication:(UIApplication *)application initialParamsAfterInitUI:(NSDictionary *)launchOptions {
     
+    /// 配置样式
+    [self configureAppearance];
+    
     /// 配置弹出框
     
     /// 配置平台信息
@@ -140,11 +139,17 @@
     
     /// 配置H5
 }
-#pragma mark - Configure Debug Model
+#pragma mark - Configure
 
-- (void)configureDebugModel {
+- (void)configureAppearance {
     
-    /// 显示FPS
+    [UINavigationBar appearance].barTintColor = HexRGB(colorA1);
+    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    
+    [UISegmentedControl appearance].tintColor = [UIColor whiteColor];
+    
+    [UITabBar appearance].tintColor = HexRGB(colorA2);
 }
 
 @end

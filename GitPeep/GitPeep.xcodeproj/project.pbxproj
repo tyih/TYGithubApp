@@ -16,13 +16,16 @@
 		7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A01FFE7D9300887DFE /* TYMainController.m */; };
 		7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */; };
 		717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */; };
-		717924F4200CE2790097925E /* TYHomePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYHomePageViewModel.m */; };
+		717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYNewsViewModel.m */; };
 		717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F6200CE2B50097925E /* TYBootLoginViewModel.m */; };
 		717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F9200CE2D90097925E /* TYAccountLoginViewModel.m */; };
+		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
+		9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */; };
+		9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */; };
 		9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C961FFF42AB00A8FACD /* TYExploreController.m */; };
-		9F3B5C9A1FFF42B500A8FACD /* TYHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYHomeController.m */; };
+		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
 		9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */; };
-		9F3B5CA01FFF42C900A8FACD /* TYRepositoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYRepositoriesController.m */; };
+		9F3B5CA01FFF42C900A8FACD /* TYReposController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
@@ -31,6 +34,8 @@
 		9FBF5DC61FF510690032418D /* GitPeepUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DC51FF510690032418D /* GitPeepUITests.m */; };
 		9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */; };
 		9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA8201738B6006BCFE9 /* TYUtils.m */; };
+		9FD507AC2022E7C3004F2F96 /* TYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */; };
+		9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD507AE2022F84B004F2F96 /* YYFPSLabel.m */; };
 		9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */; };
 		9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */; };
 		9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */; };
@@ -76,21 +81,27 @@
 		7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMainViewModel.m; sourceTree = "<group>"; };
 		717924ED200CE20F0097925E /* TYNewFeatureViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewFeatureViewModel.h; sourceTree = "<group>"; };
 		717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureViewModel.m; sourceTree = "<group>"; };
-		717924F2200CE2790097925E /* TYHomePageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYHomePageViewModel.h; sourceTree = "<group>"; };
-		717924F3200CE2790097925E /* TYHomePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYHomePageViewModel.m; sourceTree = "<group>"; };
+		717924F2200CE2790097925E /* TYNewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewsViewModel.h; sourceTree = "<group>"; };
+		717924F3200CE2790097925E /* TYNewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewsViewModel.m; sourceTree = "<group>"; };
 		717924F5200CE2B50097925E /* TYBootLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBootLoginViewModel.h; sourceTree = "<group>"; };
 		717924F6200CE2B50097925E /* TYBootLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBootLoginViewModel.m; sourceTree = "<group>"; };
 		717924F8200CE2D90097925E /* TYAccountLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYAccountLoginViewModel.h; sourceTree = "<group>"; };
 		717924F9200CE2D90097925E /* TYAccountLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYAccountLoginViewModel.m; sourceTree = "<group>"; };
 		956CEF98E0C9C96FE156CB86 /* Pods-GitPeepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0DC02E2021B3D200A64050 /* TYReposViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYReposViewModel.h; sourceTree = "<group>"; };
+		9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYReposViewModel.m; sourceTree = "<group>"; };
+		9F0DC0312021B3E600A64050 /* TYProfileViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYProfileViewModel.h; sourceTree = "<group>"; };
+		9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileViewModel.m; sourceTree = "<group>"; };
+		9F0DC0342021B3FD00A64050 /* TYExploreViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreViewModel.h; sourceTree = "<group>"; };
+		9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYExploreViewModel.m; sourceTree = "<group>"; };
 		9F3B5C951FFF42AB00A8FACD /* TYExploreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYExploreController.h; sourceTree = "<group>"; };
 		9F3B5C961FFF42AB00A8FACD /* TYExploreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYExploreController.m; sourceTree = "<group>"; };
-		9F3B5C981FFF42B500A8FACD /* TYHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYHomeController.m; sourceTree = "<group>"; };
-		9F3B5C991FFF42B500A8FACD /* TYHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYHomeController.h; sourceTree = "<group>"; };
+		9F3B5C981FFF42B500A8FACD /* TYNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYNewsController.m; sourceTree = "<group>"; };
+		9F3B5C991FFF42B500A8FACD /* TYNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYNewsController.h; sourceTree = "<group>"; };
 		9F3B5C9B1FFF42BF00A8FACD /* TYProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYProfileController.h; sourceTree = "<group>"; };
 		9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYProfileController.m; sourceTree = "<group>"; };
-		9F3B5C9E1FFF42C800A8FACD /* TYRepositoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRepositoriesController.h; sourceTree = "<group>"; };
-		9F3B5C9F1FFF42C800A8FACD /* TYRepositoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRepositoriesController.m; sourceTree = "<group>"; };
+		9F3B5C9E1FFF42C800A8FACD /* TYReposController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYReposController.h; sourceTree = "<group>"; };
+		9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYReposController.m; sourceTree = "<group>"; };
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DA11FF510690032418D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FBF5DA21FF510690032418D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +119,10 @@
 		9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain+GHUtil.m"; sourceTree = "<group>"; };
 		9FC2BEA7201738B6006BCFE9 /* TYUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUtils.h; sourceTree = "<group>"; };
 		9FC2BEA8201738B6006BCFE9 /* TYUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUtils.m; sourceTree = "<group>"; };
+		9FD507AA2022E7C3004F2F96 /* TYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationController.h; sourceTree = "<group>"; };
+		9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationController.m; sourceTree = "<group>"; };
+		9FD507AD2022F84B004F2F96 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		9FD507AE2022F84B004F2F96 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		9FDE45C91FFC80B600E1DCE4 /* TYConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYConstant.h; sourceTree = "<group>"; };
 		9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYConstant.m; sourceTree = "<group>"; };
 		9FDE45CC1FFC832700E1DCE4 /* TYMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMacros.h; sourceTree = "<group>"; };
@@ -188,7 +203,7 @@
 				9FF8448F2015B31D00FF4DCF /* Login */,
 				7109E09B1FFE789900887DFE /* Main */,
 				7109E0971FFE5EBF00887DFE /* Explore */,
-				7109E0961FFE5EB200887DFE /* Home */,
+				7109E0961FFE5EB200887DFE /* News */,
 				7109E0951FFE5EA800887DFE /* Profile */,
 				7109E0941FFE5E7E00887DFE /* Repositories */,
 				7109E0901FFE5E4100887DFE /* BaseClass */,
@@ -203,6 +218,8 @@
 				7109E0921FFE5E7100887DFE /* TYViewController.m */,
 				7109E09C1FFE78EB00887DFE /* TYTabBarController.h */,
 				7109E09D1FFE78EB00887DFE /* TYTabBarController.m */,
+				9FD507AA2022E7C3004F2F96 /* TYNavigationController.h */,
+				9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -210,8 +227,8 @@
 		7109E0941FFE5E7E00887DFE /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B5C9E1FFF42C800A8FACD /* TYRepositoriesController.h */,
-				9F3B5C9F1FFF42C800A8FACD /* TYRepositoriesController.m */,
+				9F3B5C9E1FFF42C800A8FACD /* TYReposController.h */,
+				9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -225,13 +242,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		7109E0961FFE5EB200887DFE /* Home */ = {
+		7109E0961FFE5EB200887DFE /* News */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B5C991FFF42B500A8FACD /* TYHomeController.h */,
-				9F3B5C981FFF42B500A8FACD /* TYHomeController.m */,
+				9F3B5C991FFF42B500A8FACD /* TYNewsController.h */,
+				9F3B5C981FFF42B500A8FACD /* TYNewsController.m */,
 			);
-			path = Home;
+			path = News;
 			sourceTree = "<group>";
 		};
 		7109E0971FFE5EBF00887DFE /* Explore */ = {
@@ -281,13 +298,40 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		717924F1200CE2590097925E /* HomePage */ = {
+		717924F1200CE2590097925E /* News */ = {
 			isa = PBXGroup;
 			children = (
-				717924F2200CE2790097925E /* TYHomePageViewModel.h */,
-				717924F3200CE2790097925E /* TYHomePageViewModel.m */,
+				717924F2200CE2790097925E /* TYNewsViewModel.h */,
+				717924F3200CE2790097925E /* TYNewsViewModel.m */,
 			);
-			path = HomePage;
+			path = News;
+			sourceTree = "<group>";
+		};
+		9F0DC02A2021B37400A64050 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				9F0DC0342021B3FD00A64050 /* TYExploreViewModel.h */,
+				9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		9F0DC02B2021B38600A64050 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9F0DC0312021B3E600A64050 /* TYProfileViewModel.h */,
+				9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9F0DC02C2021B39100A64050 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				9F0DC02E2021B3D200A64050 /* TYReposViewModel.h */,
+				9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		9FBF5D951FF510690032418D = {
@@ -369,7 +413,10 @@
 		9FBF5DD41FF511220032418D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				717924F1200CE2590097925E /* HomePage */,
+				9F0DC02C2021B39100A64050 /* Repositories */,
+				9F0DC02B2021B38600A64050 /* Profile */,
+				9F0DC02A2021B37400A64050 /* Explore */,
+				717924F1200CE2590097925E /* News */,
 				717924F0200CE24B0097925E /* Login */,
 				717924EC200CE1DD0097925E /* NewFeature */,
 				7109E0AE1FFE813400887DFE /* Main */,
@@ -388,6 +435,8 @@
 		9FBF5DD81FF5117A0032418D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9FD507AD2022F84B004F2F96 /* YYFPSLabel.h */,
+				9FD507AE2022F84B004F2F96 /* YYFPSLabel.m */,
 				9FC2BEA420173024006BCFE9 /* SAMKeychain+GHUtil.h */,
 				9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */,
 				9FC2BEA7201738B6006BCFE9 /* TYUtils.h */,
@@ -783,24 +832,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3B5CA01FFF42C900A8FACD /* TYRepositoriesController.m in Sources */,
+				9FD507AC2022E7C3004F2F96 /* TYNavigationController.m in Sources */,
+				9F3B5CA01FFF42C900A8FACD /* TYReposController.m in Sources */,
 				717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */,
 				9FBF5DB11FF510690032418D /* main.m in Sources */,
 				7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */,
-				9F3B5C9A1FFF42B500A8FACD /* TYHomeController.m in Sources */,
+				9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */,
 				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
 				9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */,
 				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
-				717924F4200CE2790097925E /* TYHomePageViewModel.m in Sources */,
+				717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */,
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
+				9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */,
 				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
 				9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */,
+				9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */,
+				9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
 				9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */,
+				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,

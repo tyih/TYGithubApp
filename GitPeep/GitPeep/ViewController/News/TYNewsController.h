@@ -1,5 +1,5 @@
 //
-//  TYHomeController.h
+//  TYNewsController.h
 //  GitPeep
 //
 //  Created by tiany on 2018/1/4.
@@ -8,6 +8,8 @@
 
 #import "TYViewController.h"
 
-@interface TYHomeController : TYViewController
+@interface TYNewsController : TYViewController
+
+- (void)refresh;
 
 @end

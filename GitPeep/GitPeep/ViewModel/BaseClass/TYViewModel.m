@@ -40,6 +40,7 @@
     if (self) {
         self.services = services;
         self.params = params;
+        self.title = params[@"title"];
     }
     return self;
 }

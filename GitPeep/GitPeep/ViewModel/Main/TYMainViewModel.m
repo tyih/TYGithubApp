@@ -8,6 +8,31 @@
 
 #import "TYMainViewModel.h"
 
+@interface TYMainViewModel ()
+
+@property (nonatomic, strong, readwrite) TYNewsViewModel *newsViewModel;
+
+@property (nonatomic, strong, readwrite) TYReposViewModel *reposViewModel;
+
+@property (nonatomic, strong, readwrite) TYExploreViewModel *exploreViewModel;
+
+@property (nonatomic, strong, readwrite) TYProfileViewModel *profileViewModel;
+
+@end
+
 @implementation TYMainViewModel
+
+- (void)initialize {
+    
+    [super initialize];
+    
+    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:nil];
+    
+    self.reposViewModel = [[TYReposViewModel alloc] initWithServices:self.services params:nil];
+    
+    self.exploreViewModel = [[TYExploreViewModel alloc] initWithServices:self.services params:nil];
+    
+    self.profileViewModel = [[TYProfileViewModel alloc] initWithServices:self.services params:nil];
+}
 
 @end
