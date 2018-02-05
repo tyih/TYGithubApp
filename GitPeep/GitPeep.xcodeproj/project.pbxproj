@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15CE74C1E55598E2B4F11223 /* libPods-GitPeepUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D245A053043DE98A47E10 /* libPods-GitPeepUITests.a */; };
-		377EAE82B35A63CF778268D9 /* libPods-GitPeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */; };
-		432C9ED88A2B4DEA51CBF7E2 /* libPods-GitPeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191AE2B3298EB784577BC5C1 /* libPods-GitPeepTests.a */; };
+		6D63F05ABD356DFF107CF4E1 /* libPods-GitPeepUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D66E8876C7B2082FA9B020A1 /* libPods-GitPeepUITests.a */; };
 		7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0921FFE5E7100887DFE /* TYViewController.m */; };
 		7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0991FFE62ED00887DFE /* TYRouter.m */; };
 		7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E09D1FFE78EB00887DFE /* TYTabBarController.m */; };
@@ -26,6 +24,13 @@
 		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
 		9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */; };
 		9F3B5CA01FFF42C900A8FACD /* TYReposController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */; };
+		9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9C2027FAED008CA739 /* UIView+frame.m */; };
+		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
+		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
+		9F5FAFC920284B95008CA739 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9F5FAFCB20284C3D008CA739 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9F5FAFCD20284C48008CA739 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9F5FAFCF20284C51008CA739 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
@@ -43,6 +48,8 @@
 		9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844922015B39200FF4DCF /* TYNewFeatureController.m */; };
 		9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844952015B40900FF4DCF /* TYBootLoginController.m */; };
 		9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */; };
+		C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1954A772F434F09F94CD24AF /* libPods-GitPeep.a */; };
+		FEC8E996A93D3216FF86CB82 /* libPods-GitPeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EE3B24397F793DDA5CBF2 /* libPods-GitPeepTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +71,9 @@
 
 /* Begin PBXFileReference section */
 		0D34CA5B71BC2795E7568D7D /* Pods-GitPeepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepUITests/Pods-GitPeepUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		143D245A053043DE98A47E10 /* libPods-GitPeepUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeepUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		191AE2B3298EB784577BC5C1 /* libPods-GitPeepTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeepTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1954A772F434F09F94CD24AF /* libPods-GitPeep.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeep.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1D49280F965098EB470EE /* Pods-GitPeepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.release.xcconfig"; sourceTree = "<group>"; };
 		2EC9BCCFC8812056E42CC6EE /* Pods-GitPeepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepUITests/Pods-GitPeepUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeep.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7109E0911FFE5E7100887DFE /* TYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewController.h; sourceTree = "<group>"; };
 		7109E0921FFE5E7100887DFE /* TYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewController.m; sourceTree = "<group>"; };
 		7109E0981FFE62ED00887DFE /* TYRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRouter.h; sourceTree = "<group>"; };
@@ -102,6 +107,17 @@
 		9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYProfileController.m; sourceTree = "<group>"; };
 		9F3B5C9E1FFF42C800A8FACD /* TYReposController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYReposController.h; sourceTree = "<group>"; };
 		9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYReposController.m; sourceTree = "<group>"; };
+		9F5FAF9B2027FAED008CA739 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
+		9F5FAF9C2027FAED008CA739 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
+		9F5FAF9E2027FCB6008CA739 /* UIImage+TYOcticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYOcticons.h"; sourceTree = "<group>"; };
+		9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYOcticons.m"; sourceTree = "<group>"; };
+		9F5FAFA12028000B008CA739 /* UIView+line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+line.h"; sourceTree = "<group>"; };
+		9F5FAFA22028000B008CA739 /* UIView+line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+line.m"; sourceTree = "<group>"; };
+		9F5FAFC820284B95008CA739 /* OctoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OctoKit.framework; sourceTree = "<group>"; };
+		9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ISO8601DateFormatter.framework; sourceTree = "<group>"; };
+		9F5FAFCE20284C51008CA739 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mantle.framework; sourceTree = "<group>"; };
+		9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DA11FF510690032418D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FBF5DA21FF510690032418D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +159,8 @@
 		9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYAccountLoginController.m; sourceTree = "<group>"; };
 		A669BE2CFC8D05F0B762DE1F /* Pods-GitPeep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.release.xcconfig"; sourceTree = "<group>"; };
 		D46D6C7556264FF3942F81CA /* Pods-GitPeep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.debug.xcconfig"; sourceTree = "<group>"; };
+		D47EE3B24397F793DDA5CBF2 /* libPods-GitPeepTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeepTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66E8876C7B2082FA9B020A1 /* libPods-GitPeepUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeepUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +168,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377EAE82B35A63CF778268D9 /* libPods-GitPeep.a in Frameworks */,
+				9F5FAFC920284B95008CA739 /* OctoKit.framework in Frameworks */,
+				9F5FAFCF20284C51008CA739 /* Mantle.framework in Frameworks */,
+				9F5FAFCB20284C3D008CA739 /* AFNetworking.framework in Frameworks */,
+				9F5FAFCD20284C48008CA739 /* ISO8601DateFormatter.framework in Frameworks */,
+				C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				432C9ED88A2B4DEA51CBF7E2 /* libPods-GitPeepTests.a in Frameworks */,
+				FEC8E996A93D3216FF86CB82 /* libPods-GitPeepTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15CE74C1E55598E2B4F11223 /* libPods-GitPeepUITests.a in Frameworks */,
+				6D63F05ABD356DFF107CF4E1 /* libPods-GitPeepUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,9 +198,14 @@
 		3FCC39DB9773BEF64EC8039C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4213C5F8A3D4C96D87532308 /* libPods-GitPeep.a */,
-				191AE2B3298EB784577BC5C1 /* libPods-GitPeepTests.a */,
-				143D245A053043DE98A47E10 /* libPods-GitPeepUITests.a */,
+				9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */,
+				9F5FAFCE20284C51008CA739 /* Mantle.framework */,
+				9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */,
+				9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */,
+				9F5FAFC820284B95008CA739 /* OctoKit.framework */,
+				1954A772F434F09F94CD24AF /* libPods-GitPeep.a */,
+				D47EE3B24397F793DDA5CBF2 /* libPods-GitPeepTests.a */,
+				D66E8876C7B2082FA9B020A1 /* libPods-GitPeepUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -435,12 +462,18 @@
 		9FBF5DD81FF5117A0032418D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F5FAF9B2027FAED008CA739 /* UIView+frame.h */,
+				9F5FAF9C2027FAED008CA739 /* UIView+frame.m */,
 				9FD507AD2022F84B004F2F96 /* YYFPSLabel.h */,
 				9FD507AE2022F84B004F2F96 /* YYFPSLabel.m */,
 				9FC2BEA420173024006BCFE9 /* SAMKeychain+GHUtil.h */,
 				9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */,
 				9FC2BEA7201738B6006BCFE9 /* TYUtils.h */,
 				9FC2BEA8201738B6006BCFE9 /* TYUtils.m */,
+				9F5FAF9E2027FCB6008CA739 /* UIImage+TYOcticons.h */,
+				9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */,
+				9F5FAFA12028000B008CA739 /* UIView+line.h */,
+				9F5FAFA22028000B008CA739 /* UIView+line.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -747,6 +780,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/OcticonsIOS/OcticonsIOS/octicons.ttf",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
@@ -783,9 +817,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/OcticonsIOS/OcticonsIOS.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OcticonsIOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -850,7 +899,9 @@
 				9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */,
 				9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
+				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
+				9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */,
 				717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
 				9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */,
@@ -861,6 +912,7 @@
 				9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */,
 				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
 				717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */,
+				9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,6 +1070,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GitPeep/PrefixHeader.pch";
 				INFOPLIST_FILE = GitPeep/Info.plist;
@@ -1036,6 +1092,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/GitPeep/PrefixHeader.pch";
 				INFOPLIST_FILE = GitPeep/Info.plist;

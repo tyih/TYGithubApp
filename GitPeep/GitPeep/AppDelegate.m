@@ -101,7 +101,7 @@
 
             // 有账号，有用户数据，跳到主页
             return [[TYMainViewModel alloc] initWithServices:self.services params:nil];
-        } else if (0) {
+        } else if (1) {
             // 没有账号，有用户数据，跳到登录界面
             return [[TYAccountLoginViewModel alloc] initWithServices:self.services params:nil];
         } else {

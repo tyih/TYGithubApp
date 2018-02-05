@@ -11,4 +11,8 @@
 
 @protocol TYViewModelServicesProtocol <TYNavigationProtocol>
 
+//@required
+//
+//@property (nonatomic, strong) OCTClient *client;
+
 @end

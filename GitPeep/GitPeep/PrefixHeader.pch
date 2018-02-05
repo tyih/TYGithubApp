@@ -14,7 +14,8 @@
 
 #ifdef __OBJC__
 
-#import <ReactiveObjC.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <OctoKit/OctoKit.h>
 
 #import "AppDelegate.h"
 #import "TYConstant.h"
@@ -22,7 +23,10 @@
 #import "SAMKeychain+GHUtil.h"
 #import "TYUtils.h"
 #import "UIImage+Octicons.h"
+#import "UIImage+TYOcticons.h"
 #import "YYFPSLabel.h"
+#import "UIView+frame.h"
+#import "UIView+line.h"
 
 #endif
 

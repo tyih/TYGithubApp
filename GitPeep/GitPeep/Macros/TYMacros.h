@@ -94,6 +94,7 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 
 #define colorA1 0x2F434F
 #define colorA2 0x4183C4
+#define colorA3 0xF7F7F7
 
 #pragma mark -
 

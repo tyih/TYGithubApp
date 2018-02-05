@@ -10,7 +10,7 @@ target 'GitPeep' do
   # use_frameworks!
 
   # Pods for GitPeep
-
+  
   pod 'ReactiveObjC'
 
   pod 'YYKit'
@@ -18,7 +18,9 @@ target 'GitPeep' do
   pod 'SAMKeychain'
   
   pod 'OcticonsIOS', :git => 'https://github.com/jacksonh/OcticonsIOS.git', :commit => '4bd3b21'
-
+  
+  pod 'IQKeyboardManager'
+  
   target 'GitPeepTests' do
     inherit! :search_paths
     # Pods for testing

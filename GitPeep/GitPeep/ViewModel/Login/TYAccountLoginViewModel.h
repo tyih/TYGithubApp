@@ -10,4 +10,12 @@
 
 @interface TYAccountLoginViewModel : TYViewModel
 
+@property (nonatomic, copy) NSString *username;
+
+@property (nonatomic, copy) NSString *password;
+
+@property (nonatomic, strong, readonly) RACSignal *validLoginSignal;
+
+@property (nonatomic, strong, readonly) RACCommand *loginCommand;
+
 @end
