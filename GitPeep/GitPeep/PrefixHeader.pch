@@ -27,6 +27,8 @@
 #import "YYFPSLabel.h"
 #import "UIView+frame.h"
 #import "UIView+line.h"
+#import "UILabel+category.h"
+#import "IQKeyboardManager.h"
 
 #endif
 

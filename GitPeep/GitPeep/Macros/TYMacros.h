@@ -63,7 +63,7 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 #define NAV_BAR_HEIGHT      (self.navigationController.navigationBar.frame.size.height)
 
 /// 状态栏+导航栏
-#define TOP_BAR_HEIGHT      (([XDeviceHelper systemVersion] >= 7) ? (NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT) : NAV_BAR_HEIGHT)
+#define TOP_BAR_HEIGHT      (NAV_BAR_HEIGHT + STATUS_BAR_HEIGHT)
 
 /// 底部tab栏高度
 #define TAB_BAR_HEIGHT      (self.tabBarController.tabBar.frame.size.height)
@@ -95,6 +95,7 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 #define colorA1 0x2F434F
 #define colorA2 0x4183C4
 #define colorA3 0xF7F7F7
+#define colorA4 0x28A73B
 
 #pragma mark -
 

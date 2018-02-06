@@ -20,38 +20,72 @@
 
 @dynamic viewModel;
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    CGFloat logoX = (SCREEN_WIDTH - 50) * 0.5;
+    CGFloat logoY = TOP_BAR_HEIGHT + 30;
+    CGFloat logoW = 50;
+    CGFloat logoH = 50;
+    UIImageView *logoImgView = [[UIImageView alloc] initWithFrame:CGRectMake(logoX, logoY, logoW, logoH)];
+    logoImgView.image = [UIImage octicon_ImageWithIcon:@"MarkGithub" size:CGSizeMake(logoW, logoH)];
+    [self.view addSubview:logoImgView];
     
+    UILabel *titleLabel = [UILabel labelWithText:@"Sign in to Github" frame:CGRectMake(0, logoImgView.bottom+35, SCREEN_WIDTH, 25) font:[UIFont fontWithName:@"PingFangSC-Regular" size:20.f] color:nil alignment:NSTextAlignmentCenter];
+    [self.view addSubview:titleLabel];
     
-    UIView *accountView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 40)];
-    accountView.backgroundColor = [UIColor whiteColor];
-    UIImageView *accountImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 9, 22, 22)];
-    accountImgView.image = [UIImage octicon_ImageWithIcon:@"Person" size:CGSizeMake(22, 22)];
-    [accountView addSubview:accountImgView];
-    UITextField *accountField = [[UITextField alloc] initWithFrame:CGRectMake(accountImgView.right+5, 5, SCREEN_WIDTH-accountImgView.right-15, 30)];
-    accountField.placeholder = @"Username or email address";
-    [accountView addSubview:accountField];
-    [accountView addSubview:[UIView lineViewWithX:0 y:0 width:SCREEN_WIDTH color:[UIColor lightGrayColor]]];
+    CGFloat signInW = 310;
+    CGFloat signInH = 260;
+    CGFloat signInX = (SCREEN_WIDTH - signInW) * 0.5;
+    CGFloat signInY = titleLabel.bottom+25;
+    UIView *signInView = [[UIView alloc] initWithFrame:CGRectMake(signInX, signInY, signInW, signInH)];
+    signInView.backgroundColor = [UIColor whiteColor];
+    signInView.layer.cornerRadius = 5.f;
+    signInView.layer.borderWidth = 1.f;
+    signInView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    signInView.layer.masksToBounds = YES;
+    [self.view addSubview:signInView];
     
-    UIView *passwordView = [[UIView alloc] initWithFrame:CGRectMake(0, accountView.bottom, SCREEN_WIDTH, 40)];
-    passwordView.backgroundColor = [UIColor whiteColor];
-    UIImageView *passwordImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 9, 22, 22)];
-    passwordImgView.image = [UIImage octicon_ImageWithIcon:@"Lock" size:CGSizeMake(22, 22)];
-    [passwordView addSubview:passwordImgView];
-    UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(passwordImgView.right+5, 5, SCREEN_WIDTH-passwordImgView.right-15, 30)];
-    passwordField.placeholder = @"Password";
-    [passwordView addSubview:passwordField];
-    [passwordView addSubview:[UIView lineViewWithX:15 y:0 width:SCREEN_WIDTH-15 color:[UIColor lightGrayColor]]];
-    [passwordView addSubview:[UIView lineViewWithX:0 y:40 width:SCREEN_WIDTH color:[UIColor lightGrayColor]]];
+    CGFloat fieldW = 265;
+    CGFloat fieldH = 35;
+    CGFloat fieldX = (signInView.width - fieldW) * 0.5;
+    UILabel *usernameLabel = [UILabel labelWithText:@"Username or email address" frame:CGRectMake(fieldX, 26, fieldW, 15) font:[UIFont boldSystemFontOfSize:15.f] color:nil alignment:NSTextAlignmentLeft];
+    [signInView addSubview:usernameLabel];
+    UITextField *usernameField = [[UITextField alloc] initWithFrame:CGRectMake(fieldX, usernameLabel.bottom+12, fieldW, fieldH)];
+    usernameField.layer.borderWidth = 1.f;
+    usernameField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    UIView *leftView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, fieldH)];
+    usernameField.leftView = leftView1;
+    usernameField.leftViewMode = UITextFieldViewModeAlways;
+    [signInView addSubview:usernameField];
     
-    [self.view addSubview:accountView];
-    [self.view addSubview:passwordView];
+    UILabel *passwordLabel = [UILabel labelWithText:@"Password" frame:CGRectMake(fieldX, usernameField.bottom+20, fieldW, 15) font:[UIFont boldSystemFontOfSize:15.f] color:nil alignment:NSTextAlignmentLeft];
+    [signInView addSubview:passwordLabel];
+    UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(fieldX, passwordLabel.bottom+12, fieldW, fieldH)];
+    passwordField.layer.borderWidth = 1.f;
+    passwordField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    UIView *leftView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, fieldH)];
+    passwordField.leftView = leftView2;
+    passwordField.leftViewMode = UITextFieldViewModeAlways;
+    [signInView addSubview:passwordField];
+    
+    UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
+    loginButton.backgroundColor = HexRGB(colorA4);
+    [loginButton setTitle:@"Sign in" forState:UIControlStateNormal];
+    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
+    loginButton.layer.cornerRadius = 5.f;
+    [signInView addSubview:loginButton];
     
     if ([SAMKeychain rawLogin] != nil) {
-        accountField.text = [SAMKeychain rawLogin];
+        usernameField.text = [SAMKeychain rawLogin];
         passwordField.text = [SAMKeychain password];
     }
     

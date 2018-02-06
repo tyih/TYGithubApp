@@ -118,6 +118,7 @@
     /// 显示状态栏
     
     /// 配置键盘
+    [self configureKeyboardManager];
     
     /// 配置文件夹
     
@@ -150,6 +151,12 @@
     [UISegmentedControl appearance].tintColor = [UIColor whiteColor];
     
     [UITabBar appearance].tintColor = HexRGB(colorA2);
+}
+
+- (void)configureKeyboardManager {
+    
+    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
+    IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = YES;
 }
 
 @end

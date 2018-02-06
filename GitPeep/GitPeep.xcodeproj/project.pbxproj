@@ -20,6 +20,7 @@
 		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
 		9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */; };
 		9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */; };
+		9F2023D620297A79008A7706 /* UILabel+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2023D520297A79008A7706 /* UILabel+category.m */; };
 		9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C961FFF42AB00A8FACD /* TYExploreController.m */; };
 		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
 		9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */; };
@@ -99,6 +100,8 @@
 		9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileViewModel.m; sourceTree = "<group>"; };
 		9F0DC0342021B3FD00A64050 /* TYExploreViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreViewModel.h; sourceTree = "<group>"; };
 		9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYExploreViewModel.m; sourceTree = "<group>"; };
+		9F2023D420297A79008A7706 /* UILabel+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+category.h"; sourceTree = "<group>"; };
+		9F2023D520297A79008A7706 /* UILabel+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+category.m"; sourceTree = "<group>"; };
 		9F3B5C951FFF42AB00A8FACD /* TYExploreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYExploreController.h; sourceTree = "<group>"; };
 		9F3B5C961FFF42AB00A8FACD /* TYExploreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYExploreController.m; sourceTree = "<group>"; };
 		9F3B5C981FFF42B500A8FACD /* TYNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYNewsController.m; sourceTree = "<group>"; };
@@ -474,6 +477,8 @@
 				9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */,
 				9F5FAFA12028000B008CA739 /* UIView+line.h */,
 				9F5FAFA22028000B008CA739 /* UIView+line.m */,
+				9F2023D420297A79008A7706 /* UILabel+category.h */,
+				9F2023D520297A79008A7706 /* UILabel+category.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -911,6 +916,7 @@
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 				9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */,
 				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
+				9F2023D620297A79008A7706 /* UILabel+category.m in Sources */,
 				717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */,
 				9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */,
 			);

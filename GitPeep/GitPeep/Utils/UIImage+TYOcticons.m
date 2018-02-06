@@ -14,7 +14,7 @@
     
     return [UIImage octicon_imageWithIcon:icon
                           backgroundColor:[UIColor clearColor]
-                                iconColor:[UIColor grayColor]
+                                iconColor:[UIColor blackColor]
                                 iconScale:1.f
                                   andSize:size];
 }
