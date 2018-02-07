@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TYViewModelServicesProtocol.h"
+#import "TYViewModelServices.h"
 
-@interface TYViewModelServicesImpl : NSObject <TYViewModelServicesProtocol>
+@interface TYViewModelServicesImpl : NSObject <TYViewModelServices>
 
 @end

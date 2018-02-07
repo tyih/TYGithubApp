@@ -15,8 +15,9 @@
 		7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */; };
 		717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */; };
 		717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYNewsViewModel.m */; };
-		717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F6200CE2B50097925E /* TYBootLoginViewModel.m */; };
-		717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F9200CE2D90097925E /* TYAccountLoginViewModel.m */; };
+		717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F9200CE2D90097925E /* TYLoginViewModel.m */; };
+		9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; };
+		9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
 		9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */; };
 		9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */; };
@@ -47,8 +48,7 @@
 		9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */; };
 		9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */; };
 		9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844922015B39200FF4DCF /* TYNewFeatureController.m */; };
-		9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844952015B40900FF4DCF /* TYBootLoginController.m */; };
-		9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */; };
+		9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF844982015B42A00FF4DCF /* TYLoginController.m */; };
 		C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1954A772F434F09F94CD24AF /* libPods-GitPeep.a */; };
 		FEC8E996A93D3216FF86CB82 /* libPods-GitPeepTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47EE3B24397F793DDA5CBF2 /* libPods-GitPeepTests.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +70,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9F0D9B44202AEF0C00AFA899 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D34CA5B71BC2795E7568D7D /* Pods-GitPeepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepUITests/Pods-GitPeepUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1954A772F434F09F94CD24AF /* libPods-GitPeep.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeep.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,10 +103,8 @@
 		717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureViewModel.m; sourceTree = "<group>"; };
 		717924F2200CE2790097925E /* TYNewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewsViewModel.h; sourceTree = "<group>"; };
 		717924F3200CE2790097925E /* TYNewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewsViewModel.m; sourceTree = "<group>"; };
-		717924F5200CE2B50097925E /* TYBootLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBootLoginViewModel.h; sourceTree = "<group>"; };
-		717924F6200CE2B50097925E /* TYBootLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBootLoginViewModel.m; sourceTree = "<group>"; };
-		717924F8200CE2D90097925E /* TYAccountLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYAccountLoginViewModel.h; sourceTree = "<group>"; };
-		717924F9200CE2D90097925E /* TYAccountLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYAccountLoginViewModel.m; sourceTree = "<group>"; };
+		717924F8200CE2D90097925E /* TYLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLoginViewModel.h; sourceTree = "<group>"; };
+		717924F9200CE2D90097925E /* TYLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLoginViewModel.m; sourceTree = "<group>"; };
 		956CEF98E0C9C96FE156CB86 /* Pods-GitPeepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F0DC02E2021B3D200A64050 /* TYReposViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYReposViewModel.h; sourceTree = "<group>"; };
 		9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYReposViewModel.m; sourceTree = "<group>"; };
@@ -148,7 +160,7 @@
 		9FDE45CE1FFCFC0C00E1DCE4 /* TYNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationProtocol.h; sourceTree = "<group>"; };
 		9FDE45CF1FFCFDCA00E1DCE4 /* TYViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModel.h; sourceTree = "<group>"; };
 		9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewModel.m; sourceTree = "<group>"; };
-		9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServicesProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModelServicesProtocol.h; sourceTree = "<group>"; };
+		9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModelServices.h; sourceTree = "<group>"; };
 		9FDE45D31FFD012300E1DCE4 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9FDE45D41FFD071A00E1DCE4 /* TYViewModelServicesImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYViewModelServicesImpl.h; sourceTree = "<group>"; };
 		9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYViewModelServicesImpl.m; sourceTree = "<group>"; };
@@ -156,10 +168,8 @@
 		9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationControllerStack.m; sourceTree = "<group>"; };
 		9FF844912015B39200FF4DCF /* TYNewFeatureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewFeatureController.h; sourceTree = "<group>"; };
 		9FF844922015B39200FF4DCF /* TYNewFeatureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureController.m; sourceTree = "<group>"; };
-		9FF844942015B40900FF4DCF /* TYBootLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYBootLoginController.h; sourceTree = "<group>"; };
-		9FF844952015B40900FF4DCF /* TYBootLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYBootLoginController.m; sourceTree = "<group>"; };
-		9FF844972015B42A00FF4DCF /* TYAccountLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYAccountLoginController.h; sourceTree = "<group>"; };
-		9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYAccountLoginController.m; sourceTree = "<group>"; };
+		9FF844972015B42A00FF4DCF /* TYLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLoginController.h; sourceTree = "<group>"; };
+		9FF844982015B42A00FF4DCF /* TYLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLoginController.m; sourceTree = "<group>"; };
 		A669BE2CFC8D05F0B762DE1F /* Pods-GitPeep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.release.xcconfig"; sourceTree = "<group>"; };
 		D46D6C7556264FF3942F81CA /* Pods-GitPeep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep.debug.xcconfig"; sourceTree = "<group>"; };
 		D47EE3B24397F793DDA5CBF2 /* libPods-GitPeepTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitPeepTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5FAFC920284B95008CA739 /* OctoKit.framework in Frameworks */,
+				9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */,
 				9F5FAFCF20284C51008CA739 /* Mantle.framework in Frameworks */,
 				9F5FAFCB20284C3D008CA739 /* AFNetworking.framework in Frameworks */,
 				9F5FAFCD20284C48008CA739 /* ISO8601DateFormatter.framework in Frameworks */,
@@ -320,10 +331,8 @@
 		717924F0200CE24B0097925E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				717924F5200CE2B50097925E /* TYBootLoginViewModel.h */,
-				717924F6200CE2B50097925E /* TYBootLoginViewModel.m */,
-				717924F8200CE2D90097925E /* TYAccountLoginViewModel.h */,
-				717924F9200CE2D90097925E /* TYAccountLoginViewModel.m */,
+				717924F8200CE2D90097925E /* TYLoginViewModel.h */,
+				717924F9200CE2D90097925E /* TYLoginViewModel.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -548,7 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDE45CE1FFCFC0C00E1DCE4 /* TYNavigationProtocol.h */,
-				9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServicesProtocol.h */,
+				9FDE45D21FFCFF0A00E1DCE4 /* TYViewModelServices.h */,
 				9FDE45CF1FFCFDCA00E1DCE4 /* TYViewModel.h */,
 				9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */,
 				9FDE45D41FFD071A00E1DCE4 /* TYViewModelServicesImpl.h */,
@@ -560,10 +569,8 @@
 		9FF8448F2015B31D00FF4DCF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				9FF844942015B40900FF4DCF /* TYBootLoginController.h */,
-				9FF844952015B40900FF4DCF /* TYBootLoginController.m */,
-				9FF844972015B42A00FF4DCF /* TYAccountLoginController.h */,
-				9FF844982015B42A00FF4DCF /* TYAccountLoginController.m */,
+				9FF844972015B42A00FF4DCF /* TYLoginController.h */,
+				9FF844982015B42A00FF4DCF /* TYLoginController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -590,6 +597,7 @@
 				9FBF5D9C1FF510690032418D /* Resources */,
 				B735495AA5B24646D47A11EF /* [CP] Embed Pods Frameworks */,
 				7F4A162A5CC5BAD7B7A65EC1 /* [CP] Copy Pods Resources */,
+				9F0D9B44202AEF0C00AFA899 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -907,17 +915,15 @@
 				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */,
-				717924FA200CE2D90097925E /* TYAccountLoginViewModel.m in Sources */,
+				717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
-				9FF844992015B42A00FF4DCF /* TYAccountLoginController.m in Sources */,
+				9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */,
 				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
-				9FF844962015B40900FF4DCF /* TYBootLoginController.m in Sources */,
 				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
 				9F2023D620297A79008A7706 /* UILabel+category.m in Sources */,
-				717924F7200CE2B50097925E /* TYBootLoginViewModel.m in Sources */,
 				9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

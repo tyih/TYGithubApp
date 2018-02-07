@@ -12,8 +12,7 @@
 #import "TYViewModelServicesImpl.h"
 #import "TYMainViewModel.h"
 #import "TYNewFeatureViewModel.h"
-#import "TYBootLoginViewModel.h"
-#import "TYAccountLoginViewModel.h"
+#import "TYLoginViewModel.h"
 #import "TYNewsViewModel.h"
 
 #import <SAMKeychain.h>
@@ -103,10 +102,7 @@
             return [[TYMainViewModel alloc] initWithServices:self.services params:nil];
         } else if (1) {
             // 没有账号，有用户数据，跳到登录界面
-            return [[TYAccountLoginViewModel alloc] initWithServices:self.services params:nil];
-        } else {
-            // 第一次使用
-            return [[TYBootLoginViewModel alloc] initWithServices:self.services params:nil];
+            return [[TYLoginViewModel alloc] initWithServices:self.services params:nil];
         }
     }
 }

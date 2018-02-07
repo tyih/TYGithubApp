@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TYViewModelServicesProtocol;
+@protocol TYViewModelServices;
 
 @interface TYNavigationControllerStack : NSObject
 
-- (instancetype)initWithServices:(id<TYViewModelServicesProtocol>)services;
+- (instancetype)initWithServices:(id<TYViewModelServices>)services;
 
 - (void)pushNavigationController:(UINavigationController *)navigationController;
 

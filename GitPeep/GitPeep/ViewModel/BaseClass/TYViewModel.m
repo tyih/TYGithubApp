@@ -10,7 +10,7 @@
 
 @interface TYViewModel ()
 
-@property (nonatomic, strong, readwrite) id<TYViewModelServicesProtocol> services;
+@property (nonatomic, strong, readwrite) id<TYViewModelServices> services;
 
 @property (nonatomic, strong, readwrite) NSDictionary *params;
 
@@ -28,13 +28,13 @@
     @weakify(viewModel);
     [[viewModel rac_signalForSelector:@selector(initWithServices:params:)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(viewModel);
-        [viewModel initialize];
+        [viewModel initialize]; // 使用 initWithServices:params: 初始化时调用此方法
     }];
     
     return viewModel;
 }
 
-- (instancetype)initWithServices:(id<TYViewModelServicesProtocol>)services params:(NSDictionary *)params {
+- (instancetype)initWithServices:(id<TYViewModelServices>)services params:(NSDictionary *)params {
     
     self = [super init];
     if (self) {

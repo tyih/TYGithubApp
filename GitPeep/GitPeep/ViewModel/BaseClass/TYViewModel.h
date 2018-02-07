@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TYViewModelServicesProtocol;
+@protocol TYViewModelServices;
 
 typedef NS_ENUM(NSUInteger, TYTitleViewType) {
     TYTitleViewTypeDefault,
@@ -18,9 +18,9 @@ typedef NS_ENUM(NSUInteger, TYTitleViewType) {
 
 @interface TYViewModel : NSObject
 
-- (instancetype)initWithServices:(id<TYViewModelServicesProtocol>)services params:(NSDictionary *)params;
+- (instancetype)initWithServices:(id<TYViewModelServices>)services params:(NSDictionary *)params;
 
-@property (nonatomic, strong, readonly) id<TYViewModelServicesProtocol> services;
+@property (nonatomic, strong, readonly) id<TYViewModelServices> services;
 
 @property (nonatomic, strong, readonly) NSDictionary *params;
 

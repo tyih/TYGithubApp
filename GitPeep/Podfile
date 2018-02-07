@@ -11,8 +11,6 @@ target 'GitPeep' do
 
   # Pods for GitPeep
   
-  pod 'ReactiveObjC'
-
   pod 'YYKit'
   
   pod 'SAMKeychain'

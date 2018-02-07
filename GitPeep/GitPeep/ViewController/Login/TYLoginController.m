@@ -1,22 +1,25 @@
 //
-//  TYAccountLoginController.m
+//  TYLoginController.m
 //  GitPeep
 //
 //  Created by IGEN-TECH on 2018/1/22.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYAccountLoginController.h"
+#import "TYLoginController.h"
 
-#import "TYAccountLoginViewModel.h"
+#import "TYLoginViewModel.h"
 
-@interface TYAccountLoginController () <UITextFieldDelegate>
+@interface TYLoginController () <UITextFieldDelegate>
 
-@property (nonatomic, strong, readonly) TYAccountLoginViewModel *viewModel;
+@property (nonatomic, strong, readonly) TYLoginViewModel *viewModel;
+
+@property (nonatomic, weak) UITextField *usernameField;
+@property (nonatomic, weak) UITextField *passwordField;
 
 @end
 
-@implementation TYAccountLoginController
+@implementation TYLoginController
 
 @dynamic viewModel;
 
@@ -64,16 +67,19 @@
     UIView *leftView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, fieldH)];
     usernameField.leftView = leftView1;
     usernameField.leftViewMode = UITextFieldViewModeAlways;
+    self.usernameField = usernameField;
     [signInView addSubview:usernameField];
     
     UILabel *passwordLabel = [UILabel labelWithText:@"Password" frame:CGRectMake(fieldX, usernameField.bottom+20, fieldW, 15) font:[UIFont boldSystemFontOfSize:15.f] color:nil alignment:NSTextAlignmentLeft];
     [signInView addSubview:passwordLabel];
     UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(fieldX, passwordLabel.bottom+12, fieldW, fieldH)];
+    passwordField.delegate = self;
     passwordField.layer.borderWidth = 1.f;
     passwordField.layer.borderColor = [UIColor lightGrayColor].CGColor;
     UIView *leftView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, fieldH)];
     passwordField.leftView = leftView2;
     passwordField.leftViewMode = UITextFieldViewModeAlways;
+    self.passwordField = passwordField;
     [signInView addSubview:passwordField];
     
     UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
@@ -84,7 +90,7 @@
     loginButton.layer.cornerRadius = 5.f;
     [signInView addSubview:loginButton];
     
-    if ([SAMKeychain rawLogin] != nil) {
+    if ([SAMKeychain rawLogin] != nil) { // 有账号，显示账号密码
         usernameField.text = [SAMKeychain rawLogin];
         passwordField.text = [SAMKeychain password];
     }
@@ -92,12 +98,18 @@
     @weakify(self);
     [[self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
-        if (x.first == passwordField) {
+        if (x.first == passwordField) { // 输入密码后按回车键
             [self.viewModel.loginCommand execute:nil];
         }
     }];
     
-    passwordField.delegate = self;
+}
+
+- (void)bindViewModel {
+    [super bindViewModel];
+    
+    RAC(self.viewModel, username) = self.usernameField.rac_textSignal;
+    RAC(self.viewModel, password) = self.passwordField.rac_textSignal;
 }
 
 - (void)didReceiveMemoryWarning {

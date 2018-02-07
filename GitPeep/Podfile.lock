@@ -1,7 +1,6 @@
 PODS:
   - IQKeyboardManager (5.0.7)
   - OcticonsIOS (0.0.2)
-  - ReactiveObjC (3.0.0)
   - SAMKeychain (1.5.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -10,7 +9,6 @@ PODS:
 DEPENDENCIES:
   - IQKeyboardManager
   - OcticonsIOS (from `https://github.com/jacksonh/OcticonsIOS.git`, commit `4bd3b21`)
-  - ReactiveObjC
   - SAMKeychain
   - YYKit
 
@@ -27,10 +25,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   OcticonsIOS: e21204b48b0d83f7740008abed42f8b1573b3ffc
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: bb11a59aee26263d8e45c6639cc90e5e410ce0c3
+PODFILE CHECKSUM: 9dd851568ace4220fc958c66cb774c0c9527bc32
 
 COCOAPODS: 1.3.1

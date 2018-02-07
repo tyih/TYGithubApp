@@ -1,5 +1,5 @@
 //
-//  TYAccountLoginController.h
+//  TYLoginController.h
 //  GitPeep
 //
 //  Created by IGEN-TECH on 2018/1/22.
@@ -8,6 +8,6 @@
 
 #import "TYViewController.h"
 
-@interface TYAccountLoginController : TYViewController
+@interface TYLoginController : TYViewController
 
 @end

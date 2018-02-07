@@ -9,13 +9,13 @@
 #import "TYNavigationControllerStack.h"
 
 #import "TYNavigationController.h"
-#import "TYViewModelServicesProtocol.h"
+#import "TYViewModelServices.h"
 #import "TYViewController.h"
 #import "TYRouter.h"
 
 @interface TYNavigationControllerStack ()
 
-@property (nonatomic, strong) id<TYViewModelServicesProtocol> services;
+@property (nonatomic, strong) id<TYViewModelServices> services;
 
 @property (nonatomic, strong) NSMutableArray *navigationControllers;
 
@@ -23,7 +23,7 @@
 
 @implementation TYNavigationControllerStack
 
-- (instancetype)initWithServices:(id<TYViewModelServicesProtocol>)services {
+- (instancetype)initWithServices:(id<TYViewModelServices>)services {
     
     self = [super init];
     if (self) {

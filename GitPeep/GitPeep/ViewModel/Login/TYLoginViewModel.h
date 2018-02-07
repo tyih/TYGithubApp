@@ -1,5 +1,5 @@
 //
-//  TYAccountLoginViewModel.h
+//  TYLoginViewModel.h
 //  GitPeep
 //
 //  Created by tiany on 2018/1/15.
@@ -8,7 +8,7 @@
 
 #import "TYViewModel.h"
 
-@interface TYAccountLoginViewModel : TYViewModel
+@interface TYLoginViewModel : TYViewModel
 
 @property (nonatomic, copy) NSString *username;
 

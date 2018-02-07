@@ -104,6 +104,10 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 
 #pragma mark -
 
+/// Client Info
+#define TY_CLIENT_ID        @"25e6db94660a14981e23"
+#define TY_CLIENT_SECRET    @"93aac30256a276a0330bfe699224bdd82357e128"
+
 /// SAMKeychain
 #define GH_SERVICE_NAME @"com.tianyao.GitPeep"
 #define GH_RAW_LOGIN    @"RawLogin"

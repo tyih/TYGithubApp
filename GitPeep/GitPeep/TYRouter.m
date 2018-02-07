@@ -63,7 +63,7 @@ static TYRouter *sharedInstance_ = nil;
     return @{
              @"TYNewFeatureViewModel" : @"TYNewFeatureController",
              @"TYBootLoginViewModel" : @"TYBootLoginController",
-             @"TYAccountLoginViewModel" : @"TYAccountLoginController",
+             @"TYLoginViewModel" : @"TYLoginController",
              @"TYMainViewModel" : @"TYMainController",
              @"TYNewsViewModel" : @"TYNewsController"
              
