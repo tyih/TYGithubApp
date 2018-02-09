@@ -26,13 +26,18 @@
 		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
 		9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */; };
 		9F3B5CA01FFF42C900A8FACD /* TYReposController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */; };
+		9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F4809DD202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; };
+		9F4809DE202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F4809DF202BE9C70075D9C9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; };
+		9F4809E0202BE9C70075D9C9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F4809E1202BE9CE0075D9C9 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; };
+		9F4809E2202BE9CE0075D9C9 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */; };
 		9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9C2027FAED008CA739 /* UIView+frame.m */; };
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
 		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
-		9F5FAFC920284B95008CA739 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		9F5FAFCB20284C3D008CA739 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		9F5FAFCD20284C48008CA739 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		9F5FAFCF20284C51008CA739 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
@@ -77,7 +82,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */,
+				9F4809E2202BE9CE0075D9C9 /* Mantle.framework in Embed Frameworks */,
+				9F4809E0202BE9C70075D9C9 /* AFNetworking.framework in Embed Frameworks */,
 				9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */,
+				9F4809DE202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +131,7 @@
 		9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYProfileController.m; sourceTree = "<group>"; };
 		9F3B5C9E1FFF42C800A8FACD /* TYReposController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYReposController.h; sourceTree = "<group>"; };
 		9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYReposController.m; sourceTree = "<group>"; };
+		9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F5FAF9B2027FAED008CA739 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		9F5FAF9C2027FAED008CA739 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		9F5FAF9E2027FCB6008CA739 /* UIImage+TYOcticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYOcticons.h"; sourceTree = "<group>"; };
@@ -181,12 +191,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F5FAFC920284B95008CA739 /* OctoKit.framework in Frameworks */,
+				9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */,
+				9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */,
+				9F4809DF202BE9C70075D9C9 /* AFNetworking.framework in Frameworks */,
 				9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */,
-				9F5FAFCF20284C51008CA739 /* Mantle.framework in Frameworks */,
-				9F5FAFCB20284C3D008CA739 /* AFNetworking.framework in Frameworks */,
-				9F5FAFCD20284C48008CA739 /* ISO8601DateFormatter.framework in Frameworks */,
+				9F4809DD202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Frameworks */,
 				C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */,
+				9F4809E1202BE9CE0075D9C9 /* Mantle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +223,7 @@
 		3FCC39DB9773BEF64EC8039C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */,
 				9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */,
 				9F5FAFCE20284C51008CA739 /* Mantle.framework */,
 				9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */,
@@ -1081,7 +1093,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1103,7 +1115,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCN9P9HHK2;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

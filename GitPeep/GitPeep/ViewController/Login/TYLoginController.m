@@ -47,7 +47,7 @@
     CGFloat signInW = 310;
     CGFloat signInH = 260;
     CGFloat signInX = (SCREEN_WIDTH - signInW) * 0.5;
-    CGFloat signInY = titleLabel.bottom+25;
+    CGFloat signInY = titleLabel.bottom + 25;
     UIView *signInView = [[UIView alloc] initWithFrame:CGRectMake(signInX, signInY, signInW, signInH)];
     signInView.backgroundColor = [UIColor whiteColor];
     signInView.layer.cornerRadius = 5.f;

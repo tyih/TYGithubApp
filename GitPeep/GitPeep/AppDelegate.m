@@ -14,6 +14,7 @@
 #import "TYNewFeatureViewModel.h"
 #import "TYLoginViewModel.h"
 #import "TYNewsViewModel.h"
+#import "Reachability.h"
 
 #import <SAMKeychain.h>
 
@@ -22,6 +23,8 @@
 @property (nonatomic, strong, readwrite) TYNavigationControllerStack *navigationControllerStack;
 
 @property (nonatomic, strong, readwrite) TYViewModelServicesImpl *services;
+
+@property (nonatomic, strong) Reachability *reachability;
 
 @end
 
@@ -116,6 +119,9 @@
     /// 配置键盘
     [self configureKeyboardManager];
     
+    // 配置网络
+    [self configureReachability];
+    
     /// 配置文件夹
     
     /// 配置数据库
@@ -153,6 +159,12 @@
     
     IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
     IQKeyboardManager.sharedManager.shouldResignOnTouchOutside = YES;
+}
+
+- (void)configureReachability {
+    
+    self.reachability = Reachability.reachabilityForInternetConnection;
+    
 }
 
 @end

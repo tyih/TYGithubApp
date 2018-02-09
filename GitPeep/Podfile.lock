@@ -1,6 +1,9 @@
 PODS:
   - IQKeyboardManager (5.0.7)
+  - MKNetworkKit (0.87):
+    - Reachability (~> 3.1.0)
   - OcticonsIOS (0.0.2)
+  - Reachability (3.1.1)
   - SAMKeychain (1.5.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -8,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - MKNetworkKit (= 0.87)
   - OcticonsIOS (from `https://github.com/jacksonh/OcticonsIOS.git`, commit `4bd3b21`)
   - SAMKeychain
   - YYKit
@@ -24,10 +28,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  MKNetworkKit: 60ad3c83b62183e40ba75ce772c9427c25b520de
   OcticonsIOS: e21204b48b0d83f7740008abed42f8b1573b3ffc
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9dd851568ace4220fc958c66cb774c0c9527bc32
+PODFILE CHECKSUM: 9f2e03f48228b8d05350001dab45912ead4d22ac
 
 COCOAPODS: 1.3.1

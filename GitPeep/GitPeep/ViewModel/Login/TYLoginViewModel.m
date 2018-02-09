@@ -52,7 +52,14 @@
         
         NSLog(@"username:%@, password:%@", self.username, self.password);
         OCTUser *user = [OCTUser userWithRawLogin:self.username server:OCTServer.dotComServer];
-        return [[OCTClient signInAsUser:user password:self.password oneTimePassword:input scopes:OCTClientAuthorizationScopesUser note:nil noteURL:nil fingerprint:nil] doNext:doNext];
+        return [[OCTClient signInAsUser:user password:self.password oneTimePassword:input scopes:OCTClientAuthorizationScopesUser | OCTClientAuthorizationScopesRepository note:nil noteURL:nil fingerprint:nil] doNext:doNext];
+        
+//        return [[OCTClient signInAsUser:user password:self.password oneTimePassword:input scopes:OCTClientAuthorizationScopesUser | OCTClientAuthorizationScopesRepository note:nil noteURL:nil fingerprint:nil] subscribeNext:^(OCTClient *authenticatedClient) {
+//            
+//            NSLog(@"%@, %@", authenticatedClient.user.rawLogin, authenticatedClient.token);
+//        } error:^(NSError *error) {
+//            NSLog(@"error:%@", error);
+//        }];
     }];
 }
 
