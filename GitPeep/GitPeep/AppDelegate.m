@@ -99,14 +99,14 @@
         return [[TYNewFeatureViewModel alloc] initWithServices:self.services params:nil];
     } else {
         
-        if ([SAMKeychain rawLogin].isExist && [SAMKeychain accessToken].isExist) {
-
-            // 有账号，有用户数据，跳到主页
-            return [[TYMainViewModel alloc] initWithServices:self.services params:nil];
-        } else if (1) {
+//        if ([SAMKeychain rawLogin].isExist && [SAMKeychain accessToken].isExist) {
+//
+//            // 有账号，有用户数据，跳到主页
+//            return [[TYMainViewModel alloc] initWithServices:self.services params:nil];
+//        } else {
             // 没有账号，有用户数据，跳到登录界面
             return [[TYLoginViewModel alloc] initWithServices:self.services params:nil];
-        }
+//        }
     }
 }
 

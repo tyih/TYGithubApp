@@ -10,6 +10,8 @@
 
 @implementation TYViewModelServicesImpl
 
+@synthesize client = _client; // 自动生成getter、setter方法
+
 - (void)pushViewModel:(TYViewModel *)viewModel animated:(BOOL)animated {}
 
 - (void)popViewModelAnimated:(BOOL)animated {}

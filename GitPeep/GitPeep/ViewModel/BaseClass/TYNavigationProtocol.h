@@ -5,6 +5,7 @@
 //  Created by IGEN-TECH on 2018/1/3.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
+// 导航协议，申明导航接口
 
 #import <Foundation/Foundation.h>
 

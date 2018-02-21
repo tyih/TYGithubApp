@@ -24,6 +24,7 @@
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     
+    /// 绑定初始化方法
     TYViewModel *viewModel = [super allocWithZone:zone];
     @weakify(viewModel);
     [[viewModel rac_signalForSelector:@selector(initWithServices:params:)] subscribeNext:^(RACTuple * _Nullable x) {
@@ -61,6 +62,7 @@
     return _willDisappearSignal;
 }
 
+/// 子类覆写
 - (void)initialize {}
 
 @end

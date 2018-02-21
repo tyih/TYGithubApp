@@ -13,6 +13,7 @@
 		7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E09D1FFE78EB00887DFE /* TYTabBarController.m */; };
 		7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A01FFE7D9300887DFE /* TYMainController.m */; };
 		7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */; };
+		712F9F93202ECD7300F31BB2 /* TYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F9F92202ECD7300F31BB2 /* TYButton.m */; };
 		717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */; };
 		717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYNewsViewModel.m */; };
 		717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F9200CE2D90097925E /* TYLoginViewModel.m */; };
@@ -108,6 +109,8 @@
 		7109E0A01FFE7D9300887DFE /* TYMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMainController.m; sourceTree = "<group>"; };
 		7109E0AF1FFE81CB00887DFE /* TYMainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYMainViewModel.h; sourceTree = "<group>"; };
 		7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYMainViewModel.m; sourceTree = "<group>"; };
+		712F9F91202ECD7300F31BB2 /* TYButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYButton.h; sourceTree = "<group>"; };
+		712F9F92202ECD7300F31BB2 /* TYButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYButton.m; sourceTree = "<group>"; };
 		717924ED200CE20F0097925E /* TYNewFeatureViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewFeatureViewModel.h; sourceTree = "<group>"; };
 		717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureViewModel.m; sourceTree = "<group>"; };
 		717924F2200CE2790097925E /* TYNewsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewsViewModel.h; sourceTree = "<group>"; };
@@ -331,6 +334,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		712F9F90202ECD4B00F31BB2 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				712F9F91202ECD7300F31BB2 /* TYButton.h */,
+				712F9F92202ECD7300F31BB2 /* TYButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		717924EC200CE1DD0097925E /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +464,7 @@
 		9FBF5DD31FF510DB0032418D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				712F9F90202ECD4B00F31BB2 /* Button */,
 				9FBF5DEC1FF514C50032418D /* BaseClass */,
 				9FBF5DEB1FF514BE0032418D /* Home */,
 				9FBF5DEA1FF514AA0032418D /* Repositories */,
@@ -920,6 +933,7 @@
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
 				9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */,
 				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
+				712F9F93202ECD7300F31BB2 /* TYButton.m in Sources */,
 				9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */,
 				9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */,
 				9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */,
@@ -1093,7 +1107,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLVHRULUN5;
+				DEVELOPMENT_TEAM = 4975AS6BL3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1115,7 +1129,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLVHRULUN5;
+				DEVELOPMENT_TEAM = 4975AS6BL3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

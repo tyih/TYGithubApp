@@ -16,6 +16,7 @@
 
 @property (nonatomic, weak) UITextField *usernameField;
 @property (nonatomic, weak) UITextField *passwordField;
+@property (nonatomic, weak) UIButton *loginButton;
 
 @end
 
@@ -73,6 +74,7 @@
     UILabel *passwordLabel = [UILabel labelWithText:@"Password" frame:CGRectMake(fieldX, usernameField.bottom+20, fieldW, 15) font:[UIFont boldSystemFontOfSize:15.f] color:nil alignment:NSTextAlignmentLeft];
     [signInView addSubview:passwordLabel];
     UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(fieldX, passwordLabel.bottom+12, fieldW, fieldH)];
+    passwordField.secureTextEntry = YES;
     passwordField.delegate = self;
     passwordField.layer.borderWidth = 1.f;
     passwordField.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -88,13 +90,16 @@
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     loginButton.layer.cornerRadius = 5.f;
+    self.loginButton = loginButton;
     [signInView addSubview:loginButton];
     
-    if ([SAMKeychain rawLogin] != nil) { // 有账号，显示账号密码
+    // 显示账号密码
+    if ([SAMKeychain rawLogin] != nil) {
         usernameField.text = [SAMKeychain rawLogin];
         passwordField.text = [SAMKeychain password];
     }
     
+    // textFieldShouldReturn: 代理方法触发
     @weakify(self);
     [[self rac_signalForSelector:@selector(textFieldShouldReturn:) fromProtocol:@protocol(UITextFieldDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
@@ -110,6 +115,16 @@
     
     RAC(self.viewModel, username) = self.usernameField.rac_textSignal;
     RAC(self.viewModel, password) = self.passwordField.rac_textSignal;
+    
+    RAC(self.loginButton, enabled) = self.viewModel.validLoginSignal;
+    // 登录按钮点击
+    @weakify(self);
+    [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.viewModel.loginCommand execute:nil];
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

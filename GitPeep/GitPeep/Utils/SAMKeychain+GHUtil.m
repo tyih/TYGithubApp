@@ -34,7 +34,7 @@
 }
 + (BOOL)setAccessToken:(NSString *)accessToken {
     
-    return [self setPassword:accessToken forService:GH_SERVICE_NAME account:GH_PASSWORD];
+    return [self setPassword:accessToken forService:GH_SERVICE_NAME account:GH_ACCESS_TOKEN];
 }
 
 + (BOOL)deleteRawLogin {
