@@ -89,7 +89,7 @@
     [loginButton setTitle:@"Sign in" forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     loginButton.layer.cornerRadius = 5.f;
-    loginButton.enabled = NO;
+    self.loginButton = loginButton;
     [signInView addSubview:loginButton];
     
     // 显示账号密码
