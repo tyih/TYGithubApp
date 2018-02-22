@@ -9,6 +9,7 @@
 #import "TYLoginController.h"
 
 #import "TYLoginViewModel.h"
+#import "TYButton.h"
 
 @interface TYLoginController () <UITextFieldDelegate>
 
@@ -16,7 +17,7 @@
 
 @property (nonatomic, weak) UITextField *usernameField;
 @property (nonatomic, weak) UITextField *passwordField;
-@property (nonatomic, weak) UIButton *loginButton;
+@property (nonatomic, weak) TYButton *loginButton;
 
 @end
 
@@ -84,13 +85,11 @@
     self.passwordField = passwordField;
     [signInView addSubview:passwordField];
     
-    UIButton *loginButton = [[UIButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
-    loginButton.backgroundColor = HexRGB(colorA4);
+    TYButton *loginButton = [[TYButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
     [loginButton setTitle:@"Sign in" forState:UIControlStateNormal];
-    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
     loginButton.layer.cornerRadius = 5.f;
-    self.loginButton = loginButton;
+    loginButton.enabled = NO;
     [signInView addSubview:loginButton];
     
     // 显示账号密码

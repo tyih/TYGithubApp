@@ -39,7 +39,14 @@
     self.layer.cornerRadius = 3.f;
     self.layer.masksToBounds = YES;
     
-    [self setBackgroundImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>]
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self setTitleColor:HexRGB(colorA5) forState:UIControlStateDisabled];
+    
+    [self setBackgroundImage:[HexRGB(colorA4) color2Image] forState:UIControlStateNormal];
+    [self setBackgroundImage:[HexRGB(colorA6) color2Image] forState:UIControlStateDisabled];
+    
+    
+    return self;
 }
 
 @end
