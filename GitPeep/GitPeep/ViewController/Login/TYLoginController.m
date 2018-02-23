@@ -18,6 +18,7 @@
 @property (nonatomic, weak) UITextField *usernameField;
 @property (nonatomic, weak) UITextField *passwordField;
 @property (nonatomic, weak) TYButton *loginButton;
+@property (nonatomic, weak) UIButton *browserLoginButton;
 
 @end
 
@@ -87,10 +88,15 @@
     
     TYButton *loginButton = [[TYButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
     [loginButton setTitle:@"Sign in" forState:UIControlStateNormal];
-    loginButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.f];
-    loginButton.layer.cornerRadius = 5.f;
     self.loginButton = loginButton;
     [signInView addSubview:loginButton];
+    
+    UIButton *browserLoginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-20-40, SCREEN_WIDTH, 40)];
+    [browserLoginButton setTitle:@"OAuth2 Authorization Login" forState:UIControlStateNormal];
+    [browserLoginButton setTitleColor:HexRGB(colorA2) forState:UIControlStateNormal];
+    browserLoginButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:15.f];
+    self.browserLoginButton = browserLoginButton;
+    [self.view addSubview:browserLoginButton];
     
     // 显示账号密码
     if ([SAMKeychain rawLogin] != nil) {
@@ -116,6 +122,7 @@
     RAC(self.viewModel, password) = self.passwordField.rac_textSignal;
     
     RAC(self.loginButton, enabled) = self.viewModel.validLoginSignal;
+    
     // 登录按钮点击
     @weakify(self);
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -123,7 +130,51 @@
         [self.viewModel.loginCommand execute:nil];
     }];
     
+    // 指示器
+    [[self.viewModel.loginCommand.executing doNext:^(id x) {
+        @strongify(self);
+        [self.view endEditing:YES];
+    }] subscribeNext:^(NSNumber *excuting) {
+        @strongify(self);
+        if (excuting.boolValue) {
+            [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES].label.text = @"Loading...";
+        } else {
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+        }
+    }];
     
+    // 登录失败
+    [self.viewModel.loginCommand.errors subscribeNext:^(NSError *error) {
+        @strongify(self);
+        if ([error.domain isEqual:OCTClientErrorDomain] && error.code == OCTClientErrorAuthenticationFailed) {
+            
+            NSLog(@"Incorrect username or password")
+        } else if ([error.domain isEqual:OCTClientErrorDomain] && error.code == OCTClientErrorTwoFactorAuthenticationOneTimePasswordRequired) {
+            
+            NSString *message = @"Please enter the 2FA code you received via SMS or read from an authenticator app";
+            
+            UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:TY_ALERT_TITLE message:message preferredStyle:UIAlertControllerStyleAlert];
+            [alertCtrl addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.returnKeyType = UIReturnKeyGo;
+                textField.placeholder = @"2FA code";
+                textField.secureTextEntry = YES;
+            }];
+            
+            [alertCtrl addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+            [alertCtrl addAction:[UIAlertAction actionWithTitle:@"Login" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                @strongify(self);
+                [self.viewModel.loginCommand execute:[alertCtrl.textFields.firstObject text]];
+            }]];
+            [self presentViewController:alertCtrl animated:YES completion:nil];
+        } else {
+            
+            UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:TY_ALERT_TITLE message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            [alertCtrl addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertCtrl animated:YES completion:nil];
+        }
+    }];
+    
+    self.browserLoginButton.rac_command = self.viewModel.browserLoginCommand;
 }
 
 - (void)didReceiveMemoryWarning {

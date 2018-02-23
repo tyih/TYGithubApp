@@ -20,6 +20,8 @@ target 'GitPeep' do
   pod 'IQKeyboardManager'
   
   pod 'MKNetworkKit', '0.87'
+  
+  pod 'MBProgressHUD', '~> 1.1.0'
     
   target 'GitPeepTests' do
     inherit! :search_paths

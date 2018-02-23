@@ -23,6 +23,11 @@ typedef int  (^intBlock_string) (NSString *);
 typedef BOOL (^boolBlock_string)(NSString *);
 typedef id   (^idBlock_string)  (NSString *);
 
+typedef void (^voidBlock_id)(id);
+typedef int  (^intBlock_id) (id);
+typedef BOOL (^boolBlock_id)(id);
+typedef id   (^idBlock_id)  (id);
+
 @interface TYConstant : NSObject
 
 @end

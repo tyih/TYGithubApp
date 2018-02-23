@@ -14,10 +14,9 @@
 
 #ifdef __OBJC__
 
+#import "AppDelegate.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <OctoKit/OctoKit.h>
-
-#import "AppDelegate.h"
 #import "TYConstant.h"
 #import "TYMacros.h"
 #import "SAMKeychain+GHUtil.h"
@@ -29,6 +28,7 @@
 #import "UIView+line.h"
 #import "UILabel+category.h"
 #import "IQKeyboardManager.h"
+#import "MBProgressHUD.h"
 
 #endif
 

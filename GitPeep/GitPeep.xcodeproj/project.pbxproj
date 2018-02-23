@@ -17,6 +17,10 @@
 		717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */; };
 		717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYNewsViewModel.m */; };
 		717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F9200CE2D90097925E /* TYLoginViewModel.m */; };
+		9F012CA6203FE564005237A1 /* TYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CA5203FE564005237A1 /* TYWebViewController.m */; };
+		9F012CA9203FE734005237A1 /* TYWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CA8203FE734005237A1 /* TYWebViewModel.m */; };
+		9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CAB203FEDC7005237A1 /* TYOAuthViewController.m */; };
+		9F012CAF203FEE81005237A1 /* TYOAuthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CAE203FEE81005237A1 /* TYOAuthViewModel.m */; };
 		9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; };
 		9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
@@ -118,6 +122,14 @@
 		717924F8200CE2D90097925E /* TYLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLoginViewModel.h; sourceTree = "<group>"; };
 		717924F9200CE2D90097925E /* TYLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLoginViewModel.m; sourceTree = "<group>"; };
 		956CEF98E0C9C96FE156CB86 /* Pods-GitPeepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitPeepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitPeepTests/Pods-GitPeepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F012CA4203FE564005237A1 /* TYWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYWebViewController.h; sourceTree = "<group>"; };
+		9F012CA5203FE564005237A1 /* TYWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYWebViewController.m; sourceTree = "<group>"; };
+		9F012CA7203FE734005237A1 /* TYWebViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYWebViewModel.h; sourceTree = "<group>"; };
+		9F012CA8203FE734005237A1 /* TYWebViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYWebViewModel.m; sourceTree = "<group>"; };
+		9F012CAA203FEDC7005237A1 /* TYOAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYOAuthViewController.h; sourceTree = "<group>"; };
+		9F012CAB203FEDC7005237A1 /* TYOAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYOAuthViewController.m; sourceTree = "<group>"; };
+		9F012CAD203FEE81005237A1 /* TYOAuthViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYOAuthViewModel.h; sourceTree = "<group>"; };
+		9F012CAE203FEE81005237A1 /* TYOAuthViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYOAuthViewModel.m; sourceTree = "<group>"; };
 		9F0DC02E2021B3D200A64050 /* TYReposViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYReposViewModel.h; sourceTree = "<group>"; };
 		9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYReposViewModel.m; sourceTree = "<group>"; };
 		9F0DC0312021B3E600A64050 /* TYProfileViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYProfileViewModel.h; sourceTree = "<group>"; };
@@ -276,6 +288,8 @@
 				7109E09D1FFE78EB00887DFE /* TYTabBarController.m */,
 				9FD507AA2022E7C3004F2F96 /* TYNavigationController.h */,
 				9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */,
+				9F012CA4203FE564005237A1 /* TYWebViewController.h */,
+				9F012CA5203FE564005237A1 /* TYWebViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -587,6 +601,10 @@
 				9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */,
 				9FDE45D41FFD071A00E1DCE4 /* TYViewModelServicesImpl.h */,
 				9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */,
+				9F012CA7203FE734005237A1 /* TYWebViewModel.h */,
+				9F012CA8203FE734005237A1 /* TYWebViewModel.m */,
+				9F012CAD203FEE81005237A1 /* TYOAuthViewModel.h */,
+				9F012CAE203FEE81005237A1 /* TYOAuthViewModel.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -596,6 +614,8 @@
 			children = (
 				9FF844972015B42A00FF4DCF /* TYLoginController.h */,
 				9FF844982015B42A00FF4DCF /* TYLoginController.m */,
+				9F012CAA203FEDC7005237A1 /* TYOAuthViewController.h */,
+				9F012CAB203FEDC7005237A1 /* TYOAuthViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -929,13 +949,16 @@
 				9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */,
 				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
+				9F012CA6203FE564005237A1 /* TYWebViewController.m in Sources */,
 				717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */,
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
 				9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */,
 				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
 				712F9F93202ECD7300F31BB2 /* TYButton.m in Sources */,
+				9F012CA9203FE734005237A1 /* TYWebViewModel.m in Sources */,
 				9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */,
 				9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */,
+				9F012CAF203FEE81005237A1 /* TYOAuthViewModel.m in Sources */,
 				9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
 				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
@@ -945,6 +968,7 @@
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
 				9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */,
 				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
+				9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
@@ -1107,7 +1131,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4975AS6BL3;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1129,7 +1153,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4975AS6BL3;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

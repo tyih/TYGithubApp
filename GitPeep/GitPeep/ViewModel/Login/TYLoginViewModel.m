@@ -10,11 +10,15 @@
 
 #import "TYViewModelServices.h"
 #import "TYMainViewModel.h"
+#import "TYOAuthViewModel.h"
 
 @interface TYLoginViewModel ()
 
 @property (nonatomic, strong, readwrite) RACSignal *validLoginSignal;
+
 @property (nonatomic, strong, readwrite) RACCommand *loginCommand;
+
+@property (nonatomic, strong, readwrite) RACCommand *browserLoginCommand;
 
 @end
 
@@ -23,6 +27,7 @@
 - (void)initialize {
     [super initialize];
     
+    // 账号、密码输入有效signal
     self.validLoginSignal = [[RACSignal combineLatest:@[RACObserve(self, username), RACObserve(self, password)] reduce:^(NSString *username, NSString *password) {
         
         return @(username.length > 0 && password.length > 0);
@@ -54,6 +59,21 @@
         NSLog(@"username:%@, password:%@", self.username, self.password);
         OCTUser *user = [OCTUser userWithRawLogin:self.username server:OCTServer.dotComServer];
         return [[OCTClient signInAsUser:user password:self.password oneTimePassword:input scopes:OCTClientAuthorizationScopesUser | OCTClientAuthorizationScopesRepository note:nil noteURL:nil fingerprint:nil] doNext:doNext];
+    }];
+    
+    // 浏览器登录
+    self.browserLoginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        @strongify(self);
+        
+        TYOAuthViewModel *viewModel = [[TYOAuthViewModel alloc] initWithServices:self.services params:nil];
+        viewModel.callback = ^(NSString *code) {
+            @strongify(self);
+            [self.services popViewModelAnimated:YES];
+            
+        };
+        [self.services pushViewModel:viewModel animated:YES];
+        
+        return [RACSignal empty];
     }];
 }
 

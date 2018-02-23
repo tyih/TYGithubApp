@@ -14,6 +14,9 @@
 @property (nonatomic, copy) NSString *password;
 
 @property (nonatomic, strong, readonly) RACSignal *validLoginSignal;
+
 @property (nonatomic, strong, readonly) RACCommand *loginCommand;
+
+@property (nonatomic, strong, readonly) RACCommand *browserLoginCommand;
 
 @end

@@ -116,4 +116,8 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 #define GH_PASSWORD     @"Password"
 #define GH_ACCESS_TOKEN @"AccessToken"
 
+#pragma mark -
+
+#define TY_ALERT_TITLE  @"Tips"
+
 #endif /* TYMacros_h */
