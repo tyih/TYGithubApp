@@ -36,7 +36,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     NSArray *urlArray = [request.URL.absoluteString componentsSeparatedByString:@"?"];
-    if ([urlArray[0] isEqualToString:@"http://tianyao.gitpeep"]) {
+    if ([urlArray[0] isEqualToString:@"http://tianyao.gitpeep/"]) {
         NSDictionary *queryArguments = request.URL.oct_queryArguments;
         if ([queryArguments[@"state"] isEqual:self.viewModel.UUIDString]) {
             if (self.viewModel.callback) {
