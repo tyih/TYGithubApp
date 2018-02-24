@@ -69,11 +69,36 @@
         viewModel.callback = ^(NSString *code) {
             @strongify(self);
             [self.services popViewModelAnimated:YES];
-            
+            // 请求token
+            [self.browserLoginCommand execute:code];
         };
         [self.services pushViewModel:viewModel animated:YES];
         
         return [RACSignal empty];
+    }];
+    
+    self.browserLoginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString *code) {
+        
+        OCTClient *client = [[OCTClient alloc] initWithServer:[OCTServer dotComServer]];
+        
+        return [[[[[client exchangeAccessTokenWithCode:code] doNext:^(OCTAccessToken *accessToken) {
+            
+            [client setValue:accessToken.token forKey:@"token"];
+        }] flattenMap:^(id value) {
+            
+            return [[client fetchUserInfo] doNext:^(OCTUser *user) {
+                NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
+                
+                [mutableDictionary addEntriesFromDictionary:user.dictionaryValue];
+                
+                if (user.rawLogin.length == 0) {
+                    mutableDictionary[@keypath(user.rawLogin)] = user.login;
+                }
+                user = [OCTUser modelWithDictionary:mutableDictionary error:NULL];
+                
+                [client setValue:user forKey:@"user"];
+            }];
+        }] mapReplace:client] doNext:doNext];
     }];
 }
 

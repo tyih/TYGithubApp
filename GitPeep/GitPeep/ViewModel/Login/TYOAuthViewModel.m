@@ -26,6 +26,7 @@
     self.UUIDString = CFBridgingRelease(CFUUIDCreateString(NULL, UUID));
     CFRelease(UUID);
     
+//    https://github.com/login/oauth/authorize/?client_id=a8d9c1a366f057a23753&state=1995&redirect_uri=https://github.com/coderyi/monkey&scope=user,public_repo
     NSString *URLString = [NSString stringWithFormat:@"https://github.com/login/oauth/authorize?client_id=%@&scope=%@&state=%@", TY_CLIENT_ID, @"user,repo", self.UUIDString];
     
     self.request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];

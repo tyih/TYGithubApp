@@ -94,6 +94,7 @@
     UIButton *browserLoginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-20-40, SCREEN_WIDTH, 40)];
     [browserLoginButton setTitle:@"OAuth2 Authorization Login" forState:UIControlStateNormal];
     [browserLoginButton setTitleColor:HexRGB(colorA2) forState:UIControlStateNormal];
+    [browserLoginButton setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
     browserLoginButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:15.f];
     self.browserLoginButton = browserLoginButton;
     [self.view addSubview:browserLoginButton];
