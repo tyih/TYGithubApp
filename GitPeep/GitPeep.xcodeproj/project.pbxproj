@@ -26,6 +26,9 @@
 		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
 		9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */; };
 		9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */; };
+		9F1944012043D44F00F5C089 /* TYNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1944002043D44F00F5C089 /* TYNewsCell.m */; };
+		9F1944082043F0EB00F5C089 /* TYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1944072043F0EB00F5C089 /* TYTableViewController.m */; };
+		9F19440B2043F2A800F5C089 /* TYTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F19440A2043F2A800F5C089 /* TYTableViewModel.m */; };
 		9F2023D620297A79008A7706 /* UILabel+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2023D520297A79008A7706 /* UILabel+category.m */; };
 		9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C961FFF42AB00A8FACD /* TYExploreController.m */; };
 		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
@@ -136,6 +139,13 @@
 		9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileViewModel.m; sourceTree = "<group>"; };
 		9F0DC0342021B3FD00A64050 /* TYExploreViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreViewModel.h; sourceTree = "<group>"; };
 		9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYExploreViewModel.m; sourceTree = "<group>"; };
+		9F1943FF2043D44F00F5C089 /* TYNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewsCell.h; sourceTree = "<group>"; };
+		9F1944002043D44F00F5C089 /* TYNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewsCell.m; sourceTree = "<group>"; };
+		9F1944062043F0EB00F5C089 /* TYTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTableViewController.h; sourceTree = "<group>"; };
+		9F1944072043F0EB00F5C089 /* TYTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTableViewController.m; sourceTree = "<group>"; };
+		9F1944092043F2A800F5C089 /* TYTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYTableViewModel.h; sourceTree = "<group>"; };
+		9F19440A2043F2A800F5C089 /* TYTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYTableViewModel.m; sourceTree = "<group>"; };
+		9F19440C2044115C00F5C089 /* TYReactiveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYReactiveView.h; sourceTree = "<group>"; };
 		9F2023D420297A79008A7706 /* UILabel+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+category.h"; sourceTree = "<group>"; };
 		9F2023D520297A79008A7706 /* UILabel+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+category.m"; sourceTree = "<group>"; };
 		9F3B5C951FFF42AB00A8FACD /* TYExploreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYExploreController.h; sourceTree = "<group>"; };
@@ -290,6 +300,8 @@
 				9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */,
 				9F012CA4203FE564005237A1 /* TYWebViewController.h */,
 				9F012CA5203FE564005237A1 /* TYWebViewController.m */,
+				9F1944062043F0EB00F5C089 /* TYTableViewController.h */,
+				9F1944072043F0EB00F5C089 /* TYTableViewController.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -413,6 +425,22 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		9F1943FB2043D2FF00F5C089 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		9F1944022043D45600F5C089 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				9F1943FF2043D44F00F5C089 /* TYNewsCell.h */,
+				9F1944002043D44F00F5C089 /* TYNewsCell.m */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		9FBF5D951FF510690032418D = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +508,7 @@
 		9FBF5DD31FF510DB0032418D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F1944022043D45600F5C089 /* News */,
 				712F9F90202ECD4B00F31BB2 /* Button */,
 				9FBF5DEC1FF514C50032418D /* BaseClass */,
 				9FBF5DEB1FF514BE0032418D /* Home */,
@@ -508,6 +537,7 @@
 		9FBF5DD51FF5112B0032418D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F1943FB2043D2FF00F5C089 /* News */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,6 +620,7 @@
 			children = (
 				9FDE45D71FFD0A3200E1DCE4 /* TYNavigationControllerStack.h */,
 				9FDE45D81FFD0A3200E1DCE4 /* TYNavigationControllerStack.m */,
+				9F19440C2044115C00F5C089 /* TYReactiveView.h */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -605,6 +636,8 @@
 				9FDE45D51FFD071A00E1DCE4 /* TYViewModelServicesImpl.m */,
 				9F012CA7203FE734005237A1 /* TYWebViewModel.h */,
 				9F012CA8203FE734005237A1 /* TYWebViewModel.m */,
+				9F1944092043F2A800F5C089 /* TYTableViewModel.h */,
+				9F19440A2043F2A800F5C089 /* TYTableViewModel.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -950,6 +983,7 @@
 				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
 				9F012CA6203FE564005237A1 /* TYWebViewController.m in Sources */,
+				9F1944012043D44F00F5C089 /* TYNewsCell.m in Sources */,
 				717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */,
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
 				9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */,
@@ -960,11 +994,13 @@
 				9FD507AF2022F84B004F2F96 /* YYFPSLabel.m in Sources */,
 				9F012CAF203FEE81005237A1 /* TYOAuthViewModel.m in Sources */,
 				9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */,
+				9F19440B2043F2A800F5C089 /* TYTableViewModel.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
 				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */,
 				717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */,
+				9F1944082043F0EB00F5C089 /* TYTableViewController.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
 				9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */,
 				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
@@ -1131,7 +1167,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4975AS6BL3;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1153,7 +1189,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4975AS6BL3;
+				DEVELOPMENT_TEAM = VLVHRULUN5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

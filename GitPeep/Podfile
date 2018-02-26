@@ -22,7 +22,7 @@ target 'GitPeep' do
   pod 'MKNetworkKit', '0.87'
   
   pod 'MBProgressHUD', '~> 1.1.0'
-    
+      
   target 'GitPeepTests' do
     inherit! :search_paths
     # Pods for testing

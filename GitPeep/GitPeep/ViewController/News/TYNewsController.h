@@ -6,9 +6,9 @@
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYViewController.h"
+#import "TYTableViewController.h"
 
-@interface TYNewsController : TYViewController
+@interface TYNewsController : TYTableViewController
 
 - (void)refresh;
 
