@@ -8,25 +8,53 @@
 
 #import "TYNewsController.h"
 
+#import "TYNewsViewModel.h"
+#import "TYNewsItemViewModel.h"
+#import "TYNewsCell.h"
+
 @interface TYNewsController ()
+
+@property (nonatomic, strong, readonly) TYNewsViewModel *viewModel;
 
 @end
 
 @implementation TYNewsController
 
+@dynamic viewModel;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
+    
+//    [self refresh];
 }
 
 - (void)refresh {
     
-    
+    [self.viewModel.requestRemoteDataCommand execute:nil];
+//    @weakify(self);
+//    RACSignal *signal = [self.viewModel.requestRemoteDataCommand execute:nil];
+//    [signal subscribeNext:^(id x) {
+//
+//        @strongify(self);
+////        self.viewModel.dataArray = x;
+//        [self reloadData];
+//    }];
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+- (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     
-//    [cell ]
+    TYNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
+    if (cell == nil) {
+        cell = [[TYNewsCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"NewsCell"];
+    }
+    return cell;
+}
+
+- (void)configureCell:(TYNewsCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(TYNewsItemViewModel *)viewModel {
+    
+    [cell bindViewModel:viewModel];
 }
 
 - (void)didReceiveMemoryWarning {

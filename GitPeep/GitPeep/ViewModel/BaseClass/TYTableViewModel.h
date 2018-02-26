@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong, readonly) RACCommand *requestRemoteDataCommand;
 
-// 子类根据情况重写
+// 用于子类重写
 - (RACSignal *)requestRemoteDataSignalWithPage:(NSUInteger)page;
 
 @end

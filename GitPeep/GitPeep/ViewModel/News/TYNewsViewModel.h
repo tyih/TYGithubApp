@@ -10,6 +10,6 @@
 
 @interface TYNewsViewModel : TYTableViewModel
 
-
+@property (nonatomic, strong, readonly) RACCommand *didClickLinkCommand;
 
 @end

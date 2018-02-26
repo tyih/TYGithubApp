@@ -8,6 +8,7 @@
 
 @protocol TYReactiveView <NSObject>
 
+/// Bind view model to view
 - (void)bindViewModel:(id)viewModel;
 
 @end

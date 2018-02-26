@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TYNewsCell : UITableViewCell
+#import "TYReactiveView.h"
+
+@interface TYNewsCell : UITableViewCell <TYReactiveView>
 
 @end
