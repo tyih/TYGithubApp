@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy, readonly) NSString *time;
 
+@property (nonatomic, strong) RACCommand *didClickLinkCommand;
+
 - (instancetype)initWithTitle:(NSString *)title time:(NSString *)time;
 
 @end

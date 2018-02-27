@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong, readwrite) RACCommand *browserLoginCommand;
 
+@property (nonatomic, strong, readwrite) RACCommand *exchangeTokenCommand;
+
 @end
 
 @implementation TYLoginViewModel
@@ -70,14 +72,14 @@
             @strongify(self);
             [self.services popViewModelAnimated:YES];
             // 请求token
-            [self.browserLoginCommand execute:code];
+            [self.exchangeTokenCommand execute:code];
         };
         [self.services pushViewModel:viewModel animated:YES];
         
         return [RACSignal empty];
     }];
     
-    self.browserLoginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString *code) {
+    self.exchangeTokenCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString *code) {
         
         OCTClient *client = [[OCTClient alloc] initWithServer:[OCTServer dotComServer]];
         

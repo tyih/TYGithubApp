@@ -30,7 +30,7 @@
 - (void)initialize {
     
     [super initialize];
-    
+        
     @weakify(self);
     self.didClickLinkCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSURL *url) {
         @strongify(self);
@@ -46,7 +46,7 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            sleep(4);
+            sleep(2);
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSArray *dictArray = @[@{@"title" : @"xxxxxx", @"time" : @"9999999"},
                                        @{@"title" : @"yyyyyy", @"time" : @"1111111"},
@@ -55,6 +55,7 @@
                 NSMutableArray *dataArr = [NSMutableArray array];
                 for (NSDictionary *dic in dictArray) {
                     TYNewsItemViewModel *model = [[TYNewsItemViewModel alloc] initWithTitle:dic[@"title"] time:dic[@"time"]];
+                    model.didClickLinkCommand = self.didClickLinkCommand;
                     [dataArr addObject:model];
                 }
                 [subscriber sendNext:dataArr];

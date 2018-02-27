@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong, readonly) RACCommand *browserLoginCommand;
 
+@property (nonatomic, strong, readonly) RACCommand *exchangeTokenCommand;
+
 @end

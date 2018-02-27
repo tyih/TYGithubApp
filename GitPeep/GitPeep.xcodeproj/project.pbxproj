@@ -13,6 +13,12 @@
 		7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E09D1FFE78EB00887DFE /* TYTabBarController.m */; };
 		7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0A01FFE7D9300887DFE /* TYMainController.m */; };
 		7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7109E0B01FFE81CB00887DFE /* TYMainViewModel.m */; };
+		712A6C2F20458DA90010A2F9 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; };
+		712A6C3020458DA90010A2F9 /* ISO8601DateFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		712A6C3120458DC50010A2F9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; };
+		712A6C3220458DC50010A2F9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		712A6C3320458DEF0010A2F9 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; };
+		712A6C3420458DEF0010A2F9 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		712F9F93202ECD7300F31BB2 /* TYLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F9F92202ECD7300F31BB2 /* TYLoginButton.m */; };
 		717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924EE200CE20F0097925E /* TYNewFeatureViewModel.m */; };
 		717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 717924F3200CE2790097925E /* TYNewsViewModel.m */; };
@@ -22,8 +28,6 @@
 		9F012CA9203FE734005237A1 /* TYWebViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CA8203FE734005237A1 /* TYWebViewModel.m */; };
 		9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CAB203FEDC7005237A1 /* TYOAuthViewController.m */; };
 		9F012CAF203FEE81005237A1 /* TYOAuthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F012CAE203FEE81005237A1 /* TYOAuthViewModel.m */; };
-		9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; };
-		9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC02F2021B3D200A64050 /* TYReposViewModel.m */; };
 		9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */; };
 		9F0DC0362021B3FD00A64050 /* TYExploreViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DC0352021B3FD00A64050 /* TYExploreViewModel.m */; };
@@ -37,12 +41,6 @@
 		9F3B5CA01FFF42C900A8FACD /* TYReposController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */; };
 		9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F4809DD202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; };
-		9F4809DE202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCC20284C48008CA739 /* ISO8601DateFormatter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F4809DF202BE9C70075D9C9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; };
-		9F4809E0202BE9C70075D9C9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCA20284C3C008CA739 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F4809E1202BE9CE0075D9C9 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; };
-		9F4809E2202BE9CE0075D9C9 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFCE20284C51008CA739 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */; };
 		9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9C2027FAED008CA739 /* UIView+frame.m */; };
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
@@ -93,10 +91,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */,
-				9F4809E2202BE9CE0075D9C9 /* Mantle.framework in Embed Frameworks */,
-				9F4809E0202BE9C70075D9C9 /* AFNetworking.framework in Embed Frameworks */,
-				9F0D9B43202AEF0B00AFA899 /* ReactiveCocoa.framework in Embed Frameworks */,
-				9F4809DE202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Embed Frameworks */,
+				712A6C3420458DEF0010A2F9 /* Mantle.framework in Embed Frameworks */,
+				712A6C3220458DC50010A2F9 /* AFNetworking.framework in Embed Frameworks */,
+				712A6C3020458DA90010A2F9 /* ISO8601DateFormatter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,12 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */,
+				712A6C3120458DC50010A2F9 /* AFNetworking.framework in Frameworks */,
 				9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */,
-				9F4809DF202BE9C70075D9C9 /* AFNetworking.framework in Frameworks */,
-				9F0D9B42202AEF0B00AFA899 /* ReactiveCocoa.framework in Frameworks */,
-				9F4809DD202BE9BE0075D9C9 /* ISO8601DateFormatter.framework in Frameworks */,
+				712A6C2F20458DA90010A2F9 /* ISO8601DateFormatter.framework in Frameworks */,
 				C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */,
-				9F4809E1202BE9CE0075D9C9 /* Mantle.framework in Frameworks */,
+				712A6C3320458DEF0010A2F9 /* Mantle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,7 +1200,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLVHRULUN5;
+				DEVELOPMENT_TEAM = 4975AS6BL3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1226,7 +1222,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VLVHRULUN5;
+				DEVELOPMENT_TEAM = 4975AS6BL3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

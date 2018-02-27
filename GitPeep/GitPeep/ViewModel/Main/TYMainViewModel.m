@@ -26,13 +26,13 @@
     
     [super initialize];
     
-    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:nil];
+    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:@{@"title" : @"News"}];
     
-    self.reposViewModel = [[TYReposViewModel alloc] initWithServices:self.services params:nil];
+    self.reposViewModel = [[TYReposViewModel alloc] initWithServices:self.services params:@{@"title" : @"Repositories"}];
     
-    self.exploreViewModel = [[TYExploreViewModel alloc] initWithServices:self.services params:nil];
+    self.exploreViewModel = [[TYExploreViewModel alloc] initWithServices:self.services params:@{@"title" : @"Explore"}];
     
-    self.profileViewModel = [[TYProfileViewModel alloc] initWithServices:self.services params:nil];
+    self.profileViewModel = [[TYProfileViewModel alloc] initWithServices:self.services params:@{@"title" : @"Profile"}];
 }
 
 @end

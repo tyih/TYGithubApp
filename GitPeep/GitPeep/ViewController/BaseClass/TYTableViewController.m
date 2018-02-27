@@ -82,6 +82,11 @@
     // 用于子类重写
 }
 
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100;
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -103,7 +108,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return 100;
+    return [self heightForRowAtIndexPath:indexPath];
 }
 
 

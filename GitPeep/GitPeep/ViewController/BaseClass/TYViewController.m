@@ -57,7 +57,6 @@
     RAC(self.navigationItem, title) = RACObserve(self, viewModel.title);
     
     UIView *titleView = self.navigationItem.titleView;
-    
     @weakify(self);
     [[self rac_signalForSelector:@selector(viewWillTransitionToSize:withTransitionCoordinator:)] subscribeNext:^(id x) {
         @strongify(self);
