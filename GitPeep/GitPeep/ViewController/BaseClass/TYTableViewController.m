@@ -9,6 +9,7 @@
 #import "TYTableViewController.h"
 
 #import "TYTableViewModel.h"
+#import "TYRefreshGifHeader.h"
 
 @interface TYTableViewController ()
 
@@ -31,17 +32,8 @@
         @weakify(self);
         [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
             @strongify(self);
-            
-            @weakify(self);
-            [[RACObserve(self.viewModel, dataArray) filter:^BOOL(NSArray *dataArray) {
-                return @(dataArray.count > 0).boolValue;
-            }] subscribeNext:^(NSArray *dataArray) {
-                @strongify(self);
-                
-                [self reloadData];
-            }];
-            
-            [self.viewModel.requestRemoteDataCommand execute:@1];
+            // 请求数据，刷新
+            [self.tableView.mj_header beginRefreshing];
         }];
     }
     return self;
@@ -55,11 +47,30 @@
     tableView.delegate = self;
     self.tableView = tableView;
     [self.view addSubview:tableView];
+    
+    TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
+        
+        [self refresh];
+    }];
+    self.tableView.mj_header = refreshHeader;
 }
 
 - (void)reloadData {
     
     [self.tableView reloadData];
+}
+
+- (void)refresh {
+    
+    @weakify(self);
+    RACSignal *signal = [self.viewModel.requestRemoteDataCommand execute:nil];
+    [signal subscribeNext:^(id x) {
+        
+        @strongify(self);
+        self.viewModel.dataArray = x;
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
@@ -91,8 +102,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 50;
+
+    return 100;
 }
 
 

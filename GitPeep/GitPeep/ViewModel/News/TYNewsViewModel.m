@@ -45,16 +45,23 @@
     @weakify(self);
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
-        NSArray *dictArray = @[@{@"title" : @"xxxxxx", @"time" : @"9999999"},
-                               @{@"title" : @"yyyyyy", @"time" : @"1111111"},
-                               @{@"title" : @"zzzzzz", @"time" : @"2222222"},
-                               @{@"title" : @"tttttt", @"time" : @"3333333"}];
-        NSMutableArray *dataArr = [NSMutableArray array];
-        for (NSDictionary *dic in dictArray) {
-            TYNewsItemViewModel *model = [[TYNewsItemViewModel alloc] initWithTitle:dic[@"title"] time:dic[@"time"]];
-            [dataArr addObject:model];
-        }
-        self.dataArray = dataArr;
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            sleep(4);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSArray *dictArray = @[@{@"title" : @"xxxxxx", @"time" : @"9999999"},
+                                       @{@"title" : @"yyyyyy", @"time" : @"1111111"},
+                                       @{@"title" : @"zzzzzz", @"time" : @"2222222"},
+                                       @{@"title" : @"tttttt", @"time" : @"3333333"}];
+                NSMutableArray *dataArr = [NSMutableArray array];
+                for (NSDictionary *dic in dictArray) {
+                    TYNewsItemViewModel *model = [[TYNewsItemViewModel alloc] initWithTitle:dic[@"title"] time:dic[@"time"]];
+                    [dataArr addObject:model];
+                }
+                [subscriber sendNext:dataArr];
+                [subscriber sendCompleted];
+            });
+        });
+        
         return nil;
     }];
     

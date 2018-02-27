@@ -12,9 +12,13 @@
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 
+/// 刷新tableView
 - (void)reloadData;
 
-// 用于子类重写
+/// 请求数据、刷新
+- (void)refresh;
+
+/// 用于子类重写
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 

@@ -26,9 +26,10 @@
 #import "YYFPSLabel.h"
 #import "UIView+frame.h"
 #import "UIView+line.h"
-#import "UILabel+category.h"
+#import "UILabel+text.h"
 #import "IQKeyboardManager.h"
 #import "MBProgressHUD.h"
+#import "MJRefresh.h"
 
 #endif
 

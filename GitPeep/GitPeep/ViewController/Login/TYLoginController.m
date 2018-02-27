@@ -9,7 +9,7 @@
 #import "TYLoginController.h"
 
 #import "TYLoginViewModel.h"
-#import "TYButton.h"
+#import "TYLoginButton.h"
 
 @interface TYLoginController () <UITextFieldDelegate>
 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, weak) UITextField *usernameField;
 @property (nonatomic, weak) UITextField *passwordField;
-@property (nonatomic, weak) TYButton *loginButton;
+@property (nonatomic, weak) TYLoginButton *loginButton;
 @property (nonatomic, weak) UIButton *browserLoginButton;
 
 @end
@@ -86,7 +86,7 @@
     self.passwordField = passwordField;
     [signInView addSubview:passwordField];
     
-    TYButton *loginButton = [[TYButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
+    TYLoginButton *loginButton = [[TYLoginButton alloc] initWithFrame:CGRectMake(fieldX, passwordField.bottom+20, fieldW, 35)];
     [loginButton setTitle:@"Sign in" forState:UIControlStateNormal];
     self.loginButton = loginButton;
     [signInView addSubview:loginButton];

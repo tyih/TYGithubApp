@@ -10,6 +10,4 @@
 
 @interface TYNewsController : TYTableViewController
 
-- (void)refresh;
-
 @end

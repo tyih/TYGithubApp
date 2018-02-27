@@ -24,24 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-//    [self refresh];
+
 }
 
-- (void)refresh {
-    
-    [self.viewModel.requestRemoteDataCommand execute:nil];
-//    @weakify(self);
-//    RACSignal *signal = [self.viewModel.requestRemoteDataCommand execute:nil];
-//    [signal subscribeNext:^(id x) {
+//- (void)bindViewModel {
+//    [super bindViewModel];
 //
+//    刷新状态
+//    @weakify(self);
+//    [self.viewModel.requestRemoteDataCommand.executing subscribeNext:^(NSNumber *excuting) {
 //        @strongify(self);
-////        self.viewModel.dataArray = x;
-//        [self reloadData];
+//        if (excuting.boolValue) {
+//            [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES].label.text = @"Loading...";
+//        } else {
+//            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+//        }
 //    }];
-}
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     
@@ -61,15 +60,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
