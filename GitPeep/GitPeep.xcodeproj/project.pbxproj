@@ -46,6 +46,12 @@
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
 		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
 		9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */; };
+		9FBAD51C2046451D00F54F17 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; };
+		9FBAD51D2046451D00F54F17 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBAD566204690BB00F54F17 /* TYUsersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD565204690BB00F54F17 /* TYUsersController.m */; };
+		9FBAD56E204691B000F54F17 /* TYUsersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */; };
+		9FBAD5712046920500F54F17 /* TYUsersItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */; };
+		9FBAD5752046940400F54F17 /* TYUsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD5742046940400F54F17 /* TYUsersCell.m */; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
 		9FBF5DAE1FF510690032418D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAC1FF510690032418D /* LaunchScreen.storyboard */; };
@@ -94,6 +100,7 @@
 				712A6C3420458DEF0010A2F9 /* Mantle.framework in Embed Frameworks */,
 				712A6C3220458DC50010A2F9 /* AFNetworking.framework in Embed Frameworks */,
 				712A6C3020458DA90010A2F9 /* ISO8601DateFormatter.framework in Embed Frameworks */,
+				9FBAD51D2046451D00F54F17 /* ReactiveCocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +178,14 @@
 		9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9F7C352420455DDD009AAC8A /* TYRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRefreshGifHeader.h; sourceTree = "<group>"; };
 		9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRefreshGifHeader.m; sourceTree = "<group>"; };
+		9FBAD564204690BB00F54F17 /* TYUsersController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersController.h; sourceTree = "<group>"; };
+		9FBAD565204690BB00F54F17 /* TYUsersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersController.m; sourceTree = "<group>"; };
+		9FBAD56C204691B000F54F17 /* TYUsersViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersViewModel.h; sourceTree = "<group>"; };
+		9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersViewModel.m; sourceTree = "<group>"; };
+		9FBAD56F2046920500F54F17 /* TYUsersItemViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersItemViewModel.h; sourceTree = "<group>"; };
+		9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersItemViewModel.m; sourceTree = "<group>"; };
+		9FBAD5732046940400F54F17 /* TYUsersCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersCell.h; sourceTree = "<group>"; };
+		9FBAD5742046940400F54F17 /* TYUsersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersCell.m; sourceTree = "<group>"; };
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DA11FF510690032418D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FBF5DA21FF510690032418D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -223,6 +238,7 @@
 				712A6C3120458DC50010A2F9 /* AFNetworking.framework in Frameworks */,
 				9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */,
 				712A6C2F20458DA90010A2F9 /* ISO8601DateFormatter.framework in Frameworks */,
+				9FBAD51C2046451D00F54F17 /* ReactiveCocoa.framework in Frameworks */,
 				C51646EBA5BB643A8C78BBEF /* libPods-GitPeep.a in Frameworks */,
 				712A6C3320458DEF0010A2F9 /* Mantle.framework in Frameworks */,
 			);
@@ -279,6 +295,7 @@
 		7109E08F1FFE5E3100887DFE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9FBAD5632046901300F54F17 /* Users */,
 				9FF844902015B32E00FF4DCF /* NewFeature */,
 				9FF8448F2015B31D00FF4DCF /* Login */,
 				7109E09B1FFE789900887DFE /* Main */,
@@ -480,6 +497,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9FBAD5632046901300F54F17 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				9FBAD564204690BB00F54F17 /* TYUsersController.h */,
+				9FBAD565204690BB00F54F17 /* TYUsersController.m */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		9FBAD56B2046919C00F54F17 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				9FBAD56C204691B000F54F17 /* TYUsersViewModel.h */,
+				9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */,
+				9FBAD56F2046920500F54F17 /* TYUsersItemViewModel.h */,
+				9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		9FBAD572204693E400F54F17 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				9FBAD5732046940400F54F17 /* TYUsersCell.h */,
+				9FBAD5742046940400F54F17 /* TYUsersCell.m */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		9FBF5D951FF510690032418D = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +594,7 @@
 		9FBF5DD31FF510DB0032418D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FBAD572204693E400F54F17 /* Users */,
 				9F7C352120454BC5009AAC8A /* Custom */,
 				9F1944022043D45600F5C089 /* News */,
 				9FBF5DEC1FF514C50032418D /* BaseClass */,
@@ -562,6 +609,7 @@
 		9FBF5DD41FF511220032418D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9FBAD56B2046919C00F54F17 /* Users */,
 				9F0DC02C2021B39100A64050 /* Repositories */,
 				9F0DC02B2021B38600A64050 /* Profile */,
 				9F0DC02A2021B37400A64050 /* Explore */,
@@ -1015,9 +1063,11 @@
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
 				9F012CA6203FE564005237A1 /* TYWebViewController.m in Sources */,
 				9F1944012043D44F00F5C089 /* TYNewsCell.m in Sources */,
+				9FBAD56E204691B000F54F17 /* TYUsersViewModel.m in Sources */,
 				717924F4200CE2790097925E /* TYNewsViewModel.m in Sources */,
 				7109E0B11FFE81CB00887DFE /* TYMainViewModel.m in Sources */,
 				9F0DC0332021B3E600A64050 /* TYProfileViewModel.m in Sources */,
+				9FBAD5752046940400F54F17 /* TYUsersCell.m in Sources */,
 				7109E09A1FFE62ED00887DFE /* TYRouter.m in Sources */,
 				712F9F93202ECD7300F31BB2 /* TYLoginButton.m in Sources */,
 				9F012CA9203FE734005237A1 /* TYWebViewModel.m in Sources */,
@@ -1037,8 +1087,10 @@
 				9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */,
 				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
 				9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */,
+				9FBAD5712046920500F54F17 /* TYUsersItemViewModel.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
+				9FBAD566204690BB00F54F17 /* TYUsersController.m in Sources */,
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
 				9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */,

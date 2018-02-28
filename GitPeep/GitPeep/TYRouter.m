@@ -65,8 +65,8 @@ static TYRouter *sharedInstance_ = nil;
              @"TYOAuthViewModel" : @"TYOAuthViewController",
              @"TYLoginViewModel" : @"TYLoginController",
              @"TYMainViewModel" : @"TYMainController",
-             @"TYNewsViewModel" : @"TYNewsController"
-             
+//             @"TYNewsViewModel" : @"TYNewsController"
+             @"TYUsersViewModel" : @"TYUsersController"
              };
 }
 

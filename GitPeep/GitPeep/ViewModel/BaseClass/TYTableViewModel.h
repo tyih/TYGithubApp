@@ -14,6 +14,10 @@
 
 @property (nonatomic, assign) NSUInteger page;
 
+// cell点击
+@property (nonatomic, strong) RACCommand *didSelectCommand;
+
+// 请求
 @property (nonatomic, strong, readonly) RACCommand *requestRemoteDataCommand;
 
 // 用于子类重写

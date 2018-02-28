@@ -10,7 +10,8 @@
 
 @interface TYMainViewModel ()
 
-@property (nonatomic, strong, readwrite) TYNewsViewModel *newsViewModel;
+//@property (nonatomic, strong, readwrite) TYNewsViewModel *newsViewModel;
+@property (nonatomic, strong, readwrite) TYUsersViewModel *usersViewModel;
 
 @property (nonatomic, strong, readwrite) TYReposViewModel *reposViewModel;
 
@@ -26,7 +27,8 @@
     
     [super initialize];
     
-    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:@{@"title" : @"News"}];
+//    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:@{@"title" : @"News"}];
+    self.usersViewModel = [[TYUsersViewModel alloc] initWithServices:self.services params:@{@"title" : @"Users"}];
     
     self.reposViewModel = [[TYReposViewModel alloc] initWithServices:self.services params:@{@"title" : @"Repositories"}];
     

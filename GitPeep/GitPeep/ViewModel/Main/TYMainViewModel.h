@@ -8,14 +8,16 @@
 
 #import "TYViewModel.h"
 
-#import "TYNewsViewModel.h"
+//#import "TYNewsViewModel.h"
+#import "TYUsersViewModel.h"
 #import "TYReposViewModel.h"
 #import "TYExploreViewModel.h"
 #import "TYProfileViewModel.h"
 
 @interface TYMainViewModel : TYViewModel
 
-@property (nonatomic, strong, readonly) TYNewsViewModel *newsViewModel;
+//@property (nonatomic, strong, readonly) TYNewsViewModel *newsViewModel;
+@property (nonatomic, strong, readonly) TYUsersViewModel *usersViewModel;
 
 @property (nonatomic, strong, readonly) TYReposViewModel *reposViewModel;
 

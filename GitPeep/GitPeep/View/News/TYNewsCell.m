@@ -12,10 +12,6 @@
 
 @interface TYNewsCell ()
 
-@property (nonatomic, weak) UILabel *attrLabel;
-
-@property (nonatomic, weak) UILabel *timeLabel;
-
 @property (nonatomic, strong) TYNewsItemViewModel *viewModel;
 
 @end

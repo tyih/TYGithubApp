@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TYViewModelServices;
+#import "TYViewModelServices.h"
 
 typedef NS_ENUM(NSUInteger, TYTitleViewType) {
     TYTitleViewTypeDefault,

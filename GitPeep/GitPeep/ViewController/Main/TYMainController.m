@@ -9,7 +9,8 @@
 #import "TYMainController.h"
 
 #import "TYMainViewModel.h"
-#import "TYNewsController.h"
+//#import "TYNewsController.h"
+#import "TYUsersController.h"
 #import "TYReposController.h"
 #import "TYExploreController.h"
 #import "TYProfileController.h"
@@ -36,20 +37,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UINavigationController *newsNavCtrl = ({
-        TYNewsController *newsCtrl = [[TYNewsController alloc] initWithViewModel:self.viewModel.newsViewModel];
-        UIImage *newImage = [UIImage octicon_imageWithIcon:@"Rss"
+//    UINavigationController *newsNavCtrl = ({
+//        TYNewsController *newsCtrl = [[TYNewsController alloc] initWithViewModel:self.viewModel.newsViewModel];
+//        UIImage *newImage = [UIImage octicon_imageWithIcon:@"Rss"
+//                                           backgroundColor:[UIColor clearColor]
+//                                                 iconColor:[UIColor lightGrayColor]
+//                                                 iconScale:1.f
+//                                                   andSize:CGSizeMake(25, 25)];
+//        UIImage *newHLImage = [UIImage octicon_imageWithIcon:@"Rss"
+//                                           backgroundColor:[UIColor clearColor]
+//                                                 iconColor:[UIColor yellowColor]
+//                                                 iconScale:1.f
+//                                                   andSize:CGSizeMake(25, 25)];
+//        newsCtrl.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"News" image:newImage selectedImage:newHLImage];
+//        [[TYNavigationController alloc] initWithRootViewController:newsCtrl];
+//    });
+    UINavigationController *usersNavCtrl = ({
+        TYUsersController *usersCtrl = [[TYUsersController alloc] initWithViewModel:self.viewModel.usersViewModel];
+        UIImage *usersImage = [UIImage octicon_imageWithIcon:@"Rss"
                                            backgroundColor:[UIColor clearColor]
                                                  iconColor:[UIColor lightGrayColor]
                                                  iconScale:1.f
                                                    andSize:CGSizeMake(25, 25)];
-        UIImage *newHLImage = [UIImage octicon_imageWithIcon:@"Rss"
-                                           backgroundColor:[UIColor clearColor]
-                                                 iconColor:[UIColor yellowColor]
-                                                 iconScale:1.f
-                                                   andSize:CGSizeMake(25, 25)];
-        newsCtrl.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"News" image:newImage selectedImage:newHLImage];
-        [[TYNavigationController alloc] initWithRootViewController:newsCtrl];
+        UIImage *usersHLImage = [UIImage octicon_imageWithIcon:@"Rss"
+                                             backgroundColor:[UIColor clearColor]
+                                                   iconColor:[UIColor yellowColor]
+                                                   iconScale:1.f
+                                                     andSize:CGSizeMake(25, 25)];
+        usersCtrl.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Users" image:usersImage selectedImage:usersHLImage];
+        [[TYNavigationController alloc] initWithRootViewController:usersCtrl];
     });
     
     UINavigationController *reposNavCtrl = ({
@@ -100,9 +116,9 @@
         [[TYNavigationController alloc] initWithRootViewController:profileCtrl];
     });
     
-    self.tabBarController.viewControllers = @[newsNavCtrl, reposNavCtrl, exploreNavCtrl, profileNavCtrl];
+    self.tabBarController.viewControllers = @[usersNavCtrl, reposNavCtrl, exploreNavCtrl, profileNavCtrl];
     
-    [TYSharedAppDelegate.navigationControllerStack pushNavigationController:newsNavCtrl];
+    [TYSharedAppDelegate.navigationControllerStack pushNavigationController:usersNavCtrl];
     
     [[self rac_signalForSelector:@selector(tabBarController:didSelectViewController:)
                     fromProtocol:@protocol(UITabBarControllerDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
@@ -129,9 +145,9 @@
     if (self.tabBarController.selectedViewController == viewController) {
         UINavigationController *navCtrl = (UINavigationController *)viewController;
         UIViewController *viewCtrl = navCtrl.topViewController;
-        if ([viewCtrl isKindOfClass:[TYNewsController class]]) {
-            TYNewsController *newsCtrl = (TYNewsController *)viewCtrl;
-            [newsCtrl refresh];
+        if ([viewCtrl isKindOfClass:[TYUsersController class]]) {
+            TYUsersController *usersCtrl = (TYUsersController *)viewCtrl;
+            [usersCtrl refresh];
         }
     }
     return YES;
