@@ -37,13 +37,13 @@
 /// viewModel  - the view model
 /// animated   - use animation or not
 /// completion - the completion handler
-- (void)presentViewModel:(TYViewModel *)viewModel animated:(BOOL)animated completion:(voidBlock)completion;
+- (void)presentViewModel:(TYViewModel *)viewModel animated:(BOOL)animated completion:(VoidBlock)completion;
 
 /// Dismiss the presented view controller.
 ///
 /// animated   - use animation or not
 /// completion - the completion handler
-- (void)dismissViewModelAnimated:(BOOL)animated completion:(voidBlock)completion;
+- (void)dismissViewModelAnimated:(BOOL)animated completion:(VoidBlock)completion;
 
 /// Reset the corresponding view controller as the root view controller of the application's window.
 ///

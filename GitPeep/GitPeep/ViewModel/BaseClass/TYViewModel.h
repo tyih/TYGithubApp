@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, TYTitleViewType) {
 @property (nonatomic, copy) NSString *subtitle;
 
 /// The callback block.
-@property (nonatomic, copy) voidBlock_id callback;
+@property (nonatomic, copy) VoidBlock_id callback;
 
 /// 信号(错误\消失)
 @property (nonatomic, strong, readonly) RACSubject *errors;

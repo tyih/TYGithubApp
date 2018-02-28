@@ -32,6 +32,11 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
+        [[TYNetworkEngine sharedInstance] searchUsersWithPage:1 q:@"location:beijing" sort:@"followers" location:@"beijing" language:@"所有语言" completionHandle:^(NSDictionary *responseDictionary) {
+            NSLog(@"response:%@", responseDictionary)
+        } errorHandle:^(NSError *error) {
+            NSLog(@"error:%@", error)
+        }];
         // 请求
         [subscriber sendNext:@[@"", @"", @"", @"", @"", @""]];
         [subscriber sendCompleted];

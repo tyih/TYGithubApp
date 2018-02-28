@@ -18,9 +18,9 @@
 
 - (void)popToRootViewModelAnimated:(BOOL)animated {}
 
-- (void)presentViewModel:(TYViewModel *)viewModel animated:(BOOL)animated completion:(voidBlock)completion {}
+- (void)presentViewModel:(TYViewModel *)viewModel animated:(BOOL)animated completion:(VoidBlock)completion {}
 
-- (void)dismissViewModelAnimated:(BOOL)animated completion:(voidBlock)completion {}
+- (void)dismissViewModelAnimated:(BOOL)animated completion:(VoidBlock)completion {}
 
 - (void)resetRootViewModel:(TYViewModel *)viewModel {}
 

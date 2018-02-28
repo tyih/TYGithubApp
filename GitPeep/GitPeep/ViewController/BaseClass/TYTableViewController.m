@@ -50,7 +50,7 @@
     
     TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
         
-        [self refresh];
+        [self requestRemoteData];
     }];
     self.tableView.mj_header = refreshHeader;
 }
@@ -61,6 +61,11 @@
 }
 
 - (void)refresh {
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)requestRemoteData {
     
     @weakify(self);
     RACSignal *signal = [self.viewModel.requestRemoteDataCommand execute:nil];
