@@ -16,6 +16,7 @@ typedef void(^ErrorBlock)(NSError *error);
 
 + (instancetype)sharedInstance;
 
+// Search Users
 - (MKNetworkOperation *)searchUsersWithPage:(NSUInteger)page
                                           q:(NSString *)q
                                        sort:(NSString *)sort
@@ -23,5 +24,10 @@ typedef void(^ErrorBlock)(NSError *error);
                                    language:(NSString *)language
                            completionHandle:(CompletionBlock)completionBlock
                                 errorHandle:(ErrorBlock)errorBlock;
+
+// UserDetail
+- (MKNetworkOperation *)userDetailWithUserName:(NSString *)userName
+                              completionHandle:(CompletionBlock)completionBlock
+                                   errorHandle:(ErrorBlock)errorBlock;
 
 @end

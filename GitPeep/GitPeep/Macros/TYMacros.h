@@ -99,6 +99,12 @@ printf("\n[%s] %s line:%zd 🌶 %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSStr
 #define colorA5 0xE4F4E8    // 登录按钮不可用文字颜色
 #define colorA6 0x96D2A3    // 登录按钮不可用背景颜色
 
+#define PingFangFont(s)     [UIFont fontWithName:@"PingFangSC-Regular" size:(s)]
+
+#define SystemFont(s)       [UIFont systemFontOfSize:(s)]
+
+#define BoldSystemFont(s)   [UIFont boldSystemFontOfSize:(s)]
+
 #pragma mark -
 
 /// AppDelegate

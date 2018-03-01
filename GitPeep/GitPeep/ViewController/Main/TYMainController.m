@@ -127,17 +127,6 @@
     }];
     
     self.tabBarController.delegate = self;
-    
-#if 1
-    YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] init];
-    fpsLabel.frame = CGRectMake(110, 0, 0, 0);
-//    fpsLabel.backgroundColor = [UIColor yellowColor];
-    fpsLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
-    [fpsLabel sizeToFit];
-    
-    [self.navigationController.view addSubview:fpsLabel];
-    
-#endif
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {

@@ -8,6 +8,20 @@
 
 #import "TYUsersItemViewModel.h"
 
+@interface TYUsersItemViewModel ()
+
+@end
+
 @implementation TYUsersItemViewModel
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    
+    self = [super init];
+    if (self) {
+        TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:dictionary];
+        self.model = model;
+    }
+    return self;
+}
 
 @end

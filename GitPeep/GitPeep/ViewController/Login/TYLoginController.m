@@ -44,7 +44,7 @@
     logoImgView.image = [UIImage octicon_ImageWithIcon:@"MarkGithub" size:CGSizeMake(logoW, logoH)];
     [self.view addSubview:logoImgView];
     
-    UILabel *titleLabel = [UILabel labelWithText:@"Sign in to Github" frame:CGRectMake(0, logoImgView.bottom+35, SCREEN_WIDTH, 25) font:[UIFont fontWithName:@"PingFangSC-Regular" size:20.f] color:nil alignment:NSTextAlignmentCenter];
+    UILabel *titleLabel = [UILabel labelWithText:@"Sign in to Github" frame:CGRectMake(0, logoImgView.bottom+35, SCREEN_WIDTH, 25) font:PingFangFont(20.f) color:nil alignment:NSTextAlignmentCenter];
     [self.view addSubview:titleLabel];
     
     CGFloat signInW = 310;
@@ -95,7 +95,7 @@
     [browserLoginButton setTitle:@"OAuth2 Authorization Login" forState:UIControlStateNormal];
     [browserLoginButton setTitleColor:HexRGB(colorA2) forState:UIControlStateNormal];
     [browserLoginButton setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
-    browserLoginButton.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:15.f];
+    browserLoginButton.titleLabel.font = PingFangFont(15.f);
     self.browserLoginButton = browserLoginButton;
     [self.view addSubview:browserLoginButton];
     

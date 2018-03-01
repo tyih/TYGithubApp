@@ -32,7 +32,7 @@
 
 - (void)configureCell:(TYUsersCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     
-    [cell bindViewModel:object];
+    [cell bindViewModel:object withIndexPath:indexPath];
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {

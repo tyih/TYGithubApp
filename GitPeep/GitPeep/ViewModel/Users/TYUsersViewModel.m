@@ -8,6 +8,9 @@
 
 #import "TYUsersViewModel.h"
 
+#import "TYUsersItemViewModel.h"
+#import "TYUserDetailViewModel.h"
+
 @interface TYUsersViewModel ()
 
 @end
@@ -21,7 +24,8 @@
     self.didSelectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSIndexPath *indexPath) {
         @strongify(self);
         
-        [self.services pushViewModel:[[TYUsersViewModel alloc] initWithServices:self.services params:@{@"title" : @"DDD"}] animated:YES];
+        TYUsersItemModel *model = ((TYUsersItemViewModel *)self.dataArray[indexPath.row]).model;
+        [self.services pushViewModel:[[TYUserDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"UserDetail", @"login" : model.login}] animated:YES];
         return [RACSignal empty];
     }];
 }
@@ -32,14 +36,23 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
+        NSMutableArray *viewModelArray = [NSMutableArray array];
         [[TYNetworkEngine sharedInstance] searchUsersWithPage:1 q:@"location:beijing" sort:@"followers" location:@"beijing" language:@"所有语言" completionHandle:^(NSDictionary *responseDictionary) {
             NSLog(@"response:%@", responseDictionary)
+            
+            NSArray *items = responseDictionary[@"items"];
+            for (NSDictionary *itemDic in items) {
+                TYUsersItemViewModel *viewModel = [[TYUsersItemViewModel alloc] initWithDictionary:itemDic];
+                [viewModelArray addObject:viewModel];
+                NSLog(@"identifier:%ld", viewModel.model.userId)
+            }
+            // 发送数据
+            [subscriber sendNext:viewModelArray];
+            [subscriber sendCompleted];
         } errorHandle:^(NSError *error) {
             NSLog(@"error:%@", error)
         }];
-        // 请求
-        [subscriber sendNext:@[@"", @"", @"", @"", @"", @""]];
-        [subscriber sendCompleted];
+        
         return nil;
     }];
     return signal;

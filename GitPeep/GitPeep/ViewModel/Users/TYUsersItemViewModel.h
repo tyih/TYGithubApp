@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TYUsersItemModel.h"
+
 @interface TYUsersItemViewModel : NSObject
+
+@property (nonatomic, strong) TYUsersItemModel *model;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

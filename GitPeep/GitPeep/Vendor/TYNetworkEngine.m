@@ -62,4 +62,25 @@ static TYNetworkEngine *sharedObj = nil; // 静态实例，并初始化
     return operation;
 }
 
+// UserDetail
+- (MKNetworkOperation *)userDetailWithUserName:(NSString *)userName
+                              completionHandle:(CompletionBlock)completionBlock
+                                   errorHandle:(ErrorBlock)errorBlock {
+    
+    NSString *path = [NSString stringWithFormat:@"users/%@", userName];
+    MKNetworkOperation *operation = [self operationWithPath:path params:nil httpMethod:@"GET" ssl:YES];
+    [operation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        if ([[completedOperation responseJSON] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultDictionary = [completedOperation responseJSON];
+            completionBlock(resultDictionary);
+        }
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        
+        errorBlock(error);
+    }];
+    [self enqueueOperation:operation];
+    return operation;
+}
+
 @end

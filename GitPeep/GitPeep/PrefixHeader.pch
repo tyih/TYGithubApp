@@ -23,15 +23,15 @@
 #import "TYUtils.h"
 #import "UIImage+Octicons.h"
 #import "UIImage+TYOcticons.h"
-#import "YYFPSLabel.h"
 #import "UIView+frame.h"
 #import "UIView+line.h"
 #import "UILabel+text.h"
 #import "IQKeyboardManager.h"
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
-#import "YYLabel.h"
 #import "TYNetworkEngine.h"
+#import <YYModel.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif
 

@@ -8,7 +8,12 @@
 
 @protocol TYReactiveView <NSObject>
 
+@optional
+
 /// Bind view model to view
 - (void)bindViewModel:(id)viewModel;
+
+/// Bind view model to cell
+- (void)bindViewModel:(id)viewModel withIndexPath:(NSIndexPath *)indexPath;
 
 @end
