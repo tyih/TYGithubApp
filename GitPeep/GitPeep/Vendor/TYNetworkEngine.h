@@ -8,7 +8,9 @@
 
 #import <MKNetworkKit/MKNetworkKit.h>
 
-typedef void(^CompletionBlock)(NSDictionary *responseDictionary);
+typedef void(^CompletionDictionaryBlock)(NSDictionary *responseDictionary);
+
+typedef void(^CompletionArrayBlock)(NSArray *responseArray);
 
 typedef void(^ErrorBlock)(NSError *error);
 
@@ -16,18 +18,36 @@ typedef void(^ErrorBlock)(NSError *error);
 
 + (instancetype)sharedInstance;
 
-// Search Users
+/// Search Users
 - (MKNetworkOperation *)searchUsersWithPage:(NSUInteger)page
                                           q:(NSString *)q
                                        sort:(NSString *)sort
                                    location:(NSString *)location
                                    language:(NSString *)language
-                           completionHandle:(CompletionBlock)completionBlock
+                           completionHandle:(CompletionDictionaryBlock)completionBlock
                                 errorHandle:(ErrorBlock)errorBlock;
 
-// UserDetail
+/// UserDetail
 - (MKNetworkOperation *)userDetailWithUserName:(NSString *)userName
-                              completionHandle:(CompletionBlock)completionBlock
+                              completionHandle:(CompletionDictionaryBlock)completionBlock
                                    errorHandle:(ErrorBlock)errorBlock;
+
+/// UserRepositories
+- (MKNetworkOperation *)userRepositoriesWithUserName:(NSString *)userName
+                                                page:(NSUInteger)page
+                                    completionHandle:(CompletionArrayBlock)completionBlock
+                                         errorHandle:(ErrorBlock)errorBlock;
+
+/// UserFollowing
+- (MKNetworkOperation *)userFollowingWithUserName:(NSString *)userName
+                                             page:(NSUInteger)page
+                                 completionHandle:(CompletionArrayBlock)completionBlock
+                                      errorHandle:(ErrorBlock)errorBlock;
+
+/// UserFollowers
+- (MKNetworkOperation *)userFollowersWithUserName:(NSString *)userName
+                                             page:(NSUInteger)page
+                                 completionHandle:(CompletionArrayBlock)completionBlock
+                                      errorHandle:(ErrorBlock)errorBlock;
 
 @end

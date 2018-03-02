@@ -43,6 +43,8 @@
 		9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */; };
+		9F5970362048F08900CEC3CB /* TYRepositoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5970352048F08900CEC3CB /* TYRepositoriesCell.m */; };
+		9F59703A2048FA7400CEC3CB /* TYRepositoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5970392048FA7400CEC3CB /* TYRepositoriesModel.m */; };
 		9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9C2027FAED008CA739 /* UIView+frame.m */; };
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
 		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
@@ -51,7 +53,6 @@
 		9FBAD51D2046451D00F54F17 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FBAD566204690BB00F54F17 /* TYUsersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD565204690BB00F54F17 /* TYUsersController.m */; };
 		9FBAD56E204691B000F54F17 /* TYUsersViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */; };
-		9FBAD5712046920500F54F17 /* TYUsersItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */; };
 		9FBAD5752046940400F54F17 /* TYUsersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD5742046940400F54F17 /* TYUsersCell.m */; };
 		9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DA21FF510690032418D /* AppDelegate.m */; };
 		9FBF5DAB1FF510690032418D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBF5DAA1FF510690032418D /* Assets.xcassets */; };
@@ -171,6 +172,10 @@
 		9F3B5C9E1FFF42C800A8FACD /* TYReposController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYReposController.h; sourceTree = "<group>"; };
 		9F3B5C9F1FFF42C800A8FACD /* TYReposController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYReposController.m; sourceTree = "<group>"; };
 		9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9F5970342048F08900CEC3CB /* TYRepositoriesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRepositoriesCell.h; sourceTree = "<group>"; };
+		9F5970352048F08900CEC3CB /* TYRepositoriesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRepositoriesCell.m; sourceTree = "<group>"; };
+		9F5970382048FA7400CEC3CB /* TYRepositoriesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRepositoriesModel.h; sourceTree = "<group>"; };
+		9F5970392048FA7400CEC3CB /* TYRepositoriesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRepositoriesModel.m; sourceTree = "<group>"; };
 		9F5FAF9B2027FAED008CA739 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		9F5FAF9C2027FAED008CA739 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
 		9F5FAF9E2027FCB6008CA739 /* UIImage+TYOcticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYOcticons.h"; sourceTree = "<group>"; };
@@ -188,8 +193,6 @@
 		9FBAD565204690BB00F54F17 /* TYUsersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersController.m; sourceTree = "<group>"; };
 		9FBAD56C204691B000F54F17 /* TYUsersViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersViewModel.h; sourceTree = "<group>"; };
 		9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersViewModel.m; sourceTree = "<group>"; };
-		9FBAD56F2046920500F54F17 /* TYUsersItemViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersItemViewModel.h; sourceTree = "<group>"; };
-		9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersItemViewModel.m; sourceTree = "<group>"; };
 		9FBAD5732046940400F54F17 /* TYUsersCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUsersCell.h; sourceTree = "<group>"; };
 		9FBAD5742046940400F54F17 /* TYUsersCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUsersCell.m; sourceTree = "<group>"; };
 		9FBF5D9E1FF510690032418D /* GitPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,6 +486,24 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		9F5970332048F02500CEC3CB /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F5970342048F08900CEC3CB /* TYRepositoriesCell.h */,
+				9F5970352048F08900CEC3CB /* TYRepositoriesCell.m */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		9F5970372048FA4100CEC3CB /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				9F5970382048FA7400CEC3CB /* TYRepositoriesModel.h */,
+				9F5970392048FA7400CEC3CB /* TYRepositoriesModel.m */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		9F7C352120454BC5009AAC8A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,8 +555,6 @@
 				9FE062212047D3F800D231D2 /* UserDetail */,
 				9FBAD56C204691B000F54F17 /* TYUsersViewModel.h */,
 				9FBAD56D204691B000F54F17 /* TYUsersViewModel.m */,
-				9FBAD56F2046920500F54F17 /* TYUsersItemViewModel.h */,
-				9FBAD5702046920500F54F17 /* TYUsersItemViewModel.m */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -543,6 +562,7 @@
 		9FBAD572204693E400F54F17 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				9F5970332048F02500CEC3CB /* UserDetail */,
 				9FBAD5732046940400F54F17 /* TYUsersCell.h */,
 				9FBAD5742046940400F54F17 /* TYUsersCell.m */,
 			);
@@ -766,6 +786,7 @@
 		9FE062292047F66E00D231D2 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				9F5970372048FA4100CEC3CB /* Tabs */,
 				9FE0622A2047F69700D231D2 /* TYUserDetailModel.h */,
 				9FE0622B2047F69700D231D2 /* TYUserDetailModel.m */,
 			);
@@ -1137,13 +1158,13 @@
 				9FE062242047D41E00D231D2 /* TYUserDetailViewModel.m in Sources */,
 				718631E82044570C009D3805 /* TYNewsItemViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
+				9F5970362048F08900CEC3CB /* TYRepositoriesCell.m in Sources */,
 				71E0A8CF2046EA63003B6869 /* TYNetworkEngine.m in Sources */,
 				9FE0622C2047F69700D231D2 /* TYUserDetailModel.m in Sources */,
 				9FF844992015B42A00FF4DCF /* TYLoginController.m in Sources */,
 				9F0DC0302021B3D200A64050 /* TYReposViewModel.m in Sources */,
 				9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */,
 				9FE062282047D54F00D231D2 /* TYUserDetailController.m in Sources */,
-				9FBAD5712046920500F54F17 /* TYUsersItemViewModel.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FBAD566204690BB00F54F17 /* TYUsersController.m in Sources */,
@@ -1152,6 +1173,7 @@
 				9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */,
 				9F2023D620297A79008A7706 /* UILabel+text.m in Sources */,
 				9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */,
+				9F59703A2048FA7400CEC3CB /* TYRepositoriesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

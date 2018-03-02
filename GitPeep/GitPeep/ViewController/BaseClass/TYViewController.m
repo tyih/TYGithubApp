@@ -53,7 +53,7 @@
 }
 
 - (void)bindViewModel {
-    
+
     RAC(self.navigationItem, title) = RACObserve(self, viewModel.title);
     
     UIView *titleView = self.navigationItem.titleView;

@@ -8,11 +8,11 @@
 
 #import "TYUsersCell.h"
 
-#import "TYUsersItemViewModel.h"
+#import "TYUsersItemModel.h"
 
 @interface TYUsersCell ()
 
-@property (nonatomic, strong) TYUsersItemViewModel *viewModel;
+@property (nonatomic, strong) TYUsersItemModel *model;
 
 @property (nonatomic, assign) NSInteger row;
 
@@ -50,19 +50,19 @@
             return row.stringValue;
         }];
         
-        RAC(nameLabel, text) = [RACObserve(self, viewModel.model.login) map:^id(NSString *name) {
+        RAC(nameLabel, text) = [RACObserve(self, model.login) map:^id(NSString *name) {
             return name;
         }];
     }
     return self;
 }
 
-- (void)bindViewModel:(TYUsersItemViewModel *)viewModel withIndexPath:(NSIndexPath *)indexPath {
+- (void)setModel:(TYUsersItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
     
-    self.viewModel = viewModel;
+    self.model = model;
     self.row = indexPath.row + 1;
     
-    [self.avatarImgView sd_setImageWithURL:[NSURL URLWithString:viewModel.model.avatar_url]];
+    [self.avatarImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar_url]];
 }
 
 @end

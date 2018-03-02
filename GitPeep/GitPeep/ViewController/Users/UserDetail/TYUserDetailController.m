@@ -9,25 +9,27 @@
 #import "TYUserDetailController.h"
 
 #import "TYUserDetailViewModel.h"
+#import "TYRepositoriesCell.h"
+#import "TYRepositoriesModel.h"
+#import "TYUsersCell.h"
 
 @interface TYUserDetailController ()
 
 @property (nonatomic, weak) UIImageView *avatarImgView;
-
 @property (nonatomic, weak) UILabel *timeLabel;
-
 @property (nonatomic, weak) UILabel *loginLabel;
-
 @property (nonatomic, weak) UILabel *nameLabel;
-
 @property (nonatomic, weak) UILabel *linkLabel;
-
 @property (nonatomic, weak) UILabel *locationLabel;
 
 @property (nonatomic, weak) UIButton *repoButton;
 @property (nonatomic, weak) UIButton *followingButton;
 @property (nonatomic, weak) UIButton *followerButton;
 @property (nonatomic, weak) UIButton *preButton;
+
+@property (nonatomic, weak) UILabel *repoLabel;
+@property (nonatomic, weak) UILabel *followingLabel;
+@property (nonatomic, weak) UILabel *followerLabel;
 
 @property (nonatomic, strong, readonly) TYUserDetailViewModel *viewModel;
 
@@ -79,27 +81,35 @@
     CGFloat itemH = 60;
     UIView *buttonsView = [[UIView alloc] initWithFrame:CGRectMake(0, headerView.height-itemH, SCREEN_WIDTH, itemH)];
     
-    UIButton *repoButton = [self buttonWithTitle:@"Repositories" number:18 rect:CGRectMake(0, 0, itemW, itemH)];
+    UIButton *repoButton = [self buttonWithTitle:@"Repositories" number:0 rect:CGRectMake(0, 0, itemW, itemH)];
+    repoButton.tag = UserDetailChooseTypeRepositories;
     [buttonsView addSubview:repoButton];
     self.repoButton = repoButton;
+    self.repoLabel = [repoButton viewWithTag:100];
     
-    UIButton *followingButton = [self buttonWithTitle:@"Following" number:48 rect:CGRectMake(itemW, 0, itemW, itemH)];
+    UIButton *followingButton = [self buttonWithTitle:@"Following" number:0 rect:CGRectMake(itemW, 0, itemW, itemH)];
+    followingButton.tag = UserDetailChooseTypeFollowing;
     [buttonsView addSubview:followingButton];
     self.followingButton = followingButton;
+    self.followingLabel = [followingButton viewWithTag:100];
     
-    UIButton *followerButton = [self buttonWithTitle:@"Follower" number:28 rect:CGRectMake(itemW*2, 0, itemW, itemH)];
+    UIButton *followerButton = [self buttonWithTitle:@"Follower" number:0 rect:CGRectMake(itemW*2, 0, itemW, itemH)];
+    followerButton.tag = UserDetailChooseTypeFollower;
     [buttonsView addSubview:followerButton];
     self.followerButton = followerButton;
+    self.followerLabel = [followerButton viewWithTag:100];
     
     // 默认选中 repoButton
     repoButton.selected = YES;
     self.preButton = repoButton;
     [self setButtonItemsColor:repoButton];
+    self.viewModel.chooseType = UserDetailChooseTypeRepositories;
     
     [headerView addSubview:buttonsView];
     
     self.tableView.tableHeaderView = headerView;
     
+    // 请求userDetail
     @weakify(self);
     [[self.viewModel.requestUserDetailCommand execute:nil] subscribeNext:^(TYUserDetailModel *model) {
         @strongify(self);
@@ -136,6 +146,10 @@
         [self setButtonItemsColor:button];
         
         self.preButton = button;
+        
+        UserDetailChooseType chooseType = button.tag;
+        self.viewModel.chooseType = chooseType;
+        [self refresh];
     }];
     
     return button;
@@ -182,6 +196,73 @@
     RAC(self, locationLabel.text) = [RACObserve(self, detailModel.location) map:^id(NSString *location) {
         return location;
     }];
+    
+    RAC(self, repoLabel.text) = [RACObserve(self, detailModel.public_repos) map:^id(NSNumber *number) {
+        
+        return number.stringValue;
+    }];
+    
+    RAC(self, followingLabel.text) = [RACObserve(self, detailModel.following) map:^id(NSNumber *number) {
+        
+        return number.stringValue;
+    }];
+    
+    RAC(self, followerLabel.text) = [RACObserve(self, detailModel.followers) map:^id(NSNumber *number) {
+        
+        return number.stringValue;
+    }];
+}
+
+#pragma mark - tableview
+
+- (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (self.viewModel.chooseType) {
+        case UserDetailChooseTypeRepositories: {
+            TYRepositoriesCell *repoCell = [tableView dequeueReusableCellWithIdentifier:@"repoCell"];
+            if (repoCell == nil) {
+                repoCell = [[TYRepositoriesCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"repoCell"];
+            }
+            return repoCell;
+        }
+        case UserDetailChooseTypeFollowing: {
+            TYUsersCell *followingCell = [tableView dequeueReusableCellWithIdentifier:@"followingCell"];
+            if (followingCell == nil) {
+                followingCell = [[TYUsersCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"followingCell"];
+            }
+            return followingCell;
+        }
+        case UserDetailChooseTypeFollower: {
+            TYUsersCell *followerCell = [tableView dequeueReusableCellWithIdentifier:@"followerCell"];
+            if (followerCell == nil) {
+                followerCell = [[TYUsersCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"followerCell"];
+            }
+            return followerCell;
+        }
+    }
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(TYRepositoriesModel *)object {
+    
+    if ([cell isKindOfClass:[TYRepositoriesCell class]]) {
+        
+        [(TYRepositoriesCell *)cell setModel:object withIndexPath:indexPath];
+    } else if ([cell isKindOfClass:[TYUsersCell class]]) {
+        
+        [(TYUsersCell *)cell setModel:object withIndexPath:indexPath];
+    }
+}
+
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (self.viewModel.chooseType) {
+        case UserDetailChooseTypeRepositories:
+            return 140;
+        case UserDetailChooseTypeFollowing:
+            return 80;
+        case UserDetailChooseTypeFollower:
+            return 80;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

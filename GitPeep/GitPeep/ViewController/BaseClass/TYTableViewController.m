@@ -68,14 +68,16 @@
 - (void)requestRemoteData {
     
     @weakify(self);
-    RACSignal *signal = [self.viewModel.requestRemoteDataCommand execute:nil];
-    [signal subscribeNext:^(id x) {
+    [[self.viewModel.requestRemoteDataCommand execute:nil] subscribeNext:^(id x) {
         
         @strongify(self);
         self.viewModel.dataArray = x;
-        [self.tableView reloadData];
+        [self.tableView reloadData];        
+    } completed:^{
+        
         [self.tableView.mj_header endRefreshing];
     }];
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {

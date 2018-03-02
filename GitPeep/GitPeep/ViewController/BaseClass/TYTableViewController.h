@@ -18,11 +18,13 @@
 /// 请求数据、刷新
 - (void)refresh;
 
-/// 用于子类重写
+/// 子类重写-自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath;
 
+/// 子类重写-cell数据设置
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 
+/// 子类重写-cell高度
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -10,7 +10,15 @@
 
 #import "TYUserDetailModel.h"
 
+typedef NS_ENUM(NSUInteger, UserDetailChooseType) {
+    UserDetailChooseTypeRepositories = 200,
+    UserDetailChooseTypeFollowing,
+    UserDetailChooseTypeFollower
+};
+
 @interface TYUserDetailViewModel : TYTableViewModel
+
+@property (nonatomic, assign) UserDetailChooseType chooseType;
 
 // userDetail请求
 @property (nonatomic, strong, readonly) RACCommand *requestUserDetailCommand;

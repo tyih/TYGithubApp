@@ -73,6 +73,7 @@
             topViewController.snapshot = [[self.navigationControllers.lastObject view] snapshotViewAfterScreenUpdates:NO];
         }
         TYViewController *viewController = [[TYRouter sharedInstance] viewControllerForViewModel:x.first];
+        viewController.hidesBottomBarWhenPushed = YES;
         [self.navigationControllers.lastObject pushViewController:viewController animated:[x.second boolValue]];
     }];
     
