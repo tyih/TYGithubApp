@@ -10,7 +10,7 @@
 
 //#import "TYNewsViewModel.h"
 #import "TYUsersViewModel.h"
-#import "TYReposViewModel.h"
+#import "TYRepositoriesViewModel.h"
 #import "TYExploreViewModel.h"
 #import "TYProfileViewModel.h"
 
@@ -19,7 +19,7 @@
 //@property (nonatomic, strong, readonly) TYNewsViewModel *newsViewModel;
 @property (nonatomic, strong, readonly) TYUsersViewModel *usersViewModel;
 
-@property (nonatomic, strong, readonly) TYReposViewModel *reposViewModel;
+@property (nonatomic, strong, readonly) TYRepositoriesViewModel *reposViewModel;
 
 @property (nonatomic, strong, readonly) TYExploreViewModel *exploreViewModel;
 

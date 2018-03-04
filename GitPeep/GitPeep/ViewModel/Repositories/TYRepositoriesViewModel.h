@@ -1,13 +1,13 @@
 //
-//  TYReposViewModel.h
+//  TYRepositoriesViewModel.h
 //  GitPeep
 //
 //  Created by IGEN-TECH on 2018/1/31.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYViewModel.h"
+#import "TYTableViewModel.h"
 
-@interface TYReposViewModel : TYViewModel
+@interface TYRepositoriesViewModel : TYTableViewModel
 
 @end

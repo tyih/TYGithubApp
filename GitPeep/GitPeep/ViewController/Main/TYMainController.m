@@ -11,7 +11,7 @@
 #import "TYMainViewModel.h"
 //#import "TYNewsController.h"
 #import "TYUsersController.h"
-#import "TYReposController.h"
+#import "TYRepositoriesController.h"
 #import "TYExploreController.h"
 #import "TYProfileController.h"
 #import "TYNavigationControllerStack.h"
@@ -69,7 +69,7 @@
     });
     
     UINavigationController *reposNavCtrl = ({
-        TYReposController *reposCtrl = [[TYReposController alloc] initWithViewModel:self.viewModel.reposViewModel];
+        TYRepositoriesController *reposCtrl = [[TYRepositoriesController alloc] initWithViewModel:self.viewModel.reposViewModel];
         UIImage *reposImage = [UIImage octicon_imageWithIcon:@"Repo"
                                            backgroundColor:[UIColor clearColor]
                                                  iconColor:[UIColor lightGrayColor]

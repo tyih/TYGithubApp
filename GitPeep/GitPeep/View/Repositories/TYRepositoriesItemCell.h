@@ -1,8 +1,8 @@
 //
-//  TYRepositoriesCell.h
+//  TYRepositoriesItemCell.h
 //  GitPeep
 //
-//  Created by IGEN-TECH on 2018/3/2.
+//  Created by tiany on 2018/3/3.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
@@ -10,7 +10,6 @@
 
 #import "TYReactiveView.h"
 
-@interface TYRepositoriesCell : UITableViewCell <TYReactiveView>
-
+@interface TYRepositoriesItemCell : UITableViewCell <TYReactiveView>
 
 @end

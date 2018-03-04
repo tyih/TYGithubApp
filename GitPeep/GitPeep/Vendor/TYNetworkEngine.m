@@ -37,7 +37,7 @@ static TYNetworkEngine *sharedObj = nil; // 静态实例，并初始化
 }
 
 
-/// Search Users
+/// SearchUsers
 - (MKNetworkOperation *)searchUsersWithPage:(NSUInteger)page
                                           q:(NSString *)q
                                        sort:(NSString *)sort
@@ -134,6 +134,75 @@ static TYNetworkEngine *sharedObj = nil; // 静态实例，并初始化
                                       errorHandle:(ErrorBlock)errorBlock {
     
     NSString *path = [NSString stringWithFormat:@"users/%@/followers?page=%ld", userName, page];
+    MKNetworkOperation *operation = [self operationWithPath:path params:nil httpMethod:@"GET" ssl:YES];
+    [operation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        if ([[completedOperation responseJSON] isKindOfClass:[NSArray class]]) {
+            NSArray *resultArray = [completedOperation responseJSON];
+            completionBlock(resultArray);
+        }
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        
+        errorBlock(error);
+    }];
+    [self enqueueOperation:operation];
+    return operation;
+}
+
+/// SearchRepositories
+- (MKNetworkOperation *)searchRepositoriesWithPage:(NSUInteger)page
+                                                 q:(NSString *)q
+                                              sort:(NSString *)sort
+                                  completionHandle:(CompletionDictionaryBlock)completionBlock
+                                       errorHandle:(ErrorBlock)errorBlock {
+    
+    NSString *path = [NSString stringWithFormat:@"search/repositories?q=%@&sort=%@&page=%ld", q, sort, page];
+    MKNetworkOperation *operation = [self operationWithPath:path params:nil httpMethod:@"GET" ssl:YES];
+    [operation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        if ([[completedOperation responseJSON] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultDictionary = [completedOperation responseJSON];
+            completionBlock(resultDictionary);
+        }
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        
+        errorBlock(error);
+    }];
+    [self enqueueOperation:operation];
+    return operation;
+}
+
+/// RepositoryDetail
+- (MKNetworkOperation *)repositoryDetailWithUserName:(NSString *)userName
+                                      repositoryName:(NSString *)repositoryName
+                                    completionHandle:(CompletionDictionaryBlock)completionBlock
+                                         errorHandle:(ErrorBlock)errorBlock {
+    
+    NSString *path = [NSString stringWithFormat:@"repos/%@/%@", userName, repositoryName];
+    MKNetworkOperation *operation = [self operationWithPath:path params:nil httpMethod:@"GET" ssl:YES];
+    [operation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        
+        if ([[completedOperation responseJSON] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *resultDictionary = [completedOperation responseJSON];
+            completionBlock(resultDictionary);
+        }
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        
+        errorBlock(error);
+    }];
+    [self enqueueOperation:operation];
+    return operation;
+}
+
+/// RepositoryCategory
+- (MKNetworkOperation *)reposDetailCategoryWithUserName:(NSString *)userName
+                                                   page:(NSUInteger)page
+                                         repositoryName:(NSString *)repositoryName
+                                               category:(NSString *)category
+                                       completionHandle:(CompletionArrayBlock)completionBlock
+                                            errorHandle:(ErrorBlock)errorBlock {
+    
+    NSString *path = [NSString stringWithFormat:@"repos/%@/%@/%@?page=%ld", userName, repositoryName, category, page];
     MKNetworkOperation *operation = [self operationWithPath:path params:nil httpMethod:@"GET" ssl:YES];
     [operation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         

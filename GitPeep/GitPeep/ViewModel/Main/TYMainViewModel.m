@@ -13,7 +13,7 @@
 //@property (nonatomic, strong, readwrite) TYNewsViewModel *newsViewModel;
 @property (nonatomic, strong, readwrite) TYUsersViewModel *usersViewModel;
 
-@property (nonatomic, strong, readwrite) TYReposViewModel *reposViewModel;
+@property (nonatomic, strong, readwrite) TYRepositoriesViewModel *reposViewModel;
 
 @property (nonatomic, strong, readwrite) TYExploreViewModel *exploreViewModel;
 
@@ -31,7 +31,7 @@
 //    self.newsViewModel = [[TYNewsViewModel alloc] initWithServices:self.services params:@{@"title" : @"News"}];
     self.usersViewModel = [[TYUsersViewModel alloc] initWithServices:self.services params:@{@"title" : @"Users"}];
     
-    self.reposViewModel = [[TYReposViewModel alloc] initWithServices:self.services params:@{@"title" : @"Repositories"}];
+    self.reposViewModel = [[TYRepositoriesViewModel alloc] initWithServices:self.services params:@{@"title" : @"Repositories"}];
     
     self.exploreViewModel = [[TYExploreViewModel alloc] initWithServices:self.services params:@{@"title" : @"Explore"}];
     

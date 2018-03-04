@@ -1,24 +1,24 @@
 //
-//  TYRepositoriesCell.m
+//  TYDetailReposItemCell.m
 //  GitPeep
 //
 //  Created by IGEN-TECH on 2018/3/2.
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYRepositoriesCell.h"
+#import "TYDetailReposItemCell.h"
 
-#import "TYRepositoriesModel.h"
+#import "TYRepositoriesItemModel.h"
 
-@interface TYRepositoriesCell ()
+@interface TYDetailReposItemCell ()
 
-@property (nonatomic, strong) TYRepositoriesModel *model;
+@property (nonatomic, strong) TYRepositoriesItemModel *model;
 
 @property (nonatomic, assign) NSInteger row;
 
 @end
 
-@implementation TYRepositoriesCell
+@implementation TYDetailReposItemCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -54,7 +54,7 @@
         }];
         
         RAC(languageLabel, text) = [RACObserve(self, model.language) map:^id(NSString *language) {
-            return [NSString stringWithFormat:@"language: %@", language];
+            return [NSString stringWithFormat:@"language: %@", language == nil ? @"" : language];
         }];
         
         RAC(detailLabel, text) = [RACObserve(self, model.characterization) map:^id(NSString *characterization) {
@@ -66,7 +66,7 @@
     return self;
 }
 
-- (void)setModel:(TYRepositoriesModel *)model withIndexPath:(NSIndexPath *)indexPath {
+- (void)setModel:(TYRepositoriesItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
     
     self.model = model;
     self.row = indexPath.row;

@@ -28,6 +28,12 @@ typedef int  (^IntBlock_id) (id);
 typedef BOOL (^BoolBlock_id)(id);
 typedef id   (^IdBlock_id)  (id);
 
+typedef NS_ENUM(NSUInteger, TYTabButtonsType) {
+    TYTabButtonsTypeFirst = 200,
+    TYTabButtonsTypeSecond,
+    TYTabButtonsTypeThird
+};
+
 @interface TYConstant : NSObject
 
 @end

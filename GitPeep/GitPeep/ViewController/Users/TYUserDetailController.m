@@ -9,9 +9,10 @@
 #import "TYUserDetailController.h"
 
 #import "TYUserDetailViewModel.h"
-#import "TYRepositoriesCell.h"
-#import "TYRepositoriesModel.h"
+#import "TYDetailReposItemCell.h"
+#import "TYRepositoriesItemModel.h"
 #import "TYUsersCell.h"
+#import "TYTabButtonsView.h"
 
 @interface TYUserDetailController ()
 
@@ -22,14 +23,7 @@
 @property (nonatomic, weak) UILabel *linkLabel;
 @property (nonatomic, weak) UILabel *locationLabel;
 
-@property (nonatomic, weak) UIButton *repoButton;
-@property (nonatomic, weak) UIButton *followingButton;
-@property (nonatomic, weak) UIButton *followerButton;
-@property (nonatomic, weak) UIButton *preButton;
-
-@property (nonatomic, weak) UILabel *repoLabel;
-@property (nonatomic, weak) UILabel *followingLabel;
-@property (nonatomic, weak) UILabel *followerLabel;
+@property (nonatomic, weak) TYTabButtonsView *buttonsView;
 
 @property (nonatomic, strong, readonly) TYUserDetailViewModel *viewModel;
 
@@ -43,6 +37,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // headerView
+    UIView *headerView = [self userDetailHeaderView];
+    self.tableView.tableHeaderView = headerView;
+}
+
+- (UIView *)userDetailHeaderView {
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
     headerView.backgroundColor = [UIColor whiteColor];
@@ -76,106 +77,29 @@
     [headerView addSubview:locationLabel];
     self.locationLabel = locationLabel;
     
-    // 按钮选项
-    CGFloat itemW = SCREEN_WIDTH / 3;
-    CGFloat itemH = 60;
-    UIView *buttonsView = [[UIView alloc] initWithFrame:CGRectMake(0, headerView.height-itemH, SCREEN_WIDTH, itemH)];
-    
-    UIButton *repoButton = [self buttonWithTitle:@"Repositories" number:0 rect:CGRectMake(0, 0, itemW, itemH)];
-    repoButton.tag = UserDetailChooseTypeRepositories;
-    [buttonsView addSubview:repoButton];
-    self.repoButton = repoButton;
-    self.repoLabel = [repoButton viewWithTag:100];
-    
-    UIButton *followingButton = [self buttonWithTitle:@"Following" number:0 rect:CGRectMake(itemW, 0, itemW, itemH)];
-    followingButton.tag = UserDetailChooseTypeFollowing;
-    [buttonsView addSubview:followingButton];
-    self.followingButton = followingButton;
-    self.followingLabel = [followingButton viewWithTag:100];
-    
-    UIButton *followerButton = [self buttonWithTitle:@"Follower" number:0 rect:CGRectMake(itemW*2, 0, itemW, itemH)];
-    followerButton.tag = UserDetailChooseTypeFollower;
-    [buttonsView addSubview:followerButton];
-    self.followerButton = followerButton;
-    self.followerLabel = [followerButton viewWithTag:100];
-    
-    // 默认选中 repoButton
-    repoButton.selected = YES;
-    self.preButton = repoButton;
-    [self setButtonItemsColor:repoButton];
-    self.viewModel.chooseType = UserDetailChooseTypeRepositories;
-    
+    TYTabButtonsView *buttonsView = [[TYTabButtonsView alloc] initWithTitlesFirst:@"Repositories" second:@"Following" third:@"Follower" frame:CGRectMake(0, headerView.height-60, SCREEN_WIDTH, 60)];
     [headerView addSubview:buttonsView];
-    
-    self.tableView.tableHeaderView = headerView;
+    self.buttonsView = buttonsView;
     
     // 请求userDetail
     @weakify(self);
     [[self.viewModel.requestUserDetailCommand execute:nil] subscribeNext:^(TYUserDetailModel *model) {
         @strongify(self);
         
-        [avatarImgView sd_setImageWithURL:[NSURL URLWithString:model.avatar_url]];
         self.detailModel = model;
     }];
-
-}
-
-- (UIButton *)buttonWithTitle:(NSString *)title number:(NSInteger)number rect:(CGRect)rect {
     
-    UIButton *button = [[UIButton alloc] initWithFrame:rect];
-    UILabel *numLabel = [UILabel labelWithText:[NSString stringWithFormat:@"%ld", number] frame:CGRectMake(0, 0, rect.size.width, rect.size.height*0.5) font:BoldSystemFont(15.f) color:[UIColor blackColor] alignment:NSTextAlignmentCenter];
-    numLabel.tag = 100;
-    UILabel *nameLabel = [UILabel labelWithText:title frame:CGRectMake(0, numLabel.bottom, rect.size.width, rect.size.height*0.5) font:BoldSystemFont(15.f) color:[UIColor blackColor] alignment:NSTextAlignmentCenter];
-    nameLabel.tag = 101;
-    [button addSubview:numLabel];
-    [button addSubview:nameLabel];
-    
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(30, button.height-3, rect.size.width-60, 3)];
-    line.backgroundColor = HexRGB(colorA1);
-    line.tag = 102;
-    line.hidden = YES;
-    [button addSubview:line];
-    
-    @weakify(self);
-    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *button) {
-        @strongify(self);
-        self.preButton.selected = NO;
-        [self setButtonItemsColor:self.preButton];
-        
-        button.selected = YES;
-        [self setButtonItemsColor:button];
-        
-        self.preButton = button;
-        
-        UserDetailChooseType chooseType = button.tag;
-        self.viewModel.chooseType = chooseType;
-        [self refresh];
-    }];
-    
-    return button;
-}
-
-- (void)setButtonItemsColor:(UIButton *)button {
-    
-    UILabel *numLabel = [button viewWithTag:100];
-    UILabel *nameLabel = [button viewWithTag:101];
-    UIView *line = [button viewWithTag:102];
-    
-    if (button.selected) {
-        
-        numLabel.textColor = [UIColor redColor];
-        nameLabel.textColor = [UIColor redColor];
-        line.hidden = NO;
-    } else {
-        
-        numLabel.textColor = [UIColor blackColor];
-        nameLabel.textColor = [UIColor blackColor];
-        line.hidden = YES;
-    }
+    return headerView;
 }
 
 - (void)bindViewModel {
     [super bindViewModel];
+    
+    @weakify(self);
+    [RACObserve(self, detailModel.avatar_url) subscribeNext:^(NSString *avatarUrl) {
+        @strongify(self);
+        [self.avatarImgView sd_setImageWithURL:[NSURL URLWithString:avatarUrl]];
+    }];
     
     RAC(self, loginLabel.text) = [RACObserve(self, detailModel.login) map:^id(NSString *login) {
         return login;
@@ -197,19 +121,26 @@
         return location;
     }];
     
-    RAC(self, repoLabel.text) = [RACObserve(self, detailModel.public_repos) map:^id(NSNumber *number) {
+    RAC(self, buttonsView.firstLabel.text) = [RACObserve(self, detailModel.public_repos) map:^id(NSNumber *number) {
         
         return number.stringValue;
     }];
     
-    RAC(self, followingLabel.text) = [RACObserve(self, detailModel.following) map:^id(NSNumber *number) {
+    RAC(self, buttonsView.secondLabel.text) = [RACObserve(self, detailModel.following) map:^id(NSNumber *number) {
         
         return number.stringValue;
     }];
     
-    RAC(self, followerLabel.text) = [RACObserve(self, detailModel.followers) map:^id(NSNumber *number) {
+    RAC(self, buttonsView.thirdLabel.text) = [RACObserve(self, detailModel.followers) map:^id(NSNumber *number) {
         
         return number.stringValue;
+    }];
+    
+    RAC(self, viewModel.chooseType) = [RACObserve(self, buttonsView.chooseType) map:^id(NSNumber *number) {
+        @strongify(self);
+        
+        [self refresh];
+        return number;
     }];
 }
 
@@ -218,21 +149,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     
     switch (self.viewModel.chooseType) {
-        case UserDetailChooseTypeRepositories: {
-            TYRepositoriesCell *repoCell = [tableView dequeueReusableCellWithIdentifier:@"repoCell"];
+        case TYTabButtonsTypeFirst: {
+            TYDetailReposItemCell *repoCell = [tableView dequeueReusableCellWithIdentifier:@"repoCell"];
             if (repoCell == nil) {
-                repoCell = [[TYRepositoriesCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"repoCell"];
+                repoCell = [[TYDetailReposItemCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"repoCell"];
             }
             return repoCell;
         }
-        case UserDetailChooseTypeFollowing: {
+        case TYTabButtonsTypeSecond: {
             TYUsersCell *followingCell = [tableView dequeueReusableCellWithIdentifier:@"followingCell"];
             if (followingCell == nil) {
                 followingCell = [[TYUsersCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"followingCell"];
             }
             return followingCell;
         }
-        case UserDetailChooseTypeFollower: {
+        case TYTabButtonsTypeThird: {
             TYUsersCell *followerCell = [tableView dequeueReusableCellWithIdentifier:@"followerCell"];
             if (followerCell == nil) {
                 followerCell = [[TYUsersCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"followerCell"];
@@ -242,11 +173,11 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(TYRepositoriesModel *)object {
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     
-    if ([cell isKindOfClass:[TYRepositoriesCell class]]) {
+    if ([cell isKindOfClass:[TYDetailReposItemCell class]]) {
         
-        [(TYRepositoriesCell *)cell setModel:object withIndexPath:indexPath];
+        [(TYDetailReposItemCell *)cell setModel:object withIndexPath:indexPath];
     } else if ([cell isKindOfClass:[TYUsersCell class]]) {
         
         [(TYUsersCell *)cell setModel:object withIndexPath:indexPath];
@@ -256,11 +187,11 @@
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     switch (self.viewModel.chooseType) {
-        case UserDetailChooseTypeRepositories:
+        case TYTabButtonsTypeFirst:
             return 140;
-        case UserDetailChooseTypeFollowing:
+        case TYTabButtonsTypeSecond:
             return 80;
-        case UserDetailChooseTypeFollower:
+        case TYTabButtonsTypeThird:
             return 80;
     }
 }

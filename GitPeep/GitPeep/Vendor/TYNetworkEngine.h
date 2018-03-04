@@ -18,7 +18,7 @@ typedef void(^ErrorBlock)(NSError *error);
 
 + (instancetype)sharedInstance;
 
-/// Search Users
+/// SearchUsers
 - (MKNetworkOperation *)searchUsersWithPage:(NSUInteger)page
                                           q:(NSString *)q
                                        sort:(NSString *)sort
@@ -49,5 +49,26 @@ typedef void(^ErrorBlock)(NSError *error);
                                              page:(NSUInteger)page
                                  completionHandle:(CompletionArrayBlock)completionBlock
                                       errorHandle:(ErrorBlock)errorBlock;
+
+/// SearchRepositories
+- (MKNetworkOperation *)searchRepositoriesWithPage:(NSUInteger)page
+                                                 q:(NSString *)q
+                                              sort:(NSString *)sort
+                                  completionHandle:(CompletionDictionaryBlock)completionBlock
+                                       errorHandle:(ErrorBlock)errorBlock;
+
+/// RepositoryDetail
+- (MKNetworkOperation *)repositoryDetailWithUserName:(NSString *)userName
+                                      repositoryName:(NSString *)repositoryName
+                                    completionHandle:(CompletionDictionaryBlock)completionBlock
+                                         errorHandle:(ErrorBlock)errorBlock;
+
+/// RepositoryCategory
+- (MKNetworkOperation *)reposDetailCategoryWithUserName:(NSString *)userName
+                                                   page:(NSUInteger)page
+                                         repositoryName:(NSString *)repositoryName
+                                               category:(NSString *)category
+                                       completionHandle:(CompletionArrayBlock)completionBlock
+                                            errorHandle:(ErrorBlock)errorBlock;
 
 @end

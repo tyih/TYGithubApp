@@ -8,8 +8,9 @@
 
 #import "TYUserDetailViewModel.h"
 
-#import "TYRepositoriesModel.h"
+#import "TYRepositoriesItemModel.h"
 #import "TYUsersItemModel.h"
+#import "TYRepositoriesDetailViewModel.h"
 
 @interface TYUserDetailViewModel ()
 
@@ -33,15 +34,16 @@
         @strongify(self);
         
         switch (self.chooseType) {
-            case UserDetailChooseTypeRepositories: {
-                
+            case TYTabButtonsTypeFirst: {
+                TYRepositoriesItemModel *model = self.dataArray[indexPath.row];
+                [self.services pushViewModel:[[TYRepositoriesDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"RepositoriesDetail", @"login" : model.owner.login, @"repositoryName" : model.name}] animated:YES];
             }
                 break;
-            case UserDetailChooseTypeFollowing: {
+            case TYTabButtonsTypeSecond: {
                 TYUsersItemModel *model = self.dataArray[indexPath.row];
                 [self.services pushViewModel:[[TYUserDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"UserDetail", @"login" : model.login}] animated:YES];}
                 break;
-            case UserDetailChooseTypeFollower: {
+            case TYTabButtonsTypeThird: {
                 TYUsersItemModel *model = self.dataArray[indexPath.row];
                 [self.services pushViewModel:[[TYUserDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"UserDetail", @"login" : model.login}] animated:YES];}
                 break;
@@ -82,11 +84,11 @@
         NSMutableArray *modelArray = [NSMutableArray array];
         
         switch (self.chooseType) {
-            case UserDetailChooseTypeRepositories: {
+            case TYTabButtonsTypeFirst: {
                 [[TYNetworkEngine sharedInstance] userRepositoriesWithUserName:self.params[@"login"] page:page completionHandle:^(NSArray *responseArray) {
                     
                     for (NSDictionary *dic in responseArray) {
-                        TYRepositoriesModel *model = [TYRepositoriesModel yy_modelWithDictionary:dic];
+                        TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
                         [modelArray addObject:model];
                     }
                     [subscriber sendNext:modelArray];
@@ -95,7 +97,7 @@
                     NSLog(@"error:%@", error)
                 }];}
                 break;
-            case UserDetailChooseTypeFollowing: {
+            case TYTabButtonsTypeSecond: {
                 [[TYNetworkEngine sharedInstance] userFollowingWithUserName:self.params[@"login"] page:page completionHandle:^(NSArray *responseArray) {
                     
                     for (NSDictionary *dic in responseArray) {
@@ -108,7 +110,7 @@
                     NSLog(@"error:%@", error)
                 }];}
                 break;
-            case UserDetailChooseTypeFollower: {
+            case TYTabButtonsTypeThird: {
                 [[TYNetworkEngine sharedInstance] userFollowersWithUserName:self.params[@"login"] page:page completionHandle:^(NSArray *responseArray) {
                     
                     for (NSDictionary *dic in responseArray) {
