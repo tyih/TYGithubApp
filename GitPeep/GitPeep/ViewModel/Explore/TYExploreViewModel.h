@@ -6,8 +6,8 @@
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYViewModel.h"
+#import "TYTableViewModel.h"
 
-@interface TYExploreViewModel : TYViewModel
+@interface TYExploreViewModel : TYTableViewModel
 
 @end

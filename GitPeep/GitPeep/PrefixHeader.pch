@@ -32,6 +32,7 @@
 #import "TYNetworkEngine.h"
 #import <YYModel.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "YYCache+TYAdditions.h"
 
 #endif
 

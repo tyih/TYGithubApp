@@ -13,6 +13,8 @@ target 'GitPeep' do
   
   pod 'YYModel'
   
+  pod 'YYCache'
+  
   pod 'SAMKeychain'
   
   pod 'OcticonsIOS', :git => 'https://github.com/jacksonh/OcticonsIOS.git', :commit => '4bd3b21'
