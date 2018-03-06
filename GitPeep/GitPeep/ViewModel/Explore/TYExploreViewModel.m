@@ -8,6 +8,14 @@
 
 #import "TYExploreViewModel.h"
 
+#import "TYRepositoriesItemModel.h"
+#import "TYExploreItemCellViewModel.h"
+#import "TYExploreCollectionViewCellViewModel.h"
+#import "TYRepositoriesViewModel.h"
+#import "TYUsersViewModel.h"
+#import "TYRepositoriesDetailViewModel.h"
+#import "TYUserDetailViewModel.h"
+
 @interface TYExploreViewModel ()
 
 @property (nonatomic, copy) NSArray *trendingRepos;
@@ -29,59 +37,52 @@
 - (void)initialize {
     [super initialize];
     
-    @weakify(self);
     self.requestTrendingReposCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        @strongify(self);
         
-        @weakify(self);
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
             
-//            [[TYNetworkEngine sharedInstance] userRepositoriesWithUserName:self.params[@"login"] page:1 completionHandle:^(NSArray *responseArray) {
-            
-                NSMutableArray *modelArray = [NSMutableArray array];
-//                for (NSDictionary *dic in responseArray) {
-                    //                TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
-                    //                [modelArray addObject:model];
-//                }
-                //            [subscriber sendNext:modelArray];
-//                [subscriber sendCompleted];
-                [[YYCache sharedCache] setObject:modelArray forKey:TYTrendingReposLanguageCacheKey];
+            [[TYNetworkEngine sharedInstance] searchRepositoriesWithPage:1 q:@"language:Objective-C" sort:@"stars" completionHandle:^(NSDictionary *responseDictionary) {
                 
-//            } errorHandle:^(NSError *error) {
-//                NSLog(@"error:%@", error)
-//            }];
+                [[YYCache sharedCache] setObject:responseDictionary[@"items"] forKey:TYTrendingReposLanguageCacheKey];
+            } errorHandle:^(NSError *error) {
+                NSLog(@"error:%@", error)
+            }];
             return nil;
         }];
         return signal;
+        
     }];
     
     self.popularReposLanguageCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        @strongify(self);
         
-        @weakify(self);
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
-
-            NSMutableArray *modelArray = [NSMutableArray array];
-            [[YYCache sharedCache] setObject:modelArray forKey:TYTrendingReposLanguageCacheKey];
+            
+            [[TYNetworkEngine sharedInstance] searchRepositoriesWithPage:1 q:@"language:PHP" sort:@"stars" completionHandle:^(NSDictionary *responseDictionary) {
+                
+                [[YYCache sharedCache] setObject:responseDictionary[@"items"] forKey:TYPopularReposLanguageCacheKey];
+            } errorHandle:^(NSError *error) {
+                NSLog(@"error:%@", error)
+            }];
             return nil;
         }];
         return signal;
+        
     }];
     
     self.popularUsersReposCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        @strongify(self);
         
-        @weakify(self);
         RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
             
-            NSMutableArray *modelArray = [NSMutableArray array];
-            [[YYCache sharedCache] setObject:modelArray forKey:TYPopularUsersReposCacheKey];
+            [[TYNetworkEngine sharedInstance] searchUsersWithPage:1 q:@"location:beijing" sort:@"followers" location:@"beijing" language:@"all languages" completionHandle:^(NSDictionary *responseDictionary) {
+                
+                [[YYCache sharedCache] setObject:responseDictionary[@"items"] forKey:TYPopularUsersReposCacheKey];
+            } errorHandle:^(NSError *error) {
+                NSLog(@"error:%@", error)
+            }];
             return nil;
         }];
         return signal;
+        
     }];
     
     self.trendingRepos = (NSArray *)[[YYCache sharedCache] objectForKey:TYTrendingReposLanguageCacheKey];
@@ -92,23 +93,119 @@
     RAC(self, popularRepos) = self.popularReposLanguageCommand.executionSignals.switchToLatest;
     RAC(self, popularUsers) = self.popularUsersReposCommand.executionSignals.switchToLatest;
     
+    @weakify(self);
+    RACCommand *didSelectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(TYExploreCollectionViewCellViewModel *viewModel) {
+        @strongify(self);
+        
+        if ([viewModel.model isKindOfClass:[TYRepositoriesItemModel class]]) {
+            
+            TYRepositoriesItemModel *model = viewModel.model;
+            [self.services pushViewModel:[[TYRepositoriesDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"RepositoriesDetail", @"login" : model.owner.login, @"repositoryName" : model.name}] animated:YES];
+        } else if ([viewModel.model isKindOfClass:[TYUsersItemModel class]]) {
+            
+            TYUsersItemModel *model = viewModel.model;
+            [self.services pushViewModel:[[TYUserDetailViewModel alloc] initWithServices:self.services params:@{@"title" : @"UserDetail", @"login" : model.login}] animated:YES];
+        }
+        
+        return [RACSignal empty];
+    }];
+    
     RAC(self, dataArray) = [RACSignal combineLatest:@[RACObserve(self, trendingRepos), RACObserve(self, popularRepos), RACObserve(self, popularUsers)] reduce:^(NSArray *trendingRepos, NSArray *popularRepos, NSArray *popularUsers) {
 
         NSMutableArray *rows = [NSMutableArray array];
         if (trendingRepos.count > 0) {
-            [rows addObject:trendingRepos];
+            
+            NSMutableArray *viewModelArray = [NSMutableArray array];
+            for (int i=0; i<20; i++) {
+                NSDictionary *dic = trendingRepos[i];
+                TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
+                TYExploreCollectionViewCellViewModel *viewModel = [[TYExploreCollectionViewCellViewModel alloc] init];
+                viewModel.model = model;
+                viewModel.avatarUrl = model.owner.avatar_url;
+                viewModel.name = model.name;
+                viewModel.didSelectCommand = didSelectCommand;
+                [viewModelArray addObject:viewModel];
+            }
+
+            TYExploreItemCellViewModel *cellViewModel = [[TYExploreItemCellViewModel alloc] init];
+            cellViewModel.title = @"Popular Repositories";
+            cellViewModel.collectionCellViewModels = viewModelArray;
+            
+            
+            cellViewModel.seeAllCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
+                
+                TYRepositoriesViewModel *viewModel = [[TYRepositoriesViewModel alloc] initWithServices:self.services params:nil];
+                [self.services pushViewModel:viewModel animated:YES];
+                
+                return [RACSignal empty];
+            }];
+            
+            [rows addObject:cellViewModel];
         } else {
-            [rows addObject:@[]];
+            [rows addObject:[[TYExploreItemCellViewModel alloc] init]];
         }
         if (popularRepos.count > 0) {
-            [rows addObject:popularRepos];
+            
+            NSMutableArray *viewModelArray = [NSMutableArray array];
+            for (int i=0; i<20; i++) {
+                NSDictionary *dic = popularRepos[i];
+                TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
+                TYExploreCollectionViewCellViewModel *viewModel = [[TYExploreCollectionViewCellViewModel alloc] init];
+                viewModel.model = model;
+                viewModel.avatarUrl = model.owner.avatar_url;
+                viewModel.name = model.name;
+                viewModel.didSelectCommand = didSelectCommand;
+                [viewModelArray addObject:viewModel];
+            }
+            
+            TYExploreItemCellViewModel *cellViewModel = [[TYExploreItemCellViewModel alloc] init];
+            cellViewModel.title = @"Popular Languages";
+            cellViewModel.collectionCellViewModels = viewModelArray;
+            
+            cellViewModel.seeAllCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
+                
+                TYRepositoriesViewModel *viewModel = [[TYRepositoriesViewModel alloc] initWithServices:self.services params:nil];
+                [self.services pushViewModel:viewModel animated:YES];
+                
+                return [RACSignal empty];
+            }];
+            
+            [rows addObject:cellViewModel];
         } else {
-            [rows addObject:@[]];
+            [rows addObject:[[TYExploreItemCellViewModel alloc] init]];
         }
         if (popularUsers.count > 0) {
-            [rows addObject:popularUsers];
+            
+            NSMutableArray *viewModelArray = [NSMutableArray array];
+            for (int i=0; i<20; i++) {
+                NSDictionary *dic = popularUsers[i];
+                TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:dic];
+                TYExploreCollectionViewCellViewModel *viewModel = [[TYExploreCollectionViewCellViewModel alloc] init];
+                viewModel.model = model;
+                viewModel.avatarUrl = model.avatar_url;
+                viewModel.name = model.login;
+                viewModel.didSelectCommand = didSelectCommand;
+                [viewModelArray addObject:viewModel];
+            }
+            
+            TYExploreItemCellViewModel *cellViewModel = [[TYExploreItemCellViewModel alloc] init];
+            cellViewModel.title = @"Popular Users";
+            cellViewModel.collectionCellViewModels = viewModelArray;
+            
+            cellViewModel.seeAllCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                @strongify(self);
+                
+                TYUsersViewModel *viewModel = [[TYUsersViewModel alloc] initWithServices:self.services params:nil];
+                [self.services pushViewModel:viewModel animated:YES];
+                
+                return [RACSignal empty];
+            }];
+            
+            [rows addObject:cellViewModel];
         } else {
-            [rows addObject:@[]];
+            [rows addObject:[[TYExploreItemCellViewModel alloc] init]];
         }
         return rows.copy;
     }];

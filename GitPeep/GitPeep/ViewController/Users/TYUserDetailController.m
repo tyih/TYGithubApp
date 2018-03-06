@@ -47,7 +47,9 @@
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
     headerView.backgroundColor = [UIColor whiteColor];
-    [headerView addSubview:[UIView lineViewWithX:0 y:179 width:SCREEN_WIDTH color:[UIColor lightGrayColor]]];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 180, SCREEN_WIDTH, 0.5)];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [headerView addSubview:line];
     
     UIImageView *avatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 70, 70)];
     avatarImgView.layer.borderWidth = 0.5f;

@@ -46,6 +46,7 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     self.tableView = tableView;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
     TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
@@ -72,6 +73,9 @@
         
         @strongify(self);
         self.viewModel.dataArray = x;
+        if (self.viewModel.dataArray.count > 0) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }
         [self.tableView reloadData];        
     } completed:^{
         

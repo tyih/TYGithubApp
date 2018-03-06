@@ -61,7 +61,7 @@
     [button addSubview:nameLabel];
     
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(30, button.height-3, rect.size.width-60, 3)];
-    line.backgroundColor = HexRGB(colorA1);
+    line.backgroundColor = HexRGB(colorA7);
     line.tag = 102;
     line.hidden = YES;
     [button addSubview:line];
@@ -92,8 +92,8 @@
     
     if (button.selected) {
         
-        numLabel.textColor = [UIColor redColor];
-        nameLabel.textColor = [UIColor redColor];
+        numLabel.textColor = HexRGB(colorA7);
+        nameLabel.textColor = HexRGB(colorA7);
         line.hidden = NO;
     } else {
         

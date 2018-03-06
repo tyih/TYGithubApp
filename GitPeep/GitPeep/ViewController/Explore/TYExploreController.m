@@ -9,6 +9,7 @@
 #import "TYExploreController.h"
 
 #import "TYExploreItemCell.h"
+#import "TYExploreItemCellViewModel.h"
 
 @interface TYExploreController ()
 
@@ -22,6 +23,9 @@
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
     imgView.backgroundColor = [UIColor yellowColor];
     self.tableView.tableHeaderView = imgView;
+    
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 #pragma mark - tableview
@@ -35,9 +39,9 @@
     return cell;
 }
 
-- (void)configureCell:(TYExploreItemCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+- (void)configureCell:(TYExploreItemCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(TYExploreItemCellViewModel *)viewModel {
     
-    [cell setModel:object withIndexPath:indexPath];
+    [cell bindViewModel:viewModel];
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {

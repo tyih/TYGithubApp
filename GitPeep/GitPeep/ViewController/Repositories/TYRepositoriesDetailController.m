@@ -43,7 +43,9 @@
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
     headerView.backgroundColor = [UIColor whiteColor];
-    [headerView addSubview:[UIView lineViewWithX:0 y:179 width:SCREEN_WIDTH color:[UIColor lightGrayColor]]];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 180, SCREEN_WIDTH, 0.5)];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [headerView addSubview:line];
     
     UILabel *fullNameLabel = [UILabel labelWithText:nil frame:CGRectMake(10, 10, 250, 30) font:BoldSystemFont(16.f) color:[UIColor blackColor] alignment:NSTextAlignmentLeft];
     [headerView addSubview:fullNameLabel];
