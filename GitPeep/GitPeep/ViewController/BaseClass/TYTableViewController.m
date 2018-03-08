@@ -32,8 +32,15 @@
         @weakify(self);
         [[self rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
             @strongify(self);
-            // 请求数据，刷新
-            [self.tableView.mj_header beginRefreshing];
+            
+            if ([self isRequestRemoteData] && [self isHeaderRefreshing]) {
+                
+                [self.tableView.mj_header beginRefreshing]; // 有动画、有请求
+            } else if ([self isRequestRemoteData]) {
+                
+                [self requestRemoteData]; // 默认请求1次
+            }
+            
         }];
     }
     return self;
@@ -49,21 +56,13 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
-    TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
-        
-        [self requestRemoteData];
-    }];
-    self.tableView.mj_header = refreshHeader;
-}
-
-- (void)reloadData {
-    
-    [self.tableView reloadData];
-}
-
-- (void)refresh {
-    
-    [self.tableView.mj_header beginRefreshing];
+    if ([self isHeaderRefreshing]) { // 有刷新动画
+        TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
+            
+            [self requestRemoteData];
+        }];
+        self.tableView.mj_header = refreshHeader;
+    }
 }
 
 - (void)requestRemoteData {
@@ -84,6 +83,19 @@
 
 }
 
+#pragma mark - public
+
+- (void)reloadData {
+    
+    [self.tableView reloadData];
+}
+
+- (void)refresh {
+    
+    [self.tableView.mj_header beginRefreshing];
+}
+
+/// 初始化cell
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
     // 默认样式
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -93,13 +105,27 @@
     return cell;
 }
 
+/// 配置cell
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     // 用于子类重写
 }
 
+/// cell高度
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 100;
+}
+
+/// 是否发起请求
+- (BOOL)isRequestRemoteData {
+    
+    return YES; // 默认发起
+}
+
+/// 是否默认下拉刷新动画
+- (BOOL)isHeaderRefreshing {
+    
+    return YES; // 默认有动画
 }
 
 #pragma mark - UITableViewDataSource

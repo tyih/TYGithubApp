@@ -6,8 +6,8 @@
 //  Copyright © 2018年 tianyao. All rights reserved.
 //
 
-#import "TYViewController.h"
+#import "TYTableViewController.h"
 
-@interface TYProfileController : TYViewController
+@interface TYProfileController : TYTableViewController
 
 @end

@@ -15,7 +15,7 @@
 /// 刷新tableView
 - (void)reloadData;
 
-/// 请求数据、刷新
+/// 请求数据、刷新tableView
 - (void)refresh;
 
 /// 子类重写-自定义cell
@@ -26,5 +26,11 @@
 
 /// 子类重写-cell高度
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/// 是否发起请求
+- (BOOL)isRequestRemoteData;
+
+/// 是否默认下拉刷新动画
+- (BOOL)isHeaderRefreshing;
 
 @end

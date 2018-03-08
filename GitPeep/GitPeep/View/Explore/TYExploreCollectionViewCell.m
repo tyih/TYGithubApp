@@ -24,6 +24,7 @@
     if (self) {
         
         UIImageView *avatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+        avatarImgView.backgroundColor = [UIColor lightGrayColor];
         avatarImgView.layer.cornerRadius = 20.f;
         avatarImgView.layer.masksToBounds = YES;
         [self.contentView addSubview:avatarImgView];

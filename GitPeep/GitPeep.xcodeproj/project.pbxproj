@@ -53,6 +53,7 @@
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
 		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
 		9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */; };
+		9FA7446D205127F9002FCBC8 /* TYProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */; };
 		9FADD0D1204E592100D45945 /* TYExploreCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADD0D0204E592100D45945 /* TYExploreCollectionViewCell.m */; };
 		9FADD0D4204E605700D45945 /* TYExploreCollectionViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADD0D3204E605700D45945 /* TYExploreCollectionViewCellViewModel.m */; };
 		9FADD0D7204E62C100D45945 /* TYExploreItemCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADD0D6204E62C100D45945 /* TYExploreItemCellViewModel.m */; };
@@ -206,6 +207,8 @@
 		9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9F7C352420455DDD009AAC8A /* TYRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRefreshGifHeader.h; sourceTree = "<group>"; };
 		9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRefreshGifHeader.m; sourceTree = "<group>"; };
+		9FA7446B205127F9002FCBC8 /* TYProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYProfileHeaderView.h; sourceTree = "<group>"; };
+		9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileHeaderView.m; sourceTree = "<group>"; };
 		9FADD0CF204E592100D45945 /* TYExploreCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreCollectionViewCell.h; sourceTree = "<group>"; };
 		9FADD0D0204E592100D45945 /* TYExploreCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYExploreCollectionViewCell.m; sourceTree = "<group>"; };
 		9FADD0D2204E605700D45945 /* TYExploreCollectionViewCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreCollectionViewCellViewModel.h; sourceTree = "<group>"; };
@@ -737,6 +740,8 @@
 		9FBF5DE81FF514820032418D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9FA7446B205127F9002FCBC8 /* TYProfileHeaderView.h */,
+				9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1171,6 +1176,7 @@
 				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */,
+				9FA7446D205127F9002FCBC8 /* TYProfileHeaderView.m in Sources */,
 				9FB20B89204D332200B6CA0D /* TYExploreItemCell.m in Sources */,
 				717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */,
 				9F1944082043F0EB00F5C089 /* TYTableViewController.m in Sources */,
