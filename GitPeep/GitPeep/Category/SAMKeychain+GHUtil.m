@@ -12,7 +12,7 @@
 
 + (NSString *)login {
     
-    return [[NSUserDefaults standardUserDefaults] objectForKey:GH_LOGIN];
+    return [self passwordForService:GH_SERVICE_NAME account:GH_LOGIN];
 }
 + (NSString *)rawLogin {
     
