@@ -33,7 +33,7 @@
 
 - (void)configureCell:(TYRepositoriesItemCell *)cell atIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     
-    [cell setModel:object withIndexPath:indexPath];
+    [cell setObj:object withIndexPath:indexPath];
 }
 
 - (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {

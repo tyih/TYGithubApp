@@ -179,10 +179,10 @@
     
     if ([cell isKindOfClass:[TYDetailReposItemCell class]]) {
         
-        [(TYDetailReposItemCell *)cell setModel:object withIndexPath:indexPath];
+        [(TYDetailReposItemCell *)cell setObj:object withIndexPath:indexPath];
     } else if ([cell isKindOfClass:[TYUsersCell class]]) {
         
-        [(TYUsersCell *)cell setModel:object withIndexPath:indexPath];
+        [(TYUsersCell *)cell setObj:object withIndexPath:indexPath];
     }
 }
 

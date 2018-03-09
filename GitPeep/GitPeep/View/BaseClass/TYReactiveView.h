@@ -13,8 +13,8 @@
 /// Bind view model to view
 - (void)bindViewModel:(id)viewModel;
 
-/// Set model to cell
-- (void)setModel:(id)model withIndexPath:(NSIndexPath *)indexPath;
+/// Set obj to cell
+- (void)setObj:(id)obj withIndexPath:(NSIndexPath *)indexPath;
 
 
 @end

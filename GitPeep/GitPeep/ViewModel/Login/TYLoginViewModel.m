@@ -41,9 +41,10 @@
         // 登录成功
         self.services.client = authenticatedClient;
         
-        SAMKeychain.rawLogin = authenticatedClient.user.rawLogin;
-        SAMKeychain.password = self.password;
-        SAMKeychain.accessToken = authenticatedClient.token;
+        SAMKeychain.login = authenticatedClient.user.login;
+        SAMKeychain.rawLogin = authenticatedClient.user.rawLogin; // 登录帐号
+        SAMKeychain.password = self.password; // 登录密码
+        SAMKeychain.accessToken = authenticatedClient.token; // token
         
         // 展示首页
         TYMainViewModel *viewModel = [[TYMainViewModel alloc] initWithServices:self.services params:nil];

@@ -57,7 +57,7 @@
     return self;
 }
 
-- (void)setModel:(TYUsersItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
+- (void)setObj:(TYUsersItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
     
     self.model = model;
     self.row = indexPath.row + 1;

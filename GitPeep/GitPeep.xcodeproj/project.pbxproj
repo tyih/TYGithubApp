@@ -72,6 +72,11 @@
 		9FBF5DC61FF510690032418D /* GitPeepUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DC51FF510690032418D /* GitPeepUITests.m */; };
 		9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */; };
 		9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA8201738B6006BCFE9 /* TYUtils.m */; };
+		9FD2A042205262B1007A438F /* TYProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A041205262B1007A438F /* TYProfileCell.m */; };
+		9FD2A0452052729D007A438F /* TYSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A0442052729D007A438F /* TYSettingController.m */; };
+		9FD2A04820527402007A438F /* TYSettingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A04720527402007A438F /* TYSettingViewModel.m */; };
+		9FD2A04B20527DCF007A438F /* TYSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A04A20527DCF007A438F /* TYSettingsCell.m */; };
+		9FD2A04E20528C5C007A438F /* OCTUser+TYLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A04D20528C5C007A438F /* OCTUser+TYLogin.m */; };
 		9FD507AC2022E7C3004F2F96 /* TYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */; };
 		9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45CA1FFC80B600E1DCE4 /* TYConstant.m */; };
 		9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE45D01FFCFDCA00E1DCE4 /* TYViewModel.m */; };
@@ -242,6 +247,16 @@
 		9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain+GHUtil.m"; sourceTree = "<group>"; };
 		9FC2BEA7201738B6006BCFE9 /* TYUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUtils.h; sourceTree = "<group>"; };
 		9FC2BEA8201738B6006BCFE9 /* TYUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYUtils.m; sourceTree = "<group>"; };
+		9FD2A040205262B1007A438F /* TYProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYProfileCell.h; sourceTree = "<group>"; };
+		9FD2A041205262B1007A438F /* TYProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileCell.m; sourceTree = "<group>"; };
+		9FD2A0432052729D007A438F /* TYSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSettingController.h; sourceTree = "<group>"; };
+		9FD2A0442052729D007A438F /* TYSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSettingController.m; sourceTree = "<group>"; };
+		9FD2A04620527402007A438F /* TYSettingViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSettingViewModel.h; sourceTree = "<group>"; };
+		9FD2A04720527402007A438F /* TYSettingViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSettingViewModel.m; sourceTree = "<group>"; };
+		9FD2A04920527DCF007A438F /* TYSettingsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSettingsCell.h; sourceTree = "<group>"; };
+		9FD2A04A20527DCF007A438F /* TYSettingsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSettingsCell.m; sourceTree = "<group>"; };
+		9FD2A04C20528C5C007A438F /* OCTUser+TYLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCTUser+TYLogin.h"; sourceTree = "<group>"; };
+		9FD2A04D20528C5C007A438F /* OCTUser+TYLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OCTUser+TYLogin.m"; sourceTree = "<group>"; };
 		9FD507AA2022E7C3004F2F96 /* TYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationController.h; sourceTree = "<group>"; };
 		9FD507AB2022E7C3004F2F96 /* TYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationController.m; sourceTree = "<group>"; };
 		9FDE45C91FFC80B600E1DCE4 /* TYConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYConstant.h; sourceTree = "<group>"; };
@@ -386,6 +401,8 @@
 			children = (
 				9F3B5C9B1FFF42BF00A8FACD /* TYProfileController.h */,
 				9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */,
+				9FD2A0432052729D007A438F /* TYSettingController.h */,
+				9FD2A0442052729D007A438F /* TYSettingController.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -502,6 +519,8 @@
 			children = (
 				9F0DC0312021B3E600A64050 /* TYProfileViewModel.h */,
 				9F0DC0322021B3E600A64050 /* TYProfileViewModel.m */,
+				9FD2A04620527402007A438F /* TYSettingViewModel.h */,
+				9FD2A04720527402007A438F /* TYSettingViewModel.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -557,6 +576,8 @@
 				9F2023D520297A79008A7706 /* UILabel+text.m */,
 				9FB20B84204D165300B6CA0D /* YYCache+TYAdditions.h */,
 				9FB20B85204D165300B6CA0D /* YYCache+TYAdditions.m */,
+				9FD2A04C20528C5C007A438F /* OCTUser+TYLogin.h */,
+				9FD2A04D20528C5C007A438F /* OCTUser+TYLogin.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -742,6 +763,10 @@
 			children = (
 				9FA7446B205127F9002FCBC8 /* TYProfileHeaderView.h */,
 				9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */,
+				9FD2A040205262B1007A438F /* TYProfileCell.h */,
+				9FD2A041205262B1007A438F /* TYProfileCell.m */,
+				9FD2A04920527DCF007A438F /* TYSettingsCell.h */,
+				9FD2A04A20527DCF007A438F /* TYSettingsCell.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1040,6 +1065,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitPeep/Pods-GitPeep-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/OcticonsIOS/OcticonsIOS/octicons.ttf",
@@ -1173,13 +1203,17 @@
 				9F19440B2043F2A800F5C089 /* TYTableViewModel.m in Sources */,
 				9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */,
 				9FB20B86204D165300B6CA0D /* YYCache+TYAdditions.m in Sources */,
+				9FD2A04820527402007A438F /* TYSettingViewModel.m in Sources */,
 				9F5FAF9D2027FAED008CA739 /* UIView+frame.m in Sources */,
 				9FDE45CB1FFC80B600E1DCE4 /* TYConstant.m in Sources */,
 				9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */,
 				9FA7446D205127F9002FCBC8 /* TYProfileHeaderView.m in Sources */,
 				9FB20B89204D332200B6CA0D /* TYExploreItemCell.m in Sources */,
 				717924FA200CE2D90097925E /* TYLoginViewModel.m in Sources */,
+				9FD2A0452052729D007A438F /* TYSettingController.m in Sources */,
+				9FD2A042205262B1007A438F /* TYProfileCell.m in Sources */,
 				9F1944082043F0EB00F5C089 /* TYTableViewController.m in Sources */,
+				9FD2A04B20527DCF007A438F /* TYSettingsCell.m in Sources */,
 				9FE062242047D41E00D231D2 /* TYUserDetailViewModel.m in Sources */,
 				718631E82044570C009D3805 /* TYNewsItemViewModel.m in Sources */,
 				9FDE45D61FFD071A00E1DCE4 /* TYViewModelServicesImpl.m in Sources */,
@@ -1197,6 +1231,7 @@
 				9FDE45D91FFD0A3200E1DCE4 /* TYNavigationControllerStack.m in Sources */,
 				9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */,
 				9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */,
+				9FD2A04E20528C5C007A438F /* OCTUser+TYLogin.m in Sources */,
 				9FADD0D1204E592100D45945 /* TYExploreCollectionViewCell.m in Sources */,
 				9FADD0D4204E605700D45945 /* TYExploreCollectionViewCellViewModel.m in Sources */,
 				9F2023D620297A79008A7706 /* UILabel+text.m in Sources */,

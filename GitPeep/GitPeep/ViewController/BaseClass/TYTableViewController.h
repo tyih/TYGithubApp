@@ -12,6 +12,9 @@
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 
+/// tableViewStyle 默认为 UITableViewStylePlain
+- (UITableViewStyle)tableViewStyle;
+
 /// 刷新tableView
 - (void)reloadData;
 

@@ -10,6 +10,10 @@
 
 @implementation SAMKeychain (GHUtil)
 
++ (NSString *)login {
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:GH_LOGIN];
+}
 + (NSString *)rawLogin {
     
     return [[NSUserDefaults standardUserDefaults] objectForKey:GH_RAW_LOGIN];
@@ -23,6 +27,10 @@
     return [self passwordForService:GH_SERVICE_NAME account:GH_ACCESS_TOKEN];
 }
 
++ (BOOL)setLogin:(NSString *)login {
+    
+    return [self setPassword:login forService:GH_SERVICE_NAME account:GH_LOGIN];
+}
 + (BOOL)setRawLogin:(NSString *)rawLogin {
     
     [[NSUserDefaults standardUserDefaults] setObject:rawLogin forKey:GH_RAW_LOGIN];
@@ -37,6 +45,10 @@
     return [self setPassword:accessToken forService:GH_SERVICE_NAME account:GH_ACCESS_TOKEN];
 }
 
++ (BOOL)deleteLogin {
+    
+    return [self deletePasswordForService:GH_SERVICE_NAME account:GH_LOGIN];
+}
 + (BOOL)deleteRawLogin {
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:GH_RAW_LOGIN];

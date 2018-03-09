@@ -137,9 +137,9 @@
 
     if (self.viewModel.chooseType == TYTabButtonsTypeSecond) {
         TYUsersItemModel *model = ((TYRepositoriesItemModel *)object).owner;
-        [(TYUsersCell *)cell setModel:model withIndexPath:indexPath];
+        [(TYUsersCell *)cell setObj:model withIndexPath:indexPath];
     } else {
-        [(TYUsersCell *)cell setModel:object withIndexPath:indexPath];
+        [(TYUsersCell *)cell setObj:object withIndexPath:indexPath];
     }
 }
 

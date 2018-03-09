@@ -49,7 +49,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:[self tableViewStyle]];
     tableView.dataSource = self;
     tableView.delegate = self;
     self.tableView = tableView;
@@ -84,6 +84,11 @@
 }
 
 #pragma mark - public
+
+- (UITableViewStyle)tableViewStyle {
+    
+    return UITableViewStylePlain;
+}
 
 - (void)reloadData {
     

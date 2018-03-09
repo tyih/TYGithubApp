@@ -54,12 +54,12 @@
 //    });
     UINavigationController *usersNavCtrl = ({
         TYUsersController *usersCtrl = [[TYUsersController alloc] initWithViewModel:self.viewModel.usersViewModel];
-        UIImage *usersImage = [UIImage octicon_imageWithIcon:@"Rss"
+        UIImage *usersImage = [UIImage octicon_imageWithIcon:@"Organization"
                                            backgroundColor:[UIColor clearColor]
                                                  iconColor:[UIColor lightGrayColor]
                                                  iconScale:1.f
                                                    andSize:CGSizeMake(25, 25)];
-        UIImage *usersHLImage = [UIImage octicon_imageWithIcon:@"Rss"
+        UIImage *usersHLImage = [UIImage octicon_imageWithIcon:@"Organization"
                                              backgroundColor:[UIColor clearColor]
                                                    iconColor:[UIColor yellowColor]
                                                    iconScale:1.f

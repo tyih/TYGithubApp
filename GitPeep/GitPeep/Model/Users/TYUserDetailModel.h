@@ -16,6 +16,8 @@
 
 @property (nonatomic, copy, readonly) NSString *blog;
 
+@property (nonatomic, copy, readonly) NSString *company;
+
 @property (nonatomic, copy, readonly) NSString *created_at;
 
 @property (nonatomic, copy, readonly) NSString *email;

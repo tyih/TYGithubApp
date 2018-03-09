@@ -81,7 +81,7 @@
     return self;
 }
 
-- (void)setModel:(TYRepositoriesItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
+- (void)setObj:(TYRepositoriesItemModel *)model withIndexPath:(NSIndexPath *)indexPath {
     
     self.model = model;
     self.row = indexPath.row + 1;

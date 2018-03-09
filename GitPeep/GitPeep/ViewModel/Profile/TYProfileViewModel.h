@@ -8,6 +8,10 @@
 
 #import "TYTableViewModel.h"
 
+#import "TYUserDetailModel.h"
+
 @interface TYProfileViewModel : TYTableViewModel
+
+@property (nonatomic, strong) TYUserDetailModel *userModel;
 
 @end
