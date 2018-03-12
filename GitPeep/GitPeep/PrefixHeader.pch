@@ -34,6 +34,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "YYCache+TYAdditions.h"
 #import <GPUImage.h>
+#import <TYCyclePagerView.h>
+#import <TYPageControl.h>
 
 #endif
 

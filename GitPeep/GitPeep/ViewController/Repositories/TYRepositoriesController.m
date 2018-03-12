@@ -18,6 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage octicon_imageWithIcon:@"Globe" backgroundColor:[UIColor clearColor] iconColor:[UIColor whiteColor] iconScale:1.f andSize:CGSizeMake(25, 25)] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemDidClick:)];
+}
+
+#pragma mark - action
+
+- (IBAction)rightBarButtonItemDidClick:(id)sender {
+    
+    
 }
 
 #pragma mark - tableView

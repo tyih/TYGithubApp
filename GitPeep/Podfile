@@ -30,6 +30,8 @@ target 'GitPeep' do
   pod 'SDWebImage'
   
   pod 'GPUImage'
+  
+  pod 'TYCyclePagerView'
       
   target 'GitPeepTests' do
     inherit! :search_paths

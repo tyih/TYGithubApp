@@ -33,9 +33,9 @@
         [self.contentView addSubview:rankLabel];
         
         UIImageView *avatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(rankLabel.right+10, 10, 60, 60)];
-        avatarImgView.layer.borderWidth = 0.5f;
+        avatarImgView.layer.borderWidth = 0.2f;
         avatarImgView.layer.borderColor = [UIColor grayColor].CGColor;
-        avatarImgView.layer.cornerRadius = 3.f;
+        avatarImgView.layer.cornerRadius = 8.f;
         avatarImgView.layer.masksToBounds = YES;
         self.avatarImgView = avatarImgView;
         [self.contentView addSubview:avatarImgView];
