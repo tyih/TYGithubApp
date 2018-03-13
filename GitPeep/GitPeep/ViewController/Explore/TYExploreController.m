@@ -10,7 +10,7 @@
 
 #import "TYExploreItemCell.h"
 #import "TYExploreItemCellViewModel.h"
-#import "TYCyclePagerViewCell.h"
+#import "TYExploreCycleViewCell.h"
 
 @interface TYExploreController () <TYCyclePagerViewDelegate, TYCyclePagerViewDataSource> {
     
@@ -52,7 +52,7 @@
     pagerView.autoScrollInterval = 3.f;
     pagerView.dataSource = self;
     pagerView.delegate = self;
-    [pagerView registerClass:[TYCyclePagerViewCell class] forCellWithReuseIdentifier:@"cellId"];
+    [pagerView registerClass:[TYExploreCycleViewCell class] forCellWithReuseIdentifier:@"cellId"];
     _pagerView = pagerView;
 }
 
@@ -82,7 +82,7 @@
 }
 
 - (UICollectionViewCell *)pagerView:(TYCyclePagerView *)pagerView cellForItemAtIndex:(NSInteger)index {
-    TYCyclePagerViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndex:index];
+    TYExploreCycleViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndex:index];
     cell.backgroundColor = _datas[index];
     NSString *title = nil;
     switch (index) {

@@ -1,18 +1,18 @@
 //
-//  TYCyclePagerViewCell.m
+//  TYExploreCycleViewCell.m
 //  TYCyclePagerViewDemo
 //
 //  Created by tany on 2017/6/14.
 //  Copyright © 2017年 tany. All rights reserved.
 //
 
-#import "TYCyclePagerViewCell.h"
+#import "TYExploreCycleViewCell.h"
 
-@interface TYCyclePagerViewCell ()
+@interface TYExploreCycleViewCell ()
 @property (nonatomic, weak) UILabel *label;
 @end
 
-@implementation TYCyclePagerViewCell
+@implementation TYExploreCycleViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

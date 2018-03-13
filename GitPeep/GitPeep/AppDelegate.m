@@ -94,17 +94,17 @@
     
     // 应用版本号
     NSString *version = [[NSUserDefaults standardUserDefaults] objectForKey:TYApplicationVersionKey];
-    
+
     if (![version isEqualToString:APP_VERSION()]) {
         // 版本不一样，显示新特性界面
         return [[TYNewFeatureViewModel alloc] initWithServices:self.services params:nil];
     } else {
-        
+
         if ([SAMKeychain rawLogin].isExist && [SAMKeychain accessToken].isExist) {
 
             // 进行一次登录
             OCTUser *user = [OCTUser gp_userWithRawLogin:[SAMKeychain rawLogin] server:OCTServer.dotComServer];
-            
+
             OCTClient *authenticatedClient = [OCTClient authenticatedClientWithUser:user token:[SAMKeychain accessToken]];
             self.services.client = authenticatedClient;
             // 有账号，跳到主页

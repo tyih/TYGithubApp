@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
 
 @property (nonatomic, weak) UIView *headerView;
 
-@property (nonatomic, weak) UIImageView *headerImageView;
+@property (nonatomic, weak) UIImageView *bluerdImageView;
 
 @property (nonatomic, strong) GPUImageGaussianBlurFilter *gaussianBlurFilter;
 
@@ -56,22 +56,26 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
     
     // 高斯背景图
     UIImageView *bluerdImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)];
-//    headerImageView.image = [UIImage imageNamed:@"timg"];
     bluerdImageView.contentMode = UIViewContentModeScaleAspectFill;
     bluerdImageView.clipsToBounds = YES;
     
-//    UIView *navView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
-//    navView.backgroundColor = HexRGB(colorA1);
-//    navView.clipsToBounds = YES;
+    // 头像
+    UIButton *avatarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    avatarButton.layer.cornerRadius = 40;
+    avatarButton.layer.masksToBounds = YES;
+    avatarButton.center = bluerdImageView.center;
+    avatarButton.backgroundColor = [UIColor whiteColor];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)];
+    UIView *headerView = [[UIView alloc] initWithFrame:bluerdImageView.bounds];
     [headerView addSubview:bluerdImageView];
-    self.headerImageView = bluerdImageView;
+    [headerView addSubview:avatarButton];
+    self.bluerdImageView = bluerdImageView;
+    
     self.headerView = headerView;
     self.tableView.tableHeaderView = headerView;
     
     self.gaussianBlurFilter = [[GPUImageGaussianBlurFilter alloc] init];
-    self.gaussianBlurFilter.blurRadiusInPixels = 20;
+    self.gaussianBlurFilter.blurRadiusInPixels = 10;
     
     self.avatarImage = [UIImage imageNamed:@"timg"]; // 默认图
     
@@ -90,7 +94,7 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
     self.followingLabel = [followingBtn viewWithTag:10];
     [tabView addSubview:followingBtn];
     
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, tabView.height, SCREEN_WIDTH, 0.6)];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, tabView.height, SCREEN_WIDTH, 0.3)];
     line.backgroundColor = [UIColor lightGrayColor];
     [tabView addSubview:line];
     
@@ -99,7 +103,7 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
     @weakify(self);
     RAC(bluerdImageView, image) = [RACObserve(self, avatarImage) map:^id(UIImage *image) {
         @strongify(self);
-        
+
         return [self.gaussianBlurFilter imageByFilteringImage:image];
     }];
     
@@ -110,6 +114,7 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
             
             if (image && finished) {
                 self.avatarImage = image;
+                [avatarButton setImage:image forState:UIControlStateNormal];
             }
         }];
     }];
@@ -137,7 +142,7 @@ typedef NS_ENUM(NSUInteger, TYProfileTabType) {
         CGRect rect = self.headerView.frame;
         rect.origin.y = offset.y;
         rect.size.height = CGRectGetHeight(rect) - offset.y;
-        self.headerImageView.frame = rect;
+        self.bluerdImageView.frame = rect;
         self.headerView.clipsToBounds = NO;
     }
 }

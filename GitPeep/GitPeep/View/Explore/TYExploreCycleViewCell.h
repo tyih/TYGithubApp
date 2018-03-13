@@ -1,5 +1,5 @@
 //
-//  TYCyclePagerViewCell.h
+//  TYExploreCycleViewCell.h
 //  TYCyclePagerViewDemo
 //
 //  Created by tany on 2017/6/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TYCyclePagerViewCell : UICollectionViewCell
+@interface TYExploreCycleViewCell : UICollectionViewCell
 
 @property (nonatomic, weak, readonly) UILabel *label;
 

@@ -10,4 +10,6 @@
 
 @interface TYNewFeatureViewModel : TYViewModel
 
+@property (nonatomic, strong) RACCommand *didScrollCommand;
+
 @end

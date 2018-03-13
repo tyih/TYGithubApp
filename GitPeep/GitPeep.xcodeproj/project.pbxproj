@@ -44,7 +44,7 @@
 		9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C981FFF42B500A8FACD /* TYNewsController.m */; };
 		9F3B5C9D1FFF42BF00A8FACD /* TYProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */; };
 		9F3B5CA01FFF42C900A8FACD /* TYRepositoriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B5C9F1FFF42C800A8FACD /* TYRepositoriesController.m */; };
-		9F459BBB20566894009782EC /* TYCyclePagerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F459BBA20566894009782EC /* TYCyclePagerViewCell.m */; };
+		9F459BBB20566894009782EC /* TYExploreCycleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F459BBA20566894009782EC /* TYExploreCycleViewCell.m */; };
 		9F4809DB202BE9070075D9C9 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F4809DC202BE9070075D9C9 /* OctoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5FAFC820284B95008CA739 /* OctoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F480A1B202C30550075D9C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */; };
@@ -71,6 +71,7 @@
 		9FBF5DB11FF510690032418D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DB01FF510690032418D /* main.m */; };
 		9FBF5DBB1FF510690032418D /* GitPeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DBA1FF510690032418D /* GitPeepTests.m */; };
 		9FBF5DC61FF510690032418D /* GitPeepUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF5DC51FF510690032418D /* GitPeepUITests.m */; };
+		9FC061562057A38700299BFC /* TYNewFeatureCycleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC061552057A38700299BFC /* TYNewFeatureCycleViewCell.m */; };
 		9FC2BEA620173024006BCFE9 /* SAMKeychain+GHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */; };
 		9FC2BEA9201738B6006BCFE9 /* TYUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC2BEA8201738B6006BCFE9 /* TYUtils.m */; };
 		9FD2A042205262B1007A438F /* TYProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2A041205262B1007A438F /* TYProfileCell.m */; };
@@ -195,8 +196,8 @@
 		9F3B5C9C1FFF42BF00A8FACD /* TYProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYProfileController.m; sourceTree = "<group>"; };
 		9F3B5C9E1FFF42C800A8FACD /* TYRepositoriesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYRepositoriesController.h; sourceTree = "<group>"; };
 		9F3B5C9F1FFF42C800A8FACD /* TYRepositoriesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYRepositoriesController.m; sourceTree = "<group>"; };
-		9F459BB920566894009782EC /* TYCyclePagerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerViewCell.h; sourceTree = "<group>"; };
-		9F459BBA20566894009782EC /* TYCyclePagerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerViewCell.m; sourceTree = "<group>"; };
+		9F459BB920566894009782EC /* TYExploreCycleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYExploreCycleViewCell.h; sourceTree = "<group>"; };
+		9F459BBA20566894009782EC /* TYExploreCycleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYExploreCycleViewCell.m; sourceTree = "<group>"; };
 		9F480A1A202C30550075D9C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F5970342048F08900CEC3CB /* TYDetailReposItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYDetailReposItemCell.h; sourceTree = "<group>"; };
 		9F5970352048F08900CEC3CB /* TYDetailReposItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYDetailReposItemCell.m; sourceTree = "<group>"; };
@@ -246,6 +247,8 @@
 		9FBF5DC11FF510690032418D /* GitPeepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitPeepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBF5DC51FF510690032418D /* GitPeepUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitPeepUITests.m; sourceTree = "<group>"; };
 		9FBF5DC71FF510690032418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC061542057A38700299BFC /* TYNewFeatureCycleViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNewFeatureCycleViewCell.h; sourceTree = "<group>"; };
+		9FC061552057A38700299BFC /* TYNewFeatureCycleViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNewFeatureCycleViewCell.m; sourceTree = "<group>"; };
 		9FC2BEA420173024006BCFE9 /* SAMKeychain+GHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain+GHUtil.h"; sourceTree = "<group>"; };
 		9FC2BEA520173024006BCFE9 /* SAMKeychain+GHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain+GHUtil.m"; sourceTree = "<group>"; };
 		9FC2BEA7201738B6006BCFE9 /* TYUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYUtils.h; sourceTree = "<group>"; };
@@ -697,6 +700,7 @@
 		9FBF5DD31FF510DB0032418D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FC061532057A35100299BFC /* NewFeature */,
 				7126D269204A4922006EA471 /* Repositories */,
 				9FBAD572204693E400F54F17 /* Users */,
 				9F7C352120454BC5009AAC8A /* Custom */,
@@ -777,8 +781,8 @@
 		9FBF5DE91FF514A10032418D /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				9F459BB920566894009782EC /* TYCyclePagerViewCell.h */,
-				9F459BBA20566894009782EC /* TYCyclePagerViewCell.m */,
+				9F459BB920566894009782EC /* TYExploreCycleViewCell.h */,
+				9F459BBA20566894009782EC /* TYExploreCycleViewCell.m */,
 				9FB20B87204D332200B6CA0D /* TYExploreItemCell.h */,
 				9FB20B88204D332200B6CA0D /* TYExploreItemCell.m */,
 				9FADD0CF204E592100D45945 /* TYExploreCollectionViewCell.h */,
@@ -809,6 +813,15 @@
 				9F19440C2044115C00F5C089 /* TYReactiveView.h */,
 			);
 			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		9FC061532057A35100299BFC /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				9FC061542057A38700299BFC /* TYNewFeatureCycleViewCell.h */,
+				9FC061552057A38700299BFC /* TYNewFeatureCycleViewCell.m */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		9FDE45CD1FFCFBED00E1DCE4 /* BaseClass */ = {
@@ -1188,6 +1201,7 @@
 				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
 				9FF844932015B39200FF4DCF /* TYNewFeatureController.m in Sources */,
 				9FADD0D7204E62C100D45945 /* TYExploreItemCellViewModel.m in Sources */,
+				9FC061562057A38700299BFC /* TYNewFeatureCycleViewCell.m in Sources */,
 				715C7AED204BA34B00B6AEB4 /* TYRepositoriesDetailController.m in Sources */,
 				7109E09E1FFE78EB00887DFE /* TYTabBarController.m in Sources */,
 				9F3B5C971FFF42AB00A8FACD /* TYExploreController.m in Sources */,
@@ -1239,7 +1253,7 @@
 				9FD2A04E20528C5C007A438F /* OCTUser+TYLogin.m in Sources */,
 				9FADD0D1204E592100D45945 /* TYExploreCollectionViewCell.m in Sources */,
 				9FADD0D4204E605700D45945 /* TYExploreCollectionViewCellViewModel.m in Sources */,
-				9F459BBB20566894009782EC /* TYCyclePagerViewCell.m in Sources */,
+				9F459BBB20566894009782EC /* TYExploreCycleViewCell.m in Sources */,
 				9F2023D620297A79008A7706 /* UILabel+text.m in Sources */,
 				9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */,
 				9F59703A2048FA7400CEC3CB /* TYRepositoriesItemModel.m in Sources */,
