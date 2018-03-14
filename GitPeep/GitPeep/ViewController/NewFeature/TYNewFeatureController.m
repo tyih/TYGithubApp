@@ -102,16 +102,19 @@
             title = @"Write better code";
             icon = @"Code";
             iconColor = HexRGB(0xE1981A);
+            [cell setShimmeringViewHidden:YES];
             break;
         case 1:
             title = @"Manage your chaos";
             icon = @"Checklist";
             iconColor = HexRGB(0xBF000D);
+            [cell setShimmeringViewHidden:YES];
             break;
         case 2:
             title = @"Find the right tools";
             icon = @"Rocket";
             iconColor = HexRGB(0xF1EB9F);
+            [cell setShimmeringViewHidden:NO];
             break;
             
         default:

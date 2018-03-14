@@ -14,4 +14,6 @@
 
 @property (nonatomic, weak, readonly) UILabel *titleLabel;
 
+- (void)setShimmeringViewHidden:(BOOL)hidden;
+
 @end

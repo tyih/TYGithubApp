@@ -8,11 +8,17 @@
 
 #import "TYNewFeatureCycleViewCell.h"
 
+#import "FBShimmeringView.h"
+
 @interface TYNewFeatureCycleViewCell ()
 
 @property (nonatomic, weak) UIImageView *iconView;
 
-@property (nonatomic, weak, readwrite) UILabel *titleLabel;
+@property (nonatomic, weak) UILabel *titleLabel;
+
+@property (nonatomic, weak) FBShimmeringView *shimmeringView;
+
+@property (nonatomic, weak) UILabel *shimmerLabel;
 
 @end
 
@@ -23,6 +29,11 @@
     _image = image;
     
     self.iconView.image = image;
+}
+
+- (void)setShimmeringViewHidden:(BOOL)hidden {
+
+    self.shimmeringView.hidden = hidden;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -39,6 +50,19 @@
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:titleLabel];
         self.titleLabel = titleLabel;
+        
+        FBShimmeringView *shimmeringView = [[FBShimmeringView alloc] initWithFrame:CGRectMake(0, titleLabel.bottom, self.width, 60)];
+        shimmeringView.shimmering = YES;
+        shimmeringView.shimmeringOpacity = 0.2;
+        shimmeringView.shimmeringBeginFadeDuration = 0.5;
+        shimmeringView.shimmeringSpeed = 200;
+        shimmeringView.shimmeringAnimationOpacity = 1.0;
+        
+        UILabel *shimmerLabel = [UILabel labelWithText:@"Swipe left to login" frame:shimmeringView.bounds font:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40.0] color:[UIColor whiteColor] alignment:NSTextAlignmentCenter];
+        shimmeringView.contentView = shimmerLabel;
+        
+        [self addSubview:shimmeringView];
+        self.shimmeringView = shimmeringView;
     }
     return self;
 }
