@@ -9,6 +9,11 @@
 - 独立开发
 - 可测试
 
+## 效果：
+Users | Repositories | Explore | Profile
+----- | ------------ | ------- | -------
+![enter image description here](https://github.com/tyih/GitPeep/blob/master/Images/IMG_1269.PNG)| ![enter image description here](https://github.com/tyih/GitPeep/blob/master/Images/IMG_1270.PNG)| ![enter image description here](https://github.com/tyih/GitPeep/blob/master/Images/IMG_1271.PNG)| ![enter image description here](https://github.com/tyih/GitPeep/blob/master/Images/IMG_1272.PNG)
+
 ### 使用
 请使用终端`cd`到`Podfile`所在的文件夹中
 
