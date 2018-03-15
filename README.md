@@ -1,6 +1,5 @@
 ## GitHub App (GitPeep)开发
 
-### 概述
 项目使用了ReactiveCocoa框架，实现了MVVM架构，分离视图(View)和模型(Model)。
 
 #### MVVM四大优点：
