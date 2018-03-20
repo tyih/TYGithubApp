@@ -10,11 +10,28 @@
 
 #import "TYUsersCell.h"
 
-@interface TYUsersController ()
+@interface TYUsersController () <HNPopMenuViewDelegate>
+
+@property (nonatomic, strong) NSArray *memuArray;
 
 @end
 
 @implementation TYUsersController
+
+- (NSArray *)memuArray {
+    
+    if (!_memuArray) {
+        NSMutableArray *tempArray = [NSMutableArray array];
+        NSArray *titleArray = @[@"USA", @"UK", @"Germany", @"China", @"Canada", @"India", @"France", @"Australia", @"Other"];
+        for (NSString *title in titleArray) {
+            HNPopMenuModel *model = [[HNPopMenuModel alloc] init];
+            model.title = title;
+            [tempArray addObject:model];
+        }
+        _memuArray = tempArray;
+    }
+    return _memuArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +45,7 @@
 
 - (IBAction)leftBarButtonItemDidClick:(id)sender {
     
-    
+    [HNPopMenuManager showPopMenuWithView:nil items:self.memuArray delegate:self dismissAutomatically:YES];
 }
 
 - (IBAction)rightBarButtonItemDidClick:(id)sender {

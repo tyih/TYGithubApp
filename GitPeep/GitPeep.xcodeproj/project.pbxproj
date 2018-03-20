@@ -54,6 +54,10 @@
 		9F5FAFA02027FCB6008CA739 /* UIImage+TYOcticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAF9F2027FCB6008CA739 /* UIImage+TYOcticons.m */; };
 		9F5FAFA32028000B008CA739 /* UIView+line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FAFA22028000B008CA739 /* UIView+line.m */; };
 		9F7C352620455DDD009AAC8A /* TYRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */; };
+		9F939D9C2060EF6200C7A18C /* HNPopMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939D952060EF6100C7A18C /* HNPopMenuModel.m */; };
+		9F939D9D2060EF6200C7A18C /* HNPopMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939D972060EF6200C7A18C /* HNPopMenuTableViewCell.m */; };
+		9F939D9E2060EF6200C7A18C /* HNPopMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939D982060EF6200C7A18C /* HNPopMenuManager.m */; };
+		9F939D9F2060EF6200C7A18C /* HNPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F939D9B2060EF6200C7A18C /* HNPopMenuView.m */; };
 		9FA7446D205127F9002FCBC8 /* TYProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */; };
 		9FADD0D1204E592100D45945 /* TYExploreCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADD0D0204E592100D45945 /* TYExploreCollectionViewCell.m */; };
 		9FADD0D4204E605700D45945 /* TYExploreCollectionViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FADD0D3204E605700D45945 /* TYExploreCollectionViewCellViewModel.m */; };
@@ -216,6 +220,14 @@
 		9F5FAFD020284CC4008CA739 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9F7C352420455DDD009AAC8A /* TYRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYRefreshGifHeader.h; sourceTree = "<group>"; };
 		9F7C352520455DDD009AAC8A /* TYRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYRefreshGifHeader.m; sourceTree = "<group>"; };
+		9F939D942060EF6100C7A18C /* HNPopMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNPopMenuModel.h; sourceTree = "<group>"; };
+		9F939D952060EF6100C7A18C /* HNPopMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNPopMenuModel.m; sourceTree = "<group>"; };
+		9F939D962060EF6100C7A18C /* HNPopMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNPopMenuTableViewCell.h; sourceTree = "<group>"; };
+		9F939D972060EF6200C7A18C /* HNPopMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNPopMenuTableViewCell.m; sourceTree = "<group>"; };
+		9F939D982060EF6200C7A18C /* HNPopMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNPopMenuManager.m; sourceTree = "<group>"; };
+		9F939D992060EF6200C7A18C /* HNPopMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNPopMenuManager.h; sourceTree = "<group>"; };
+		9F939D9A2060EF6200C7A18C /* HNPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNPopMenuView.h; sourceTree = "<group>"; };
+		9F939D9B2060EF6200C7A18C /* HNPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNPopMenuView.m; sourceTree = "<group>"; };
 		9FA7446B205127F9002FCBC8 /* TYProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYProfileHeaderView.h; sourceTree = "<group>"; };
 		9FA7446C205127F9002FCBC8 /* TYProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYProfileHeaderView.m; sourceTree = "<group>"; };
 		9FADD0CF204E592100D45945 /* TYExploreCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYExploreCollectionViewCell.h; sourceTree = "<group>"; };
@@ -501,6 +513,7 @@
 		71E0A8CC2046E9A2003B6869 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				9F939D932060EF4500C7A18C /* PopMenu */,
 				71E0A8CD2046EA63003B6869 /* TYNetworkEngine.h */,
 				71E0A8CE2046EA63003B6869 /* TYNetworkEngine.m */,
 			);
@@ -597,6 +610,21 @@
 				715C7ADA204B8D6A00B6AEB4 /* TYTabButtonsView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9F939D932060EF4500C7A18C /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9F939D992060EF6200C7A18C /* HNPopMenuManager.h */,
+				9F939D982060EF6200C7A18C /* HNPopMenuManager.m */,
+				9F939D942060EF6100C7A18C /* HNPopMenuModel.h */,
+				9F939D952060EF6100C7A18C /* HNPopMenuModel.m */,
+				9F939D962060EF6100C7A18C /* HNPopMenuTableViewCell.h */,
+				9F939D972060EF6200C7A18C /* HNPopMenuTableViewCell.m */,
+				9F939D9A2060EF6200C7A18C /* HNPopMenuView.h */,
+				9F939D9B2060EF6200C7A18C /* HNPopMenuView.m */,
+			);
+			path = PopMenu;
 			sourceTree = "<group>";
 		};
 		9FBAD5632046901300F54F17 /* Users */ = {
@@ -1196,6 +1224,8 @@
 				717924EF200CE20F0097925E /* TYNewFeatureViewModel.m in Sources */,
 				9FBF5DB11FF510690032418D /* main.m in Sources */,
 				715C7AEA204BA19900B6AEB4 /* TYRepositoriesDetailViewModel.m in Sources */,
+				9F939D9E2060EF6200C7A18C /* HNPopMenuManager.m in Sources */,
+				9F939D9C2060EF6200C7A18C /* HNPopMenuModel.m in Sources */,
 				7109E0931FFE5E7100887DFE /* TYViewController.m in Sources */,
 				9F3B5C9A1FFF42B500A8FACD /* TYNewsController.m in Sources */,
 				9FDE45D11FFCFDCA00E1DCE4 /* TYViewModel.m in Sources */,
@@ -1232,6 +1262,7 @@
 				9FD2A0452052729D007A438F /* TYSettingController.m in Sources */,
 				9FD2A042205262B1007A438F /* TYProfileCell.m in Sources */,
 				9F1944082043F0EB00F5C089 /* TYTableViewController.m in Sources */,
+				9F939D9D2060EF6200C7A18C /* HNPopMenuTableViewCell.m in Sources */,
 				9FD2A04B20527DCF007A438F /* TYSettingsCell.m in Sources */,
 				9FE062242047D41E00D231D2 /* TYUserDetailViewModel.m in Sources */,
 				718631E82044570C009D3805 /* TYNewsItemViewModel.m in Sources */,
@@ -1244,6 +1275,7 @@
 				9F012CAC203FEDC7005237A1 /* TYOAuthViewController.m in Sources */,
 				9FE062282047D54F00D231D2 /* TYUserDetailController.m in Sources */,
 				7109E0A11FFE7D9300887DFE /* TYMainController.m in Sources */,
+				9F939D9F2060EF6200C7A18C /* HNPopMenuView.m in Sources */,
 				7126D26C204A4954006EA471 /* TYRepositoriesItemCell.m in Sources */,
 				9FBF5DA31FF510690032418D /* AppDelegate.m in Sources */,
 				9FBAD566204690BB00F54F17 /* TYUsersController.m in Sources */,

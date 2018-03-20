@@ -36,6 +36,8 @@
 #import <GPUImage.h>
 #import <TYCyclePagerView.h>
 #import <TYPageControl.h>
+#import "HNPopMenuModel.h"
+#import "HNPopMenuManager.h"
 
 #endif
 
