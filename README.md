@@ -27,3 +27,9 @@ Users | Repositories | Explore | Profile
   1. pod repo update : 更新本地仓库 
   2. pod install : 下载安装
 ```
+### TODO
+- [ ] 在User界面增加城市选择、编程语言选择
+- [ ] 在Repositories界面增加编程语言选择
+- [ ] 在Explore界面增加搜索框
+- [ ] 增加Fork、Star功能
+- [ ] 增加文档查看功能
