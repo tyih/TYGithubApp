@@ -19,6 +19,8 @@
 - (void)initialize {
     
     self.page = 1;
+    self.prePage = 1;
+    self.modelArray = [NSMutableArray array];
     
     @weakify(self);
     self.requestRemoteDataCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSNumber *page) {

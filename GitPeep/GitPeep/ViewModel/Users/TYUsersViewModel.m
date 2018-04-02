@@ -36,17 +36,26 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
-        NSMutableArray *modelArray = [NSMutableArray array];
-        [[TYNetworkEngine sharedInstance] searchUsersWithPage:1 q:@"location:beijing" sort:@"followers" location:@"beijing" language:@"所有语言" completionHandle:^(NSDictionary *responseDictionary) {
+        [[TYNetworkEngine sharedInstance] searchUsersWithPage:self.page q:@"location:beijing" sort:@"followers" location:@"beijing" language:@"所有语言" completionHandle:^(NSDictionary *responseDictionary) {
             NSLog(@"response:%@", responseDictionary)
-            
+
+            NSMutableArray *array = [NSMutableArray array];
             NSArray *items = responseDictionary[@"items"];
             for (NSDictionary *itemDic in items) {
                 TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:itemDic];
-                [modelArray addObject:model];
+                [array addObject:model];
             }
+            
+            if (self.prePage < self.page) {
+                [self.modelArray addObjectsFromArray:array];
+            } else {
+                if (array.count > 0) {
+                    self.modelArray = array;
+                }
+            }
+            
             // 发送数据
-            [subscriber sendNext:modelArray];
+            [subscriber sendNext:self.modelArray];
             [subscriber sendCompleted];
         } errorHandle:^(NSError *error) {
             NSLog(@"error:%@", error)

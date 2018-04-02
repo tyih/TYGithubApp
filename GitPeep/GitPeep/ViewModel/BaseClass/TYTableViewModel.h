@@ -14,6 +14,10 @@
 
 @property (nonatomic, assign) NSUInteger page;
 
+@property (nonatomic, assign) NSUInteger prePage;
+
+@property (nonatomic, strong) NSMutableArray *modelArray;
+
 /// cell点击
 @property (nonatomic, strong) RACCommand *didSelectCommand;
 

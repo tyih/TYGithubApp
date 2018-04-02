@@ -81,7 +81,7 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
-        NSMutableArray *modelArray = [NSMutableArray array];
+        NSMutableArray *array = [NSMutableArray array];
         
         switch (self.chooseType) {
             case TYTabButtonsTypeFirst: {
@@ -89,9 +89,19 @@
                     
                     for (NSDictionary *dic in responseArray) {
                         TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
-                        [modelArray addObject:model];
+                        [array addObject:model];
                     }
-                    [subscriber sendNext:modelArray];
+                    
+                    if (self.prePage < self.page) {
+                        [self.modelArray addObjectsFromArray:array];
+                    } else {
+                        if (array.count > 0) {
+                            self.modelArray = array;
+                        } else {
+                            [self.modelArray removeAllObjects];
+                        }
+                    }
+                    [subscriber sendNext:self.modelArray];
                     [subscriber sendCompleted];
                 } errorHandle:^(NSError *error) {
                     NSLog(@"error:%@", error)
@@ -102,9 +112,18 @@
                     
                     for (NSDictionary *dic in responseArray) {
                         TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:dic];
-                        [modelArray addObject:model];
+                        [array addObject:model];
                     }
-                    [subscriber sendNext:modelArray];
+                    if (self.prePage < self.page) {
+                        [self.modelArray addObjectsFromArray:array];
+                    } else {
+                        if (array.count > 0) {
+                            self.modelArray = array;
+                        } else {
+                            [self.modelArray removeAllObjects];
+                        }
+                    }
+                    [subscriber sendNext:self.modelArray];
                     [subscriber sendCompleted];
                 } errorHandle:^(NSError *error) {
                     NSLog(@"error:%@", error)
@@ -115,9 +134,18 @@
                     
                     for (NSDictionary *dic in responseArray) {
                         TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:dic];
-                        [modelArray addObject:model];
+                        [array addObject:model];
                     }
-                    [subscriber sendNext:modelArray];
+                    if (self.prePage < self.page) {
+                        [self.modelArray addObjectsFromArray:array];
+                    } else {
+                        if (array.count > 0) {
+                            self.modelArray = array;
+                        } else {
+                            [self.modelArray removeAllObjects];
+                        }
+                    }
+                    [subscriber sendNext:self.modelArray];
                     [subscriber sendCompleted];
                 } errorHandle:^(NSError *error) {
                     NSLog(@"error:%@", error)

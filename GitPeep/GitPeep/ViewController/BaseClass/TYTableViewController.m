@@ -56,13 +56,23 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     
+    // header refresh
     if ([self isHeaderRefreshing]) { // 有刷新动画
         TYRefreshGifHeader *refreshHeader = [TYRefreshGifHeader headerWithRefreshingBlock:^{
-            
+            self.viewModel.prePage = 1;
+            self.viewModel.page = 1;
             [self requestRemoteData];
         }];
         self.tableView.mj_header = refreshHeader;
     }
+    
+    // footer refresh
+    MJRefreshAutoFooter *refreshFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        self.viewModel.prePage = self.viewModel.page;
+        self.viewModel.page ++;
+        [self requestRemoteData];
+    }];
+    self.tableView.mj_footer = refreshFooter;
 }
 
 - (void)requestRemoteData {
@@ -79,6 +89,7 @@
     } completed:^{
         
         [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
 
 }

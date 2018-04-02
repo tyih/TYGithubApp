@@ -31,16 +31,25 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
-        NSMutableArray *modelArray = [NSMutableArray array];
-        [[TYNetworkEngine sharedInstance] searchRepositoriesWithPage:page q:@"language:JavaScript" sort:@"stars" completionHandle:^(NSDictionary *responseDictionary) {
+        [[TYNetworkEngine sharedInstance] searchRepositoriesWithPage:self.page q:@"language:JavaScript" sort:@"stars" completionHandle:^(NSDictionary *responseDictionary) {
             
+            NSMutableArray *array = [NSMutableArray array];
             NSArray *items = responseDictionary[@"items"];
             for (NSDictionary *itemDic in items) {
                 TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:itemDic];
-                [modelArray addObject:model];
+                [array addObject:model];
             }
+            
+            if (self.prePage < self.page) {
+                [self.modelArray addObjectsFromArray:array];
+            } else {
+                if (array.count > 0) {
+                    self.modelArray = array;
+                }
+            }
+            
             // 发送数据
-            [subscriber sendNext:modelArray];
+            [subscriber sendNext:self.modelArray];
             [subscriber sendCompleted];
         } errorHandle:^(NSError *error) {
             NSLog(@"error:%@", error)

@@ -67,7 +67,6 @@
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self);
         
-        NSMutableArray *modelArray = [NSMutableArray array];
         NSString *category = nil;
         switch (self.chooseType) {
             case TYTabButtonsTypeFirst:
@@ -80,17 +79,31 @@
                 category = @"stargazers";
                 break;
         }
-        [[TYNetworkEngine sharedInstance] reposDetailCategoryWithUserName:self.params[@"login"] page:page repositoryName:self.params[@"repositoryName"] category:category completionHandle:^(NSArray *responseArray) {
+        [[TYNetworkEngine sharedInstance] reposDetailCategoryWithUserName:self.params[@"login"] page:self.page repositoryName:self.params[@"repositoryName"] category:category completionHandle:^(NSArray *responseArray) {
+            
+            NSMutableArray *array = [NSMutableArray array];
             for (NSDictionary *dic in responseArray) {
+                
                 if (self.chooseType == TYTabButtonsTypeSecond) {
                     TYRepositoriesItemModel *model = [TYRepositoriesItemModel yy_modelWithDictionary:dic];
-                    [modelArray addObject:model];
+                    [array addObject:model];
                 } else {
                     TYUsersItemModel *model = [TYUsersItemModel yy_modelWithDictionary:dic];
-                    [modelArray addObject:model];
+                    [array addObject:model];
                 }
             }
-            [subscriber sendNext:modelArray];
+            
+            if (self.prePage < self.page) {
+                [self.modelArray addObjectsFromArray:array];
+            } else {
+                if (array.count > 0) {
+                    self.modelArray = array;
+                } else {
+                    [self.modelArray removeAllObjects];
+                }
+            }
+            
+            [subscriber sendNext:self.modelArray];
             [subscriber sendCompleted];
         } errorHandle:^(NSError *error) {
             NSLog(@"error:%@", error)
